@@ -13,3 +13,76 @@
     height: 20px;
     animation: spin 1s linear infinite;
   }
+.react-tel-input {
+  width: 100%;
+  border: 2px solid #008bdc;
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+}
+
+.react-tel-input .form-control {
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  /* border-radius: 0.75rem; */
+}
+
+.custom-phone-input-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #008bdc;
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+}
+
+.custom-phone-input-field {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.react-tel-input .flag-dropdown {
+  background-color: transparent; 
+  border: none;
+  height: 40px;
+  align-items: center;
+  padding: 0;
+}
+
+
+
+.input-field {
+  position: relative;
+}
+
+.field {
+  outline: none;
+  width: 100%;
+  border: 2px solid #008bdc;
+  padding: 8px 14px;
+  transition: 150ms;
+}
+
+.field-focus {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 3px;
+  width: 0;
+  transition: 150ms;
+}
+
+.field:focus {
+  border: 2px solid #008bdc;
+}
+
+.field:focus ~ label {
+  transform: translateY(-39px);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #008bdc;
+}
+

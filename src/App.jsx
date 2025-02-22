@@ -6,6 +6,7 @@ import { PartnerRoutes } from './Routes/PartnerRoutes';
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { Signup } from './components/Login/Signup/Signup';
 
+import { PartnerForm } from './components/Partners/PartnerForm'
 
 const App = () => {
 
@@ -31,3 +32,4 @@ const App = () => {
 }
 
 export default App
+
