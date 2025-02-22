@@ -1,8 +1,11 @@
 import React from 'react'
+import { PartnerForm } from './components/Partners/PartnerForm'
 
 const App = () => {
   return (
-    <div className='text-2xl font-medium'>App</div>
+    <>
+      <PartnerForm />
+    </>
   )
 }
 
