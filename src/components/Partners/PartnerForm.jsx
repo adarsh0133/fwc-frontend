@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import Stepper, { Step } from '../../UI/Stepper';
 import PhoneInputField from './../../UI/PhoneInputField';
@@ -394,3 +395,5 @@ export const PartnerForm = () => {
     </>
   )
 }
+
+export default PartnerForm
