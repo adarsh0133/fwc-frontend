@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { currentUser } from '../../store/Actions/userAction'
 
-export const PartnerForm = () => {
+const PartnerForm = () => {
+   const dispatch = useDispatch()
+   const {user} = useSelector(state => state.user)
+ 
+   useEffect(() => {
+     dispatch(currentUser())
+   }, [])
+ 
+ if(!user) return <div className='loader'></div>
+ 
+
   return (
-    <div>PartnerForm</div>
+    <div>
+      hey {user && user.name}
+    </div>
   )
 }
+
+export default PartnerForm
