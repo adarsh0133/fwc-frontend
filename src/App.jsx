@@ -6,7 +6,8 @@ import { PartnerRoutes } from './Routes/PartnerRoutes';
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { Signup } from './components/Login/Signup/Signup';
 
-import { PartnerForm } from './components/Partners/PartnerForm'
+import { AdminRoutes } from './Routes/AdminRoutes';
+import AdminProtectedRoute from './utils/AdminProtectedRoute';
 
 const App = () => {
 
@@ -26,6 +27,11 @@ const App = () => {
         <Route path="/Signup" element={<GoogleAuthWrapper isLogin={false} />} />
         <Route path="/login" element={<GoogleAuthWrapper isLogin={true} />} />
         <Route path="/partner/*" element={<PartnerRoutes />} />
+        <Route path="/admin/*" element={
+          <AdminProtectedRoute>
+            <AdminRoutes />
+          </AdminProtectedRoute>
+        } />
       </Routes>
     </div>
   )
