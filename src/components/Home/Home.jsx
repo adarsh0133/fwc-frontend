@@ -20,9 +20,10 @@ export const Home = () => {
             minFontSize={100}
           />
         </div>
-        <Link to={'/login'} className='text-center font-bold  text-2xl'>
-          Login Now
-        </Link>
+        <div className="mt-10 text-center">
+          <Link to="/login" className="bg-black text-white py-3 px-6 roundg text-lg font-bold rounded-lg">Login Now</Link>
+
+        </div>
       </div>
     </div>
   )
