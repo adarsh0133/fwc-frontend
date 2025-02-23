@@ -52,7 +52,7 @@ export default function Stepper({
 
   return (
     <div
-      className="flex w-full bg-zinc-400 py-20 flex-1 flex-col items-center justify-center p-4 sm:aspect-[4/3] md:aspect-[2/1]"
+      className="flex w-full max-[600px]:min-h-screen h-fit bg-zinc-400 py-20 flex-1 flex-col items-center justify-center p-4 sm:aspect-[4/3] md:aspect-[2/1]"
       {...rest}
     >
       <div
