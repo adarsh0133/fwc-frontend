@@ -5,7 +5,26 @@ import { Link } from 'react-router-dom';
 export const Home = () => {
   return (
     <div>
-      <div className="center h-screen gap-10 flex-col w-full">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center p-6">
+        {/* Logo */}
+        <img src="/images/Home/homepagelogo.JPG" alt="FWC Logo" className="w-1/2 mb-4" />
+
+        {/* Heading */}
+        <h1 className="text-3xl font-bold text-gray-800">First World Community</h1>
+
+        {/* Description */}
+        <p className="text-gray-600 max-w-md mt-2">
+          FWC is an Entrepreneurship Enabling Foundation dedicated to empowering
+          emerging business leaders through expert mentoring, networking, and
+          strategic business solutions.
+        </p>
+
+        <div className="mt-10 text-center">
+          <Link to="/Signup" className="bg-black text-white py-3 px-6 roundg text-lg font-semibold rounded-lg">Join Now!</Link>
+        </div>
+
+      </div>
+      <div className="center h-screen gap-10  flex-col w-full">
         <div className=''>
           <TextPressure
             text="Page- Under - Construction"
@@ -19,10 +38,6 @@ export const Home = () => {
             strokeColor="#3498DB"
             minFontSize={100}
           />
-        </div>
-        <div className="mt-10 text-center">
-          <Link to="/login" className="bg-black text-white py-3 px-6 roundg text-lg font-bold rounded-lg">Login Now</Link>
-
         </div>
       </div>
     </div>
