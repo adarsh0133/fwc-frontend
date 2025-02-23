@@ -1,16 +1,27 @@
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Stepper, { Step } from '../../UI/Stepper';
 import PhoneInputField from './../../UI/PhoneInputField';
+import { useDispatch, useSelector } from 'react-redux';
+import { currentUser } from '../../store/Actions/userAction';
+import { sendMemberPayment, submitMemberDetails } from '../../store/Actions/partnerAction';
+import { useNavigate } from 'react-router-dom';
 
 export const PartnerForm = () => {
+  const key = import.meta.env.VITE_RAZORPAY_KEY;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [formLoading, setformLoading] = useState(false)
+  const [showFinancialAid, setShowFinancialAid] = useState(false);
+  const { user } = useSelector(state => state.user)
   const [userInput, setUserInput] = useState({
     // first step
-    fullname: "",
+    fullName: "",
     contact: "",
     email: "",
     city: "",
-    Linkedin: "",
+    country: "",
+    linkedinProfile: "",
     youtube: "",
     instagram: "",
     twitter: "",
@@ -50,7 +61,12 @@ export const PartnerForm = () => {
     termsAccepted: false,
 
     // amount 
-    amount: 1,
+    price: 1,
+
+    // new fields for financial aid
+    financialAidReason: "",
+    financialAidBenefit: "",
+    financialAidCommitment: "",
   });
 
   const handleChange = (name) => (eventOrValue) => {
@@ -64,18 +80,98 @@ export const PartnerForm = () => {
     }));
   };
 
-  const submitHandler = () => {
-    console.log(userInput);
+  const submitForm = () => {
+    // if (!userInput.termsAccepted) {
+    //   alert("Please accept the terms and conditions to proceed!");
+    //   return;
+    // }
+    // if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country || !userInput.userType || !userInput.lookingForCollaboration || !userInput.needFWCConnection || !userInput.offerServices || !userInput.offerDetails || !userInput.platform || !userInput.needTechSupport || !userInput.helpInBranding || !userInput.expandInternationally || !userInput.investmentSupport || !userInput.membershipCategory) {
+    //   alert("Please fill all the fields to proceed!");
+    //   return;
+    // }
+    // if (showFinancialAid && (!userInput.financialAidReason || !userInput.financialAidBenefit || !userInput.financialAidCommitment)) {
+    //   alert("Please fill all the fields to proceed!");
+    //   return;
+    // }
+    setformLoading(true)
+    dispatch(submitMemberDetails(userInput));
+    setformLoading(false)
+    alert("Form submitted successfully!")
+    navigate('/')
   }
+
+  const submitHandler = async () => {
+    if (!userInput.termsAccepted) {
+      alert("Please accept the terms and conditions to proceed!");
+      return;
+    }
+    if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country
+      || !userInput.userType || !userInput.lookingForCollaboration || !userInput.needFWCConnection || !userInput.offerServices || !userInput.offerDetails || !userInput.platform || !userInput.needTechSupport || !userInput.helpInBranding || !userInput.expandInternationally || !userInput.investmentSupport || !userInput.membershipCategory
+    ) {
+      alert("Please fill all the fields to proceed!");
+      return;
+    }
+    setformLoading(true)
+    try {
+      const order = await dispatch(sendMemberPayment(userInput));
+      const options = {
+        key: key,
+        amount: userInput.price,
+        currency: "INR",
+        name: "FWC Membership",
+        description: "Payment for FWC Membership",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHuqzgiEkvl9PaoFzwa6Q2LdqlUsbw1-b3Dw&s",
+        order_id: order.id,
+        callback_url:
+          `${import.meta.env.VITE_BACKEND_URL}/member/verify-payment`,
+        prefill: {
+          name: user.name, //loggedinuser name
+          email: user.email, //loggedinuser email
+        },
+        notes: {
+          address: "",
+        },
+        theme: {
+          color: "#121212",
+        },
+        method: {
+          netbanking: true,
+          card: true,
+          upi: true,
+          wallet: false,
+          paylater: false,
+          banktransfer: true,
+          qr: false,
+        },
+      };
+      const razor = new window.Razorpay(options);
+      razor.open();
+    } catch (error) {
+      console.error("Payment failed:", error);
+    } finally {
+      setformLoading(false);
+    }
+  }
+
+  if (user) {
+    userInput.email = user.email
+  }
+  useEffect(() => {
+    dispatch(currentUser())
+  }, [])
+
+  if (!user)
+    return (
+      <div className='h-screen gap-5 w-full center '>
+        <div className="loader scale-125"></div>
+        <p className='text-2xl font-semibold'>Loading . . . </p>
+      </div>
+    )
 
   return (
     <>
       <Stepper
         initialStep={1}
-        onStepChange={(step) => {
-          console.log(step);
-        }}
-        onFinalStepCompleted={submitHandler}
         backButtonText="Previous"
         nextButtonText="Next"
       >
@@ -87,9 +183,9 @@ export const PartnerForm = () => {
               <input
                 type="text"
                 placeholder="Enter your full name"
-                name="fullname"
-                onChange={handleChange("fullname")}
-                value={userInput.fullname}
+                name="fullName"
+                onChange={handleChange("fullName")}
+                value={userInput.fullName}
                 className="field rounded-xl"
               />
             </div>
@@ -106,7 +202,19 @@ export const PartnerForm = () => {
                 type="email"
                 disabled
                 name="email"
+                placeholder='Enter your email'
                 value={userInput.email}
+                className="field rounded-xl"
+              />
+            </div>
+            <div className="input-field w-full mt-4 space-y-2">
+              <p className="font-medium text-sm text-zinc-600">Country</p>
+              <input
+                type="text"
+                placeholder="India/USA/UK"
+                name="country"
+                onChange={handleChange("country")}
+                value={userInput.country}
                 className="field rounded-xl"
               />
             </div>
@@ -125,10 +233,10 @@ export const PartnerForm = () => {
               <p className="font-medium text-sm text-zinc-600">Social Media Handels</p>
               <input
                 type="text"
-                placeholder="Linkedin"
-                name="Linkedin"
-                onChange={handleChange("Linkedin")}
-                value={userInput.Linkedin}
+                placeholder="linkedinProfile"
+                name="linkedinProfile"
+                onChange={handleChange("linkedinProfile")}
+                value={userInput.linkedinProfile}
                 className="field rounded-xl"
               />
               <input
@@ -209,6 +317,7 @@ export const PartnerForm = () => {
               <input
                 type="text"
                 name="companyName"
+                placeholder='Enter your company name'
                 value={userInput.companyName}
                 onChange={handleChange("companyName")}
                 className="field rounded-xl"
@@ -219,6 +328,7 @@ export const PartnerForm = () => {
               <input
                 type="text"
                 name="sector"
+                placeholder='Enter your sector'
                 value={userInput.sector}
                 onChange={handleChange("sector")}
                 className="field rounded-xl"
@@ -228,7 +338,7 @@ export const PartnerForm = () => {
               <p className="font-medium text-sm text-zinc-600">Business Type: (Product-based, Service-based, B2B, B2C, SaaS, etc.)</p>
               <input
                 type="text"
-                placeholder="Bangalore/Mumbai/Delhi"
+                placeholder='Enter your business type'
                 name="businessType"
                 onChange={handleChange("businessType")}
                 value={userInput.businessType}
@@ -239,7 +349,7 @@ export const PartnerForm = () => {
               <p className="font-medium text-sm text-zinc-600">Business Stage: (Idea, Early-Stage, Growth, Scaling, Established)</p>
               <input
                 type="text"
-                placeholder="stage"
+                placeholder='stage'
                 name="stage"
                 onChange={handleChange("stage")}
                 value={userInput.stage}
@@ -391,7 +501,7 @@ export const PartnerForm = () => {
                   value={userInput.offerDetails}
                   onChange={handleChange("offerDetails")}
                   placeholder="Describe your offerings..."
-                  className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none "
                 />
               </div>
             )}
@@ -663,13 +773,91 @@ export const PartnerForm = () => {
               </span>
             </label>
           </div>
+          {showFinancialAid && (
+            <div className="mt-4 p-4 bg-gray-100 rounded-lg shadow">
+              <h3 className="text-lg font-semibold">🚀 FWC Financial Aid Request Form</h3>
+              <p className="text-sm text-gray-600 mt-2">
+                FWC is a not-for-profit organization committed to empowering startups and entrepreneurs. The ₹2,000 membership fee directly supports mentorship, funding access, networking, and business growth opportunities. If you genuinely cannot afford this fee, you may apply for financial aid.
+              </p>
+              <p className="text-sm text-gray-600 mt-2">
+                📌 Note: This aid is for those who truly need it. If you can afford the fee, please do not apply.
+              </p>
+              <div className="mt-4">
+                <label className="block text-sm font-medium text-gray-700">
+                  🔹 Why do you need financial aid for FWC membership? (Brief explanation – max 100 words)
+                </label>
+                <textarea
+                  value={userInput.financialAidReason}
+                  onChange={handleChange("financialAidReason")}
+                  placeholder="Enter your reason..."
+                  className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none "
+                />
+              </div>
+              <div className="mt-4">
+                <label className="block text-sm font-medium text-gray-700">
+                  🔹 How will FWC membership benefit you? (Brief explanation – max 100 words)
+                </label>
+                <textarea
+                  value={userInput.financialAidBenefit}
+                  onChange={handleChange("financialAidBenefit")}
+                  placeholder="Enter the benefits..."
+                  className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none "
+                />
+              </div>
+              <div className="mt-4">
+                <label className="block text-sm font-medium text-gray-700">
+                  🔹 Can you commit to actively participating in FWC activities and contributing to the community? (Yes/No)
+                </label>
+                <div className="flex space-x-4 mt-1">
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="financialAidCommitment"
+                      value="Yes"
+                      checked={userInput.financialAidCommitment === "Yes"}
+                      onChange={handleChange("financialAidCommitment")}
+                      className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+                    />
+                    <span className="text-gray-800">Yes</span>
+                  </label>
+                  <label className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="financialAidCommitment"
+                      value="No"
+                      checked={userInput.financialAidCommitment === "No"}
+                      onChange={handleChange("financialAidCommitment")}
+                      className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+                    />
+                    <span className="text-gray-800">No</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          )}
 
-          {/* Debugging - Display Selected Values */}
-          <div className="mt-4 p-3 bg-white border rounded-md">
-            <p className="text-sm text-gray-700">
-              Terms Accepted: {userInput.termsAccepted ? "✅ Yes" : "❌ No"}
-            </p>
-          </div>
+          {showFinancialAid == true ? (
+            <div className="w-full  h-20  flex items-center justify-evenly ">
+              <button onClick={() => setShowFinancialAid(false)} className='border-2 cursor-pointer rounded-lg px-4 py-2 '>Go Without Financial Ad</button>
+              {formLoading ? <div className=' bg-green-500 gap-2 rounded-lg px-4 py-2 text-white center '>
+                <div className="loader scale-75 "></div>
+                <p className=' font-semibold'>Loading . . . </p>
+              </div> : <button onClick={submitForm} className='bg-green-500 cursor-pointer rounded-lg px-4 py-2 text-white'>Submit Form</button>}
+            </div>
+          ) : (
+
+            <div className="w-full  h-20  flex items-center justify-evenly ">
+              <button onClick={() => setShowFinancialAid(true)} className='border-2 cursor-pointer rounded-lg px-4 py-2 '>Go With Financial Ad</button>
+              {formLoading ? <div className=' bg-green-500 gap-2 rounded-lg px-4 py-2 text-white center '>
+                <div className="loader scale-75 "></div>
+                <p className=' font-semibold'>Loading . . . </p>
+              </div> :
+                <button onClick={submitHandler} className='bg-green-500 cursor-pointer rounded-lg px-4 py-2 text-white'>Pay 2000</button>
+              }
+            </div>
+          )}
+
+
         </Step>
       </Stepper>
     </>
