@@ -61,7 +61,7 @@ export const PartnerForm = () => {
     termsAccepted: false,
 
     // amount 
-    price: 1,
+    price: 4000,
 
     // new fields for financial aid
     financialAidReason: "",

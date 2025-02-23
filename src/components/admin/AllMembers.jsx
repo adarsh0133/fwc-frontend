@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getMemberDetails } from "../../store/Actions/partnerAction";
+import { ApproveMember, getMemberDetails, RemoveMember } from "../../store/Actions/partnerAction";
 import { RiCloseFill } from "@remixicon/react";
+import { getUsers } from "../../store/Actions/userAction";
 
 function AllMembers() {
   const dispatch = useDispatch();
   const [comploading, setcomploading] = useState(true);
+  const [allUsers, setallUsers] = useState([])
   const [allstudents, setallstudents] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedMember, setSelectedMember] = useState(null);
@@ -15,6 +17,8 @@ function AllMembers() {
       try {
         setcomploading(true);
         const response = await dispatch(getMemberDetails());
+        const response1 = await dispatch(getUsers());
+        setallUsers(response1.users);
         setallstudents(response.members);
         setcomploading(false);
       } catch (error) {
@@ -86,6 +90,9 @@ function AllMembers() {
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         More Details
                       </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Functionality
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
@@ -111,6 +118,30 @@ function AllMembers() {
                             Click Here
                           </button>
                         </td>
+                        {/* {allUsers.map((user, i) => (
+                          user.email === student.email && (
+                            <td key={i} className="px-6 py-4 lowercase whitespace-nowrap text-sm text-gray-700">
+                              {user.role == "member" ? (
+                                <button
+                                  className="bg-red-500 cursor-pointer px-4 py-2 rounded-lg text-white"
+                                  onClick={() => dispatch(RemoveMember(user.email))}
+                                >
+                                  Remove Member
+                                </button>
+
+                              ) : (
+                                <button
+                                  className="bg-green-500 cursor-pointer px-4 py-2 rounded-lg text-white"
+                                  onClick={() => dispatch(ApproveMember(user.email))}
+                                >
+                                  Approve Member
+                                </button>
+
+                              )}
+                            </td>
+
+                          )
+                        ))} */}
                       </tr>
                     ))}
                   </tbody>
