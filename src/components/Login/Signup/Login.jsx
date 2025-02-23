@@ -33,7 +33,7 @@ export default function Login() {
         <>
             <div className="w-full h-screen  center flex flex-col items-center justify-center bg-white rounded-l-[10vh] max-[600px]:w-full">
                 <div className="  w-full h-full   flex flex-col gap-5 items-center justify-center   ">
-                    <div className="w-[30%] shadow-2xl p-10   flex flex-col gap-5 items-center">
+                    <div className="w-[30%] shadow-2xl p-10   flex flex-col gap-5 items-center max-[600px]:w-[100vw]">
                         <p className="text-3xl font-semibold">Login To FWC </p>
                         <div className=" w-full  ">
                             <p className="text-zinc-500">Email</p>

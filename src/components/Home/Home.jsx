@@ -7,7 +7,7 @@ export const Home = () => {
     <div>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center p-6">
         {/* Logo */}
-        <img src="/images/Home/homepagelogo.JPG" alt="FWC Logo" className="w-1/2 mb-4" />
+        <img src="/images/Home/homepagelogo.JPG" alt="FWC Logo" className="w-1/2 mb-4 max-[600px]:w-full" />
 
         {/* Heading */}
         <h1 className="text-3xl font-bold text-gray-800">First World Community</h1>

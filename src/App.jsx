@@ -8,6 +8,7 @@ import { Signup } from './components/Login/Signup/Signup';
 
 import { AdminRoutes } from './Routes/AdminRoutes';
 import AdminProtectedRoute from './utils/AdminProtectedRoute';
+import ErrorPage from './components/Home/ErrorPage';
 
 const App = () => {
 
@@ -24,6 +25,7 @@ const App = () => {
     <div className="overflow-x-hidden  font-body">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/*" element={<ErrorPage />} />
         <Route path="/Signup" element={<GoogleAuthWrapper isLogin={false} />} />
         <Route path="/login" element={<GoogleAuthWrapper isLogin={true} />} />
         <Route path="/partner/*" element={<PartnerRoutes />} />
