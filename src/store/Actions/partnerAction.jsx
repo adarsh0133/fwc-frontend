@@ -2,6 +2,15 @@ import axios from '../../utils/axios';
 import { getBearerToken } from './../../utils/auth';
 
 
+export const getMemberDetails = () => async (dispatch) => {
+    try {
+        const { data } = await axios.get('/member/all_members', getBearerToken());
+        return data;
+    } catch (error) {
+        console.error("Failed to fetch member details:", error);
+    }
+}
+
 export const submitMemberDetails = (formData) => async (dispatch) => {
     try {
         const { data } = await axios.post('/member/create_member', formData , getBearerToken());

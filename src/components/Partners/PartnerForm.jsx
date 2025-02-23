@@ -81,18 +81,18 @@ export const PartnerForm = () => {
   };
 
   const submitForm = () => {
-    // if (!userInput.termsAccepted) {
-    //   alert("Please accept the terms and conditions to proceed!");
-    //   return;
-    // }
-    // if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country || !userInput.userType || !userInput.lookingForCollaboration || !userInput.needFWCConnection || !userInput.offerServices || !userInput.offerDetails || !userInput.platform || !userInput.needTechSupport || !userInput.helpInBranding || !userInput.expandInternationally || !userInput.investmentSupport || !userInput.membershipCategory) {
-    //   alert("Please fill all the fields to proceed!");
-    //   return;
-    // }
-    // if (showFinancialAid && (!userInput.financialAidReason || !userInput.financialAidBenefit || !userInput.financialAidCommitment)) {
-    //   alert("Please fill all the fields to proceed!");
-    //   return;
-    // }
+    if (!userInput.termsAccepted) {
+      alert("Please accept the terms and conditions to proceed!");
+      return;
+    }
+    if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country ) {
+      alert("Please fill all the fields to proceed!");
+      return;
+    }
+    if (!userInput.financialAidReason || !userInput.financialAidBenefit || !userInput.financialAidCommitment) {
+      alert("Please fill all the fields to proceed!");
+      return;
+    }
     setformLoading(true)
     dispatch(submitMemberDetails(userInput));
     setformLoading(false)
@@ -106,7 +106,6 @@ export const PartnerForm = () => {
       return;
     }
     if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country
-      || !userInput.userType || !userInput.lookingForCollaboration || !userInput.needFWCConnection || !userInput.offerServices || !userInput.offerDetails || !userInput.platform || !userInput.needTechSupport || !userInput.helpInBranding || !userInput.expandInternationally || !userInput.investmentSupport || !userInput.membershipCategory
     ) {
       alert("Please fill all the fields to proceed!");
       return;

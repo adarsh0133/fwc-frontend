@@ -11,7 +11,7 @@ export default function AdminLeftSlide({ selectedComponent, setSelectedComponent
   };
 
   const buttons = [
-    { label: 'All users', component: 'AllUsers' },
+    { label: 'All Members', component: 'AllMembers' },
   ];
 
   const filteredButtons = buttons.filter(button =>

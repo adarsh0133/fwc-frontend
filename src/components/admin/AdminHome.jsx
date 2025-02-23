@@ -3,9 +3,11 @@ import AdminLeftSlide from "./AdminLeftSlide";
 import { useDispatch, useSelector } from "react-redux";
 import { RiArrowRightLine, RiCloseLine } from "@remixicon/react";
 import { currentUser } from "../../store/Actions/userAction";
+import AllMembers from "./AllMembers";
+// Ensure this import is correct
 
 const componentMap = {
-  // AllUsers: AllUsers,
+  AllMembers: AllMembers,
 };
 
 export default function AdminHome() {
@@ -13,7 +15,7 @@ export default function AdminHome() {
   const { user } = useSelector((state) => state.user);
 
   const [selectedComponent, setSelectedComponent] = useState(() => {
-    return localStorage.getItem("selectedComponent") || "AllUsers";
+    return localStorage.getItem("selectedComponent") || "AllMembers";
   });
 
   useEffect(() => {
@@ -56,7 +58,7 @@ export default function AdminHome() {
             />
           </div>
           <div className="w-[82%] h-[89vh]">
-            <SelectedComponent />
+            {SelectedComponent ? <SelectedComponent /> : <div>Component not found</div>}
           </div>
         </div>
       </div>
@@ -92,7 +94,7 @@ export default function AdminHome() {
               onClick={toggleSidebar}
               className="mt-3 ml-5 hidden max-[600px]:block cursor-pointer"
             />
-            <SelectedComponent />
+            {SelectedComponent ? <SelectedComponent /> : <div>Component not found</div>}
           </div>
         </div>
       </div>
