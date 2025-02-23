@@ -24,22 +24,7 @@ export const Home = () => {
         </div>
 
       </div>
-      <div className="center h-screen gap-10  flex-col w-full">
-        <div className=''>
-          <TextPressure
-            text="Page- Under - Construction"
-            flex={true}
-            alpha={false}
-            stroke={true}
-            width={true}
-            weight={true}
-            italic={true}
-            textColor="#000000"
-            strokeColor="#3498DB"
-            minFontSize={100}
-          />
-        </div>
-      </div>
+
     </div>
   )
 }

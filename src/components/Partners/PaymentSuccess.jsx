@@ -21,19 +21,19 @@ function PaymentSuccess() {
       }
     }, [user, id, dispatch]);
 
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setCountdown(prevCountdown => {
-  //       if (prevCountdown === 1) {
-  //         clearInterval(timer);
-  //         navigate('/');
-  //       }
-  //       return prevCountdown - 1;
-  //     });
-  //   }, 1000);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCountdown(prevCountdown => {
+        if (prevCountdown === 1) {
+          clearInterval(timer);
+          navigate('/');
+        }
+        return prevCountdown - 1;
+      });
+    }, 1000);
 
-  //   return () => clearInterval(timer);
-  // }, [navigate]);
+    return () => clearInterval(timer);
+  }, [navigate]);
   return (
     <div>
       <div className="center h-screen w-full flex-col text-center ">
