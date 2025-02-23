@@ -72,14 +72,14 @@ export default function Login() {
                                     {showPassword ? <RiEyeLine /> : <RiEyeCloseLine />}
                                 </span>
                             </div>
-                            {/* <div className="w-full  mt-2 flex items-center justify-end">
+                            <div className="w-full  mt-2 flex items-center justify-end">
                                 <Link
-                                    to="/sendmail"
+                                    to="/signup"
                                     className="text-[#3498DB] text-sm  max-[600px]:text-sm max-[600px]:mt-2"
                                 >
-                                    Forgot Password?
+                                   Create an account
                                 </Link>
-                            </div> */}
+                            </div>
                         </div>
                         {
                             loading ? (

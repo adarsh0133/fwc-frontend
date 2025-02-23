@@ -90,6 +90,14 @@ export const Signup = () => {
                                     {showPassword ? <RiEyeLine /> : <RiEyeCloseLine />}
                                 </span>
                             </div>
+                           <div className="w-full mt-2  flex items-center justify-end">
+                                                        <Link
+                                                            to="/login"
+                                                            className="text-[#3498DB] text-sm  max-[600px]:text-sm max-[600px]:mt-2"
+                                                        >
+                                                           Already have an account? Login
+                                                        </Link>
+                                                    </div>
                         </div>
 
                         {
