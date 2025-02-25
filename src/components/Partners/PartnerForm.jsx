@@ -61,7 +61,7 @@ export const PartnerForm = () => {
     termsAccepted: false,
 
     // amount 
-    price: 4000,
+    price: 1999,
 
     // new fields for financial aid
     financialAidReason: "",
@@ -85,7 +85,7 @@ export const PartnerForm = () => {
       alert("Please accept the terms and conditions to proceed!");
       return;
     }
-    if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country ) {
+    if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country) {
       alert("Please fill all the fields to proceed!");
       return;
     }
@@ -159,6 +159,25 @@ export const PartnerForm = () => {
     dispatch(currentUser())
   }, [])
 
+  useEffect(() => {
+    switch (userInput.membershipCategory) {
+      case "Student":
+        setUserInput((prevInput) => ({ ...prevInput, price: 999 }));
+        break;
+      case "Startup/Business":
+        setUserInput((prevInput) => ({ ...prevInput, price: 1999 }));
+        break;
+      case "Investor":
+        setUserInput((prevInput) => ({ ...prevInput, price: 3999 }));
+        break;
+      case "coreteammember":
+        setUserInput((prevInput) => ({ ...prevInput, price: 11999 }));
+        break;
+      default:
+        setUserInput((prevInput) => ({ ...prevInput, price: 1999 }));
+    }
+  }, [userInput.membershipCategory]);
+
   if (!user)
     return (
       <div className='h-screen gap-5 w-full center '>
@@ -166,6 +185,10 @@ export const PartnerForm = () => {
         <p className='text-2xl font-semibold'>Loading . . . </p>
       </div>
     )
+
+  const gstRate = 0.18;
+  const gstAmount = userInput.price * gstRate;
+  const grandTotal = userInput.price + gstAmount;
 
   return (
     <>
@@ -718,7 +741,7 @@ export const PartnerForm = () => {
             <option value="Student">Student</option>
             <option value="Startup/Business">Startup/Business</option>
             <option value="Investor">Investor</option>
-            <option value="Mentor">Mentor</option>
+            <option value="coreteammember">Core Team Member</option>
           </select>
 
           {/* Referred By */}
@@ -771,6 +794,22 @@ export const PartnerForm = () => {
                 I accept all Terms & Conditions.
               </span>
             </label>
+            <div className="text-center w-full flex items-center justify-end h-fit ">
+              <div className=" h-fit w-fit">
+                <div className="flex gap-5 items-center text-sm font-medium text-gray-600 justify-between">
+                  <p>Amount :</p>
+                  <p>₹{userInput.price}</p>
+                </div>
+                <div className="flex gap-5 items-center text-sm font-medium text-gray-600 justify-between">
+                  <p>GST (18%):</p>
+                  <p>₹{gstAmount.toFixed(2)}</p>
+                </div>
+                <div className="flex gap-5 items-center text-sm font-medium text-gray-600 justify-between">
+                  <p>Grand Total:</p>
+                  <p>₹{grandTotal.toFixed(2)}</p>
+                </div>
+              </div>
+            </div>
           </div>
           {showFinancialAid && (
             <div className="mt-4 p-4 bg-gray-100 rounded-lg shadow">
@@ -835,6 +874,7 @@ export const PartnerForm = () => {
             </div>
           )}
 
+
           {showFinancialAid == true ? (
             <div className="w-full  h-20  flex items-center justify-evenly ">
               <button onClick={() => setShowFinancialAid(false)} className='border-2 cursor-pointer rounded-lg px-4 py-2 '>Go Without Financial Ad</button>
@@ -846,12 +886,14 @@ export const PartnerForm = () => {
           ) : (
 
             <div className="w-full  h-20  flex items-center justify-evenly ">
+
               <button onClick={() => setShowFinancialAid(true)} className='border-2 cursor-pointer rounded-lg px-4 py-2 '>Go With Financial Ad</button>
+
               {formLoading ? <div className=' bg-green-500 gap-2 rounded-lg px-4 py-2 text-white center '>
                 <div className="loader scale-75 "></div>
                 <p className=' font-semibold'>Loading . . . </p>
               </div> :
-                <button onClick={submitHandler} className='bg-green-500 cursor-pointer rounded-lg px-4 py-2 text-white'>Pay 2000</button>
+                <button onClick={submitHandler} className='bg-green-500 cursor-pointer rounded-lg px-4 py-2 text-white'>Pay ₹{grandTotal.toFixed(2)}</button>
               }
             </div>
           )}
