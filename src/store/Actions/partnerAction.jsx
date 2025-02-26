@@ -24,7 +24,7 @@ export const sendMemberPayment = (formData) => async (dispatch) => {
     const order = await axios.post(`/member/create-order`, formData);
     return order.data;
   } catch (error) {
-    console.error("Failed to fetch portfolios:", error);
+    console.error("Failed to fetch:", error);
   }
 };
 

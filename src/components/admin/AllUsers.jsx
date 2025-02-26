@@ -4,7 +4,7 @@ import { ApproveMember, getMemberDetails, RemoveMember } from "../../store/Actio
 import { RiCloseFill } from "@remixicon/react";
 import { getUsers } from "../../store/Actions/userAction";
 
-function AllMembers() {
+function AllUsers() {
   const dispatch = useDispatch();
   const [comploading, setcomploading] = useState(true);
   const [allUsers, setallUsers] = useState([])
@@ -16,10 +16,7 @@ function AllMembers() {
       try {
         setcomploading(true);
         const response = await dispatch(getUsers());
-        if (response.users) {
-          const members = response.users.filter(user => user.role === "member");
-          setallUsers(members);
-        }
+        setallUsers(response.users);
         setcomploading(false);
       } catch (error) {
         console.error("Failed to fetch students:", error);
@@ -85,9 +82,9 @@ function AllMembers() {
                         Email
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Functionality
+                        Role
                       </th>
-                      
+
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
@@ -101,6 +98,19 @@ function AllMembers() {
                         </td>
                         <td className="px-6 py-4 lowercase whitespace-nowrap text-sm text-gray-700">
                           {student.email}
+                        </td>
+                        <td className=" lowercase whitespace-nowrap text-sm text-gray-700">
+                          <p className={` w-fit py-2 rounded-lg  px-4 ${student.role === "user"
+                              ? "bg-blue-300"
+                              : student.role === "member"
+                                ? "bg-green-300"
+                                : student.role === "admin"
+                                  ? "bg-red-300"
+                                  : ""
+                            }`}>
+                            {student.role}
+
+                          </p>
                         </td>
                       </tr>
                     ))}
@@ -149,4 +159,4 @@ function AllMembers() {
   );
 }
 
-export default AllMembers;
+export default AllUsers;

@@ -4,10 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { RiArrowRightLine, RiCloseLine } from "@remixicon/react";
 import { currentUser } from "../../store/Actions/userAction";
 import AllMembers from "./AllMembers";
+import MembersForm from "./MembersForm";
+import AllUsers from "./AllUsers";
 // Ensure this import is correct
 
 const componentMap = {
+  AllUsers: AllUsers,
   AllMembers: AllMembers,
+  MembersForm: MembersForm,
 };
 
 export default function AdminHome() {
