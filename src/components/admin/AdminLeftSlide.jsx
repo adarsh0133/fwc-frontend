@@ -6,12 +6,16 @@ export default function AdminLeftSlide({ selectedComponent, setSelectedComponent
 
   const getButtonClass = (component) => {
     return selectedComponent === component
-      ? "center font-semibold h-[90%] w-[80%] border-2 border-[#2a2a2ab6] rounded-lg bg-[black] text-white"
-      : "center font-semibold h-[90%] w-[80%] border-2 border-[#2a2a2ab6] rounded-lg";
+      ? "center font-semibold h-[90%] w-[80%] cursor-pointer border-2 border-[#2a2a2ab6] rounded-lg bg-[black] text-white"
+      : "center font-semibold h-[90%] w-[80%] cursor-pointer border-2 border-[#2a2a2ab6] rounded-lg";
   };
 
   const buttons = [
+    { label: 'All Users', component: 'AllUsers' },
     { label: 'All Members', component: 'AllMembers' },
+    { label: 'Members Forms', component: 'MembersForm' },
+
+
   ];
 
   const filteredButtons = buttons.filter(button =>

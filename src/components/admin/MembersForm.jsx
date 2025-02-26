@@ -8,6 +8,7 @@ function AllMembers() {
   const dispatch = useDispatch();
   const [comploading, setcomploading] = useState(true);
   const [allUsers, setallUsers] = useState([])
+  const [allstudents, setallstudents] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedMember, setSelectedMember] = useState(null);
 
@@ -15,11 +16,10 @@ function AllMembers() {
     const fetchData = async () => {
       try {
         setcomploading(true);
-        const response = await dispatch(getUsers());
-        if (response.users) {
-          const members = response.users.filter(user => user.role === "member");
-          setallUsers(members);
-        }
+        const response = await dispatch(getMemberDetails());
+        const response1 = await dispatch(getUsers());
+        setallUsers(response1.users);
+        setallstudents(response.members);
         setcomploading(false);
       } catch (error) {
         console.error("Failed to fetch students:", error);
@@ -40,7 +40,7 @@ function AllMembers() {
     setSelectedMember(null);
   };
 
-  const filteredStudents = allUsers.filter((student) =>
+  const filteredStudents = allstudents.filter((student) =>
     (student.name && student.name.toLowerCase().includes(searchQuery.toLowerCase())) ||
     (student.email && student.email.toLowerCase().includes(searchQuery.toLowerCase())) ||
     (student.contact && student.contact.includes(searchQuery))
@@ -69,7 +69,7 @@ function AllMembers() {
           </div>
           <div className="w-full h-[80vh] px-5 pb-10 overflow-hidden capitalize">
             {filteredStudents.length === 0 ? (
-              <p>No Members found</p>
+              <p>No User found</p>
             ) : (
               <div className="overflow-y-auto h-full pb-10">
                 <table className="min-w-full divide-y divide-gray-200">
@@ -85,9 +85,14 @@ function AllMembers() {
                         Email
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Contact
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        More Details
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Functionality
                       </th>
-                      
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
@@ -97,11 +102,46 @@ function AllMembers() {
                           {index + 1}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                          {student.name}
+                          {student.fullName}
                         </td>
                         <td className="px-6 py-4 lowercase whitespace-nowrap text-sm text-gray-700">
                           {student.email}
                         </td>
+                        <td className="px-6 py-4 lowercase whitespace-nowrap text-sm text-gray-700">
+                          {student.contact}
+                        </td>
+                        <td className="px-6 py-4 lowercase whitespace-nowrap text-sm text-gray-700">
+                          <button
+                            className="bg-blue-500 cursor-pointer px-4 py-2 rounded-lg text-white"
+                            onClick={() => handleMemberClick(student)}
+                          >
+                            Click Here
+                          </button>
+                        </td>
+                        {/* {allUsers.map((user, i) => (
+                          user.email === student.email && (
+                            <td key={i} className="px-6 py-4 lowercase whitespace-nowrap text-sm text-gray-700">
+                              {user.role == "member" ? (
+                                <button
+                                  className="bg-red-500 cursor-pointer px-4 py-2 rounded-lg text-white"
+                                  onClick={() => dispatch(RemoveMember(user.email))}
+                                >
+                                  Remove Member
+                                </button>
+
+                              ) : (
+                                <button
+                                  className="bg-green-500 cursor-pointer px-4 py-2 rounded-lg text-white"
+                                  onClick={() => dispatch(ApproveMember(user.email))}
+                                >
+                                  Approve Member
+                                </button>
+
+                              )}
+                            </td>
+
+                          )
+                        ))} */}
                       </tr>
                     ))}
                   </tbody>

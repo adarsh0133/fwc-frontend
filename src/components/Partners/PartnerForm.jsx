@@ -61,7 +61,8 @@ export const PartnerForm = () => {
     termsAccepted: false,
 
     // amount 
-    price: 1999,
+    categoryprice: 1999,
+    amount:0,
 
     // new fields for financial aid
     financialAidReason: "",
@@ -115,7 +116,7 @@ export const PartnerForm = () => {
       const order = await dispatch(sendMemberPayment(userInput));
       const options = {
         key: key,
-        amount: userInput.price,
+        amount: userInput.amount,
         currency: "INR",
         name: "FWC Membership",
         description: "Payment for FWC Membership",
@@ -162,19 +163,19 @@ export const PartnerForm = () => {
   useEffect(() => {
     switch (userInput.membershipCategory) {
       case "Student":
-        setUserInput((prevInput) => ({ ...prevInput, price: 999 }));
+        setUserInput((prevInput) => ({ ...prevInput, categoryprice: 999 }));
         break;
       case "Startup/Business":
-        setUserInput((prevInput) => ({ ...prevInput, price: 1999 }));
+        setUserInput((prevInput) => ({ ...prevInput, categoryprice: 1999 }));
         break;
       case "Investor":
-        setUserInput((prevInput) => ({ ...prevInput, price: 3999 }));
+        setUserInput((prevInput) => ({ ...prevInput, categoryprice: 3999 }));
         break;
       case "coreteammember":
-        setUserInput((prevInput) => ({ ...prevInput, price: 11999 }));
+        setUserInput((prevInput) => ({ ...prevInput, categoryprice: 11999 }));
         break;
       default:
-        setUserInput((prevInput) => ({ ...prevInput, price: 1999 }));
+        setUserInput((prevInput) => ({ ...prevInput, categoryprice: 1999 }));
     }
   }, [userInput.membershipCategory]);
 
@@ -187,8 +188,9 @@ export const PartnerForm = () => {
     )
 
   const gstRate = 0.18;
-  const gstAmount = userInput.price * gstRate;
-  const grandTotal = userInput.price + gstAmount;
+  const gstAmount = userInput.categoryprice * gstRate;
+  const grandTotal = userInput.categoryprice + gstAmount;
+  userInput.amount = grandTotal;
 
   return (
     <>
@@ -798,7 +800,7 @@ export const PartnerForm = () => {
               <div className=" h-fit w-fit">
                 <div className="flex gap-5 items-center text-sm font-medium text-gray-600 justify-between">
                   <p>Amount :</p>
-                  <p>₹{userInput.price}</p>
+                  <p>₹{userInput.categoryprice}</p>
                 </div>
                 <div className="flex gap-5 items-center text-sm font-medium text-gray-600 justify-between">
                   <p>GST (18%):</p>
