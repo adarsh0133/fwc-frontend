@@ -69,6 +69,12 @@ export const PartnerForm = () => {
     financialAidCommitment: "",
   });
 
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   const handleChange = (name) => (eventOrValue) => {
     const value = typeof eventOrValue === "object" && eventOrValue.target
       ? eventOrValue.target.value // For regular inputs
@@ -85,12 +91,12 @@ export const PartnerForm = () => {
       alert("Please accept the terms and conditions to proceed!");
       return;
     }
-    if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country) {
+    if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country || !userInput.country || !userInput.userType || !userInput.lookingForCollaboration || !userInput.needFWCConnection || !userInput.offerServices || !userInput.platform || !userInput.needTechSupport || !userInput.helpInBranding || !userInput.investmentSupport || !userInput.expandInternationally || !userInput.membershipCategory) {
       alert("Please fill all the fields to proceed!");
       return;
     }
     if (!userInput.financialAidReason || !userInput.financialAidBenefit || !userInput.financialAidCommitment) {
-      alert("Please fill all the fields to proceed!");
+      alert("Please fill all financial-aid fields to proceed!");
       return;
     }
     setformLoading(true)
@@ -105,8 +111,8 @@ export const PartnerForm = () => {
       alert("Please accept the terms and conditions to proceed!");
       return;
     }
-    if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country
-    ) {
+    if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country || !userInput.userType || !userInput.lookingForCollaboration || !userInput.needFWCConnection || !userInput.offerServices || !userInput.platform || !userInput.needTechSupport || !userInput.helpInBranding || !userInput.investmentSupport || !userInput.expandInternationally || !userInput.membershipCategory )
+     {
       alert("Please fill all the fields to proceed!");
       return;
     }
@@ -201,7 +207,7 @@ export const PartnerForm = () => {
           <h2 className='text-center font-semibold text-2xl'>Personal Information</h2>
           <div className="w-full flex flex-col items-start justify-between max-[600px]:flex-col">
             <div className="input-field w-full space-y-2">
-              <p className="font-medium text-sm text-zinc-600">Name</p>
+              <p className="font-medium text-sm text-zinc-600">Name <span className='text-red-500 text-lg'>*</span></p>
               <input
                 type="text"
                 placeholder="Enter your full name"
@@ -212,14 +218,14 @@ export const PartnerForm = () => {
               />
             </div>
             <div className="input-field w-full mt-4 space-y-2">
-              <p className="font-medium text-sm text-zinc-600">Contact or WhatsApp No.</p>
+              <p className="font-medium text-sm text-zinc-600">Contact or WhatsApp No. <span className='text-red-500 text-lg'>*</span></p>
               <PhoneInputField
                 value={userInput.contact}
                 onChange={(value) => handleChange("contact")(value)}
               />
             </div>
             <div className="input-field w-full mt-4 space-y-2">
-              <p className="font-medium text-sm text-zinc-600">Email</p>
+              <p className="font-medium text-sm text-zinc-600">Email <span className='text-red-500 text-lg'>*</span></p>
               <input
                 type="email"
                 disabled
@@ -230,7 +236,7 @@ export const PartnerForm = () => {
               />
             </div>
             <div className="input-field w-full mt-4 space-y-2">
-              <p className="font-medium text-sm text-zinc-600">Country</p>
+              <p className="font-medium text-sm text-zinc-600">Country <span className='text-red-500 text-lg'>*</span></p>
               <input
                 type="text"
                 placeholder="India/USA/UK"
@@ -241,7 +247,7 @@ export const PartnerForm = () => {
               />
             </div>
             <div className="input-field w-full mt-4 space-y-2">
-              <p className="font-medium text-sm text-zinc-600">City</p>
+              <p className="font-medium text-sm text-zinc-600">City <span className='text-red-500 text-lg'>*</span></p>
               <input
                 type="text"
                 placeholder="Bangalore/Mumbai/Delhi"
@@ -292,7 +298,7 @@ export const PartnerForm = () => {
           <h2 className='text-center font-semibold text-2xl'>Business & Professional Details</h2>
           <div className="w-full flex flex-col items-start justify-between">
             <div className="w-full space-y-2">
-              <p className="font-medium text-sm mt-3 text-zinc-600">Are you a Startup Founder, Business Owner, or Investor?</p>
+              <p className="font-medium text-sm mt-3 text-zinc-600">Are you a Startup Founder, Business Owner, or Investor? <span className='text-red-500 text-lg'>*</span></p>
               <div className="flex flex-wrap gap-4">
                 {/* Founder */}
                 <label className="flex items-center space-x-2 cursor-pointer">
@@ -331,6 +337,19 @@ export const PartnerForm = () => {
                     className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
                   />
                   <span className="text-gray-800">Investor</span>
+                </label>
+
+                {/* others */}
+                <label className="flex items-center space-x-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="userType"
+                    value="others"
+                    checked={userInput.userType === "others"}
+                    onChange={handleChange("userType")}
+                    className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+                  />
+                  <span className="text-gray-800">others</span>
                 </label>
               </div>
             </div>
@@ -411,7 +430,7 @@ export const PartnerForm = () => {
           <h2 className='text-center font-semibold text-2xl'>Collaboration & Networking Data</h2>
           <div className="w-full flex flex-col items-start justify-between">
             <div className="input-field w-full mt-4 space-y-2">
-              <p className="font-medium text-sm text-zinc-600">What kind of support do you need from FWC? (Funding, Tech, Marketing, Legal, Hiring, etc.)</p>
+              <p className="font-medium text-sm text-zinc-600">What kind of support do you need from FWC? (Funding,Networking, Tech, Marketing, Legal, Hiring, etc.)</p>
               <input
                 type="text"
                 name="requirements"
@@ -425,7 +444,7 @@ export const PartnerForm = () => {
           <div className="w-full max-w-lg p-4 bg-gray-100 rounded-lg shadow mt-4">
             {/* Question 1 */}
             <p className="font-medium text-sm text-gray-600 mb-2">
-              Are you looking for business collaborations or co-founders?
+              Are you looking for business collaborations or co-founders? <span className='text-red-500 text-lg'>*</span>
             </p>
             <div className="flex space-x-4">
               <label className="flex items-center space-x-2 cursor-pointer">
@@ -454,8 +473,8 @@ export const PartnerForm = () => {
             </div>
 
             {/* Question 2 */}
-            <p className="font-medium text-sm text-gray-600 mt-4 mb-2">
-              Would you like FWC to help connect you with relevant members?
+            <p className="font-medium text-sm text-gray-600 mt-4 mb-2 whitespace-nowrap">
+              Would you like FWC to help connect you with relevant members? <span className='text-red-500 text-lg'>*</span>
             </p>
             <div className="flex space-x-4">
               <label className="flex items-center space-x-2 cursor-pointer">
@@ -484,8 +503,8 @@ export const PartnerForm = () => {
             </div>
 
             {/* Question 3 */}
-            <p className="font-medium text-sm text-gray-600 mt-4 mb-2">
-              Can you offer services, mentorship, or discounts to FWC members?
+            <p className="font-medium text-sm text-gray-600 mt-4 mb-2 whitespace-nowrap">
+              Can you offer services, mentorship, or discounts to FWC members?<span className='text-red-500 text-lg'>*</span>
             </p>
             <div className="flex space-x-4">
               <label className="flex items-center space-x-2 cursor-pointer">
@@ -534,7 +553,7 @@ export const PartnerForm = () => {
           <div className="w-full max-w-lg p-4 bg-gray-100 rounded-lg shadow mt-4">
             {/* Question 1 */}
             <p className="font-medium text-sm text-gray-600 mb-2">
-              Do you have a website or app for your business?
+              Do you have a website or app for your business? <span className='text-red-500 text-lg'>*</span>
             </p>
             <div className="flex space-x-4">
               <label className="flex items-center space-x-2 cursor-pointer">
@@ -564,7 +583,7 @@ export const PartnerForm = () => {
 
             {/* Question 2 */}
             <p className="font-medium text-sm text-gray-600 mt-4 mb-2">
-              Do you need tech support (Website, App, AI solutions)?
+              Do you need tech support (Website, App, AI solutions)? <span className='text-red-500 text-lg'>*</span>
             </p>
             <div className="flex space-x-4">
               <label className="flex items-center space-x-2 cursor-pointer">
@@ -594,7 +613,7 @@ export const PartnerForm = () => {
 
             {/* Question 3 */}
             <p className="font-medium text-sm text-gray-600 mt-4 mb-2">
-              Would you like help with branding, digital marketing, or social media growth?
+              Would you like help with branding, digital marketing, or social media growth? <span className='text-red-500 text-lg'>*</span>
             </p>
             <div className="flex space-x-4">
               <label className="flex items-center space-x-2 cursor-pointer">
@@ -646,7 +665,7 @@ export const PartnerForm = () => {
 
           {/* Expand Internationally */}
           <p className="font-medium text-sm text-gray-600 mt-2 mb-2">
-            Would you like to expand your business internationally?
+            Would you like to expand your business internationally? <span className='text-red-500 text-lg'>*</span>
           </p>
           <div className="flex space-x-4">
             <label className="flex items-center space-x-2 cursor-pointer">
@@ -675,7 +694,7 @@ export const PartnerForm = () => {
 
           {/* Investment Support */}
           <p className="font-medium text-sm text-gray-600 mt-4 mb-2">
-            Are you looking for investment or funding support?
+            Are you looking for investment or funding support? <span className='text-red-500 text-lg'>*</span>
           </p>
           <div className="flex space-x-4">
             <label className="flex items-center space-x-2 cursor-pointer">
@@ -726,11 +745,12 @@ export const PartnerForm = () => {
               />
             </div>
           )}
-
-          {/* Membership Details */}
-          <h2 className='text-center font-semibold text-2xl mt-4'>Expand Internationally</h2>
+        </Step>
+        <Step>
+          {/* Code of Ethics & Terms Acceptance */}
+          <h2 className='text-center font-semibold text-2xl mt-4'>Final Confirmation</h2>
           <p className="font-medium text-sm text-gray-600 mt-2 mb-2">
-            Membership Category:
+            Membership Category: <span className='text-red-500 text-lg'>*</span>
           </p>
           <select
             value={userInput.membershipCategory}
@@ -756,31 +776,42 @@ export const PartnerForm = () => {
             placeholder="Enter name of the referrer"
             className="w-full p-2 border rounded-md focus:ring-blue-400 focus:outline-none"
           />
-        </Step>
-        <Step>
-          {/* Code of Ethics & Terms Acceptance */}
-          <h2 className='text-center font-semibold text-2xl mb-2'>Code of Ethics & Terms Acceptance</h2>
+
+          <h2 className='text-center font-semibold text-2xl mt-4'>Code of Ethics & Terms Acceptance</h2>
           <div className="mt-6 p-4 bg-white border rounded-md">
             <p className="text-sm text-gray-600 mt-2">
               Upon acceptance into FWC, I agree to abide by the following Code of Ethics:
             </p>
-            <ul className="list-disc pl-5 text-sm text-gray-700 mt-2">
-              <li>✅ Provide high-quality services and be truthful in all business dealings.</li>
-              <li>✅ Build goodwill, trust, and strong relationships within the FWC network.</li>
-              <li>✅ Follow up on referrals, maintain professionalism, and engage positively.</li>
-              <li>✅ Uphold the ethical standards of my profession and community.</li>
-            </ul>
+            <div className="">
+              <ul className="list-disc pl-5 text-sm text-gray-700 mt-2">
+                <li>✅ Provide high-quality services and be truthful in all business dealings.</li>
+                <li>✅ Build goodwill, trust, and strong relationships within the FWC network.</li>
+                <li>✅ Follow up on referrals, maintain professionalism, and engage positively.</li>
+                <li>✅ Uphold the ethical standards of my profession and community.</li>
+              </ul>
 
-            <p className="text-sm text-gray-600 mt-4">
-              <strong>Terms & Conditions:</strong>
-            </p>
-            <ul className="list-disc pl-5 text-sm text-gray-700 mt-2">
-              <li>By submitting this application, I agree to receive communications from FWC.</li>
-              <li>FWC may share my information within its network to connect with other members.</li>
-              <li>All disputes shall be resolved through arbitration as per Indian Arbitration Rules.</li>
-              <li>Membership fees are non-refundable and valid for one year from the date of acceptance.</li>
-              <li>Any false information may result in immediate termination without reimbursement.</li>
-            </ul>
+              {isExpanded && (
+                <>
+                  <p className="text-sm text-gray-600 mt-4">
+                    <strong>Terms & Conditions:</strong>
+                  </p>
+                  <ul className="list-disc pl-5 text-sm text-gray-700 mt-2">
+                    <li>By submitting this application, I agree to receive communications from FWC.</li>
+                    <li>FWC may share my information within its network to connect with other members.</li>
+                    <li>All disputes shall be resolved through arbitration as per Indian Arbitration Rules.</li>
+                    <li>Membership fees are non-refundable and valid for one year from the date of acceptance.</li>
+                    <li>Any false information may result in immediate termination without reimbursement.</li>
+                  </ul>
+                </>
+              )}
+
+              <button
+                onClick={toggleExpand}
+                className="mt-4 text-blue-500 underline text-sm cursor-pointer"
+              >
+                {isExpanded ? 'View Less' : 'View More'}
+              </button>
+            </div>
 
             {/* Checkbox for Accepting Terms & Conditions */}
             <label className="flex items-center mt-4">
@@ -791,7 +822,7 @@ export const PartnerForm = () => {
                 className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
               />
               <span className="ml-2 text-sm text-gray-800 font-medium">
-                I accept all Terms & Conditions.
+                I accept all Terms & Conditions. <span className='text-red-500 text-lg'>*</span>
               </span>
             </label>
             <div className="text-center w-full flex items-center justify-end h-fit ">
