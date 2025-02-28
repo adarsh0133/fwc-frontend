@@ -9,6 +9,7 @@ function AllMembers() {
   const [comploading, setcomploading] = useState(true);
   const [allUsers, setallUsers] = useState([])
   const [searchQuery, setSearchQuery] = useState("");
+  const [btnLoading, setbtnLoading] = useState({});
   const [selectedMember, setSelectedMember] = useState(null);
 
   useEffect(() => {
@@ -45,6 +46,30 @@ function AllMembers() {
     (student.email && student.email.toLowerCase().includes(searchQuery.toLowerCase())) ||
     (student.contact && student.contact.includes(searchQuery))
   );
+
+  const ApproveHandler = async (email) => {
+    setbtnLoading((prev) => ({ ...prev, [email]: true }));
+    dispatch(ApproveMember(email)).finally(() => {
+      setbtnLoading((prev) => ({ ...prev, [email]: false }));
+    });
+    const response = await dispatch(getUsers());
+    if (response.users) {
+      const members = response.users.filter(user => user.role === "member");
+      setallUsers(members);
+    }
+  };
+
+  const RemoveHandler = async (email) => {
+    setbtnLoading((prev) => ({ ...prev, [email]: true }));
+    await dispatch(RemoveMember(email));
+    setbtnLoading((prev) => ({ ...prev, [email]: false }));
+    
+    const response = await dispatch(getUsers());
+    if (response.users) {
+      const members = response.users.filter(user => user.role === "member");
+      setallUsers(members);
+    }
+  };
 
   return (
     <>
@@ -87,7 +112,7 @@ function AllMembers() {
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Functionality
                       </th>
-                      
+
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
@@ -101,6 +126,27 @@ function AllMembers() {
                         </td>
                         <td className="px-6 py-4 lowercase whitespace-nowrap text-sm text-gray-700">
                           {student.email}
+                        </td>
+                        <td className="px-6 py-4 lowercase whitespace-nowrap text-sm text-gray-700">
+                          {btnLoading[student.email] ? (
+                            <button className="bg-gray-500 cursor-pointer px-4 py-2 rounded-lg text-white">
+                              Loading
+                            </button>
+                          ) : student.role === "member" ? (
+                            <button
+                              className="bg-red-500 cursor-pointer px-4 py-2 rounded-lg text-white"
+                              onClick={() => RemoveHandler(student.email)}
+                            >
+                              Remove Member
+                            </button>
+                          ) : (
+                            <button
+                              className="bg-green-500 cursor-pointer px-4 py-2 rounded-lg text-white"
+                              onClick={() => ApproveHandler(student.email)}
+                            >
+                              Approve Member
+                            </button>
+                          )}
                         </td>
                       </tr>
                     ))}
