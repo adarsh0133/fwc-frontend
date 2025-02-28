@@ -54,3 +54,12 @@ export const RemoveMember = (email) => async (dispatch) => {
     return error;
   }
 }
+
+export const getMembersPayments = () => async (dispatch) => {
+  try {
+    const { data } = await axios.post('/member/all_members_payments', {} ,getBearerToken());
+    return data;
+  } catch (error) {
+    console.error("Failed to fetch member details:", error);
+  }
+}
