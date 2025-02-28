@@ -54,7 +54,7 @@ export const PartnerForm = () => {
     investmentPurpose: "",
 
     // Membership Details
-    membershipCategory: "",
+    membershipCategory: "Startup/Business",
     referredBy: "",
 
     // last step
@@ -62,7 +62,7 @@ export const PartnerForm = () => {
 
     // amount 
     categoryprice: 1999,
-    amount:0,
+    amount: 0,
 
     // new fields for financial aid
     financialAidReason: "",
@@ -112,11 +112,11 @@ export const PartnerForm = () => {
       alert("Please accept the terms and conditions to proceed!");
       return;
     }
-    if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country || !userInput.userType || !userInput.lookingForCollaboration || !userInput.needFWCConnection || !userInput.offerServices || !userInput.platform || !userInput.needTechSupport || !userInput.helpInBranding || !userInput.investmentSupport || !userInput.expandInternationally || !userInput.membershipCategory )
-     {
-      alert("Please fill all the fields to proceed!");
-      return;
-    }
+    // if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country || !userInput.userType || !userInput.lookingForCollaboration || !userInput.needFWCConnection || !userInput.offerServices || !userInput.platform || !userInput.needTechSupport || !userInput.helpInBranding || !userInput.investmentSupport || !userInput.expandInternationally || !userInput.membershipCategory )
+    //  {
+    //   alert("Please fill all the fields to proceed!");
+    //   return;
+    // }
     setformLoading(true)
     try {
       const order = await dispatch(sendMemberPayment(userInput));
@@ -184,6 +184,7 @@ export const PartnerForm = () => {
         setUserInput((prevInput) => ({ ...prevInput, categoryprice: 1999 }));
     }
   }, [userInput.membershipCategory]);
+
 
   if (!user)
     return (
@@ -475,8 +476,8 @@ export const PartnerForm = () => {
             </div>
 
             {/* Question 2 */}
-            <p className="font-medium text-sm text-gray-600 mt-4 mb-2 whitespace-nowrap">
-              Would you like FWC to help connect you with relevant members? <span className='text-red-500 text-lg'>*</span>
+            <p className="font-medium text-sm text-gray-600 mt-4 mb-2 ">
+              Would you like FWC to help and connect you with relevant members? <span className='text-red-500 text-lg'>*</span>
             </p>
             <div className="flex space-x-4">
               <label className="flex items-center space-x-2 cursor-pointer">
@@ -505,7 +506,7 @@ export const PartnerForm = () => {
             </div>
 
             {/* Question 3 */}
-            <p className="font-medium text-sm text-gray-600 mt-4 mb-2 whitespace-nowrap">
+            <p className="font-medium text-sm text-gray-600 mt-4 mb-2 ">
               Can you offer services, mentorship, or discounts to FWC members?<span className='text-red-500 text-lg'>*</span>
             </p>
             <div className="flex space-x-4">
@@ -756,10 +757,10 @@ export const PartnerForm = () => {
           </p>
           <select
             value={userInput.membershipCategory}
+            defaultValue={userInput.membershipCategory}
             onChange={handleChange("membershipCategory")}
             className="w-full p-2 border rounded-md focus:ring-blue-400 focus:outline-none"
           >
-            <option value="">Select a category</option>
             <option value="Student">Student</option>
             <option value="Startup/Business">Startup/Business</option>
             <option value="Investor">Investor</option>
@@ -827,22 +828,24 @@ export const PartnerForm = () => {
                 I accept all Terms & Conditions. <span className='text-red-500 text-lg'>*</span>
               </span>
             </label>
-            <div className="text-center w-full flex items-center justify-end h-fit ">
-              <div className=" h-fit w-fit">
-                <div className="flex gap-5 items-center text-sm font-medium text-gray-600 justify-between">
-                  <p>Amount :</p>
-                  <p>₹{userInput.categoryprice}</p>
-                </div>
-                <div className="flex gap-5 items-center text-sm font-medium text-gray-600 justify-between">
-                  <p>GST (18%):</p>
-                  <p>₹{gstAmount.toFixed(2)}</p>
-                </div>
-                <div className="flex gap-5 items-center text-sm font-medium text-gray-600 justify-between">
-                  <p>Grand Total:</p>
-                  <p>₹{grandTotal.toFixed(2)}</p>
+            {!showFinancialAid && (
+              <div className="text-center w-full flex items-center justify-end h-fit ">
+                <div className=" h-fit w-fit">
+                  <div className="flex gap-5 items-center text-sm font-medium text-gray-600 justify-between">
+                    <p>Amount :</p>
+                    <p>₹{userInput.categoryprice}</p>
+                  </div>
+                  <div className="flex gap-5 items-center text-sm font-medium text-gray-600 justify-between">
+                    <p>GST (18%):</p>
+                    <p>₹{gstAmount.toFixed(2)}</p>
+                  </div>
+                  <div className="flex gap-5 items-center text-sm font-medium text-gray-600 justify-between">
+                    <p>Grand Total:</p>
+                    <p>₹{grandTotal.toFixed(2)}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
           {showFinancialAid && (
             <div className="mt-4 p-4 bg-gray-100 rounded-lg shadow">
@@ -856,6 +859,7 @@ export const PartnerForm = () => {
               <div className="mt-4">
                 <label className="block text-sm font-medium text-gray-700">
                   🔹 Why do you need financial aid for FWC membership? (Brief explanation – max 100 words)
+                  <span className='text-red-500 text-lg'>*</span>
                 </label>
                 <textarea
                   value={userInput.financialAidReason}
@@ -867,6 +871,7 @@ export const PartnerForm = () => {
               <div className="mt-4">
                 <label className="block text-sm font-medium text-gray-700">
                   🔹 How will FWC membership benefit you? (Brief explanation – max 100 words)
+                  <span className='text-red-500 text-lg'>*</span>
                 </label>
                 <textarea
                   value={userInput.financialAidBenefit}
@@ -878,6 +883,7 @@ export const PartnerForm = () => {
               <div className="mt-4">
                 <label className="block text-sm font-medium text-gray-700">
                   🔹 Can you commit to actively participating in FWC activities and contributing to the community? (Yes/No)
+                  <span className='text-red-500 text-lg'>*</span>
                 </label>
                 <div className="flex space-x-4 mt-1">
                   <label className="flex items-center space-x-2 cursor-pointer">
