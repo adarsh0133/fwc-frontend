@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import Nav from './Nav';
 import RotatingText from '../../UI/RotatingText';
 import Magnet from '../../UI/Magnet';
+import HomeFooter from './HomeFooter';
 
 export const Home = () => {
+
   const cards = [
     {
       id: 1,
@@ -32,7 +34,6 @@ export const Home = () => {
     },
   ]
 
-  console.log(cards)
   return (
     <div>
       <Nav />
@@ -46,9 +47,9 @@ export const Home = () => {
             texts={['Business', 'Network', 'Revenue']}
             mainClassName="px-2 sm:px-2 md:px-3 text-7xl text-white font-bold overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center "
             staggerFrom={"last"}
-            initial={{ y: "100%" }}
+            initial={{ y: "-100%" }}
             animate={{ y: 0 }}
-            exit={{ y: "-120%" }}
+            exit={{ y: "120%" }}
             staggerDuration={0.025}
             splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
             transition={{ type: "spring", damping: 30, stiffness: 400 }}
@@ -92,6 +93,30 @@ export const Home = () => {
         </div>
         <p className='text-sm w-1/2 text-zinc-800'>We provide a comprehensive support system for individuals and businesses by offering valuable connections, funding assistance, expert mentoring, and a strong community network. Our goal is to empower growth through collaboration, financial support, and strategic guidance while enhancing visibility and promotion to help you succeed.</p>
       </div>
+      <div className="w-full h-[70vh] flex items-center justify-center bg-radial-[at_50%_75%] from-[#00113B] via-[#000d2d] to-[#00040e] to-90%">
+        <img className='h-full brightness-90' src="/images/Home/ckashok sir.png" alt="" />
+        <div className="h-full w-[30%] flex flex-col items-start text-white justify-center">
+          <p className='text-4xl font-bold'>CK Ashok Kumar </p>
+          <p className='leading-5 mt-5 opacity-80 '>C K Ashok Kumar, Founder of First World Community, as the Global Farmer Engagement Partner for the Millionaire Farmer of India (MFOI) Awards 2024!  With Dr. Kumar's vision and dedication, we're set to make MFOI a truly global celebration of agricultural excellence.              </p>
+
+        </div>
+      </div>
+      <div className="w-full text-center h-[70vh] flex flex-col justify-evenly px-10 bg-white">
+        <p className='text-5xl font-bold'>Our Sponsors</p>
+        <img className='w-full object-contain' src="/images/Home/spoonsers.png" alt="" />
+      </div>
+      <div className="w-full h-[70vh] flex items-center justify-center bg-radial-[at_50%_75%] from-[#00113B] via-[#000d2d] to-[#00040e] to-90%">
+        <div className="h-full w-[30%] flex flex-col items-start text-white justify-center gap-10">
+          <p className='leading-5 mt-5 opacity-80 '>FWc has global chapters in different countries; we are the fastest-growing community, and you can call it a revolt to support and help businesses and startups.</p>
+          <img className='w-[90%]' src="/images/Home/flags.png" alt="" />
+        </div>
+        <div className="h-full w-[50%] flex items-center justify-center">
+          <img className='h-full object-contain' src="/images/Home/world.png" alt="" />
+
+        </div>
+      </div>
+      <HomeFooter/>
+
     </div>
   )
 }
