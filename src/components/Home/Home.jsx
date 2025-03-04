@@ -58,7 +58,7 @@ export const Home = () => {
         </div>
         <p className='text-white text-xl max-[600px]:text-xs mb-5'>One World | One Community | One Future</p>
         <Magnet padding={50} disabled={false} magnetStrength={10}>
-          <Link to={'/partner'} className="bg-[#FFF700] text-black py-2 mt-14 max-[600px]:mt-7 px-5 text-lg font-semibold rounded-full cursor-pointer">Become a Member</Link>
+          <Link to={'/login'} className="bg-[#FFF700] text-black py-2 mt-14 max-[600px]:mt-7 px-5 text-lg font-semibold rounded-full cursor-pointer">Become a Member</Link>
         </Magnet>
       </div>
       <div className="what-we-do w-full h-screen px-10 py-32 max-[600px]:py-5 max-[600px]:h-fit">

@@ -63,17 +63,8 @@ export const PartnerHome = () => {
   if (!user)
     return (
       <div className='h-screen gap-5 w-full center flex-col '>
-        <div className="flex gap-5 items-center">
-          <div className="loader scale-125"></div>
-          <p className='text-2xl font-semibold'>Loading . . . </p>
-        </div>
-        <h1>Login or Create account to Continue</h1>
-        <div className="login-signup-btn space-x-4 max-[600px]:hidden">
-          <Magnet padding={50} disabled={false} magnetStrength={5}>
-            <Link to={'/Signup'} className="bg-white border-2 border-black text-black py-0.5 px-5 text-lg font-semibold rounded-full cursor-pointer ">Get Start</Link>
-          </Magnet>
-          <Link to={'/login'} className="bg-black border-2 border-black text-white py-0.5 px-5 text-lg font-semibold rounded-full cursor-pointer">Login</Link>
-        </div>
+        <div className="loader scale-125"></div>
+        <p className='text-2xl font-semibold'>Loading . . . </p>
       </div>
     )
 
