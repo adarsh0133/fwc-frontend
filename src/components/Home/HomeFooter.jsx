@@ -24,7 +24,7 @@ const HomeFooter = () => {
               <div className="image-wrapper w-[300px]">
                 <img
                   className="max-[600px]:w-[60%] max-[600px]:mt-6 w-1/2"
-                  src="/public/images/Home/logo.png"
+                  src="/images/Home/logo.png"
                   alt=""
                 />
                 <div>
@@ -117,7 +117,7 @@ const HomeFooter = () => {
               </div>
               <div className="section">
                 <h2 className=" font-semibold mb-2 uppercase">Vertices</h2>
-                <div className="mt-14 max-[600px]:mt-5 flex flex-col gap-3">
+                <div className="mt-14 max-[600px]:mt-5 flex flex-col gap-3 mb-10">
                   <Link
 
                     className="text-gray-500 block font-medium text-sm"
@@ -141,7 +141,7 @@ const HomeFooter = () => {
                     Integrated Ayush
                   </Link>
                 </div>
-                <button className="bg-[#000000] text-white py-2 mt-14  px-4 whitespace-nowrap  font-semibold rounded-full cursor-pointer max-[600px]:-ml-4">Become a Member</button>
+                <Link to={'/partner'} className="bg-[#000000] text-white py-2 px-4 whitespace-nowrap  font-semibold rounded-full cursor-pointer max-[600px]:-ml-4">Become a Member</Link>
               </div>
 
               <div className="section">
@@ -197,27 +197,27 @@ const HomeFooter = () => {
                 // href="https://www.instagram.com/krishna_mit_"
                 className="text-zinc-300 hover:text-gray-500"
               >
-                <img src="/public/images/Home/footer/insta.png" alt="" />
+                <img src="/images/Home/footer/insta.png" alt="" />
               </a>
               <a
                 // href="https://www.linkedin.com/in/krishna-mit"
                 className="text-zinc-300 hover:text-gray-500"
               >
-                <img src="/public/images/Home/footer/fb.png" alt="" />
+                <img src="/images/Home/footer/fb.png" alt="" />
 
               </a>
               <a
                 // href="https://wa.link/wbwwp2"
                 className="text-zinc-300 hover:text-gray-500"
               >
-                <img src="/public/images/Home/footer/yt.png" alt="" />
+                <img src="/images/Home/footer/yt.png" alt="" />
 
               </a>
               <a
                 // href="https://youtube.com/@krishnamit"
                 className="text-zinc-300 hover:text-gray-500"
               >
-                <img src="/public/images/Home/footer/lk.png" alt="" />
+                <img src="/images/Home/footer/lk.png" alt="" />
 
               </a>
             </div>
