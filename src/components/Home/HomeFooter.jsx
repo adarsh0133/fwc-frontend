@@ -14,7 +14,6 @@ const HomeFooter = () => {
 
   return (
     <>
-
       <div className="w-full h-fit flex items-center justify-center max-[600px]:p-0">
         <div
           id="footer"
@@ -36,9 +35,9 @@ const HomeFooter = () => {
                 </div>
               </div>
               <div className="max-[600px]:flex max-[600px]:items-center">
-                <div className="flex flex-col gap-4 max-[600px]:w-[50%] max-[600px]:h-full">
+                {/* <div className="flex flex-col gap-4 max-[600px]:w-[50%] max-[600px]:h-full">
 
-                </div>
+                </div> */}
                 <div className="mt-5 max-[600px]:mt-0 max-[600px]:h-full flex flex-col gap-4">
                   <div className="about mt-12">
                     <h1 className="text-lg font-medium">Contact Us</h1>
@@ -142,8 +141,7 @@ const HomeFooter = () => {
                     Integrated Ayush
                   </Link>
                 </div>
-                <button className="bg-[#000000] text-white py-2 mt-14  px-4 whitespace-nowrap  font-semibold rounded-full cursor-pointer">Become a Member</button>
-
+                <button className="bg-[#000000] text-white py-2 mt-14  px-4 whitespace-nowrap  font-semibold rounded-full cursor-pointer max-[600px]:-ml-4">Become a Member</button>
               </div>
 
               <div className="section">

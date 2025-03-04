@@ -28,14 +28,14 @@ const Nav = () => {
         };
     }, []);
     return (
-        <div className='fixed z-50 w-full px-14 h-[10vh] bg-zinc-900 flex justify-between items-center'>
+        <div className='fixed z-50 w-full px-14 h-[10vh] max-[600px]:px-5 bg-zinc-900 flex justify-between items-center'>
             <div className="logo w-40">
                 <img className='w-full h-full object-cover' src="/images/Home/logo.png" alt="" />
             </div>
             <div
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                className="nav-links relative h-full  ">
+                className="nav-links relative h-full max-[600px]:hidden">
                 <ul className='flex gap-10 text-white text-base items-center h-full font-medium'>
                     <li className='flex items-center cursor-pointer  h-full '>Benefits
                         <RiArrowDownSLine
@@ -90,11 +90,16 @@ const Nav = () => {
                     </div>
                 )}
             </div>
-            <div className="login-signup-btn space-x-4">
+            <div className="login-signup-btn space-x-4 max-[600px]:hidden">
                 <Magnet padding={50} disabled={false} magnetStrength={5}>
-                    <button className="bg-white border-2 border-white text-black py-0.5 px-5 text-lg font-semibold rounded-full cursor-pointer">Get Start</button>
+                    <Link to={'/Signup'} className="bg-white border-2 border-white text-black py-0.5 px-5 text-lg font-semibold rounded-full cursor-pointer ">Get Start</Link>
                 </Magnet>
-                <button className="bg-black border-2 border-white text-white py-0.5 px-5 text-lg font-semibold rounded-full cursor-pointer">Login</button>
+                <Link to={'/login'} className="bg-black border-2 border-white text-white py-0.5 px-5 text-lg font-semibold rounded-full cursor-pointer">Login</Link>
+            </div>
+            <div className="border-[2px] border-white min-[600px]:hidden rounded-lg p-2">
+                <h1 className='text-white min-[600px]:hidden'>
+                    <Link to={'/login'}>login</Link> / <Link to={'/Signup'}>signup</Link>
+                </h1>
             </div>
         </div>
     )
