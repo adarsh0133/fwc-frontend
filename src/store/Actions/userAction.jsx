@@ -1,6 +1,7 @@
 import { removeUser, saveUser } from "../Reducers/userSlice";
 import axios from '../../utils/axios';
 import { getBearerToken } from './../../utils/auth';
+import { isCookie } from "react-router-dom";
 
 export const getUsers = () => async (dispatch) => {
     try {
@@ -45,6 +46,8 @@ export const createUser = (user) => async (dispatch) => {
 
 export const logoutUser = () => async (dispatch) => {
     try {
+        localStorage.removeItem('twk_fwc');
+        isCookie.remove('twk_fwc');
         const { data } = await axios.get('/user/logout_user');
         dispatch(removeUser());
     } catch (error) {

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { currentUser } from '../../store/Actions/userAction'
 import { Link } from 'react-router-dom'
+import Magnet from '../../UI/Magnet';
 
 const benefits = [
   {
@@ -61,7 +62,7 @@ export const PartnerHome = () => {
 
   if (!user)
     return (
-      <div className='h-screen gap-5 w-full center '>
+      <div className='h-screen gap-5 w-full center flex-col '>
         <div className="loader scale-125"></div>
         <p className='text-2xl font-semibold'>Loading . . . </p>
       </div>
@@ -87,8 +88,9 @@ export const PartnerHome = () => {
             ))}
           </div>
         </div>
-        <div className="mt-10 text-center">
-          <Link to="/partner/submit-details" className="bg-black text-white py-3 px-6 roundg text-lg font-bold">Join Membership</Link>
+        <div className="mt-10 text-center space-x-3">
+          <Link to="/partner/submit-details" className="bg-black text-white py-3 px-6 roundg text-lg font-bold rounded-md">Join Membership</Link>
+          <a href="/" className="bg-black text-white py-3 px-6 roundg text-lg font-bold rounded-md">Home</a>
         </div>
       </div>
     </div>
