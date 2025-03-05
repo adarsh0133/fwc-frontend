@@ -47,9 +47,8 @@ export const createUser = (user) => async (dispatch) => {
 export const logoutUser = () => async (dispatch) => {
     try {
         localStorage.removeItem('twk_fwc');
-        isCookie.remove('twk_fwc');
-        const { data } = await axios.get('/user/logout_user');
         dispatch(removeUser());
+        const { data } = await axios.get('/user/logout_user');
     } catch (error) {
         return error;
     }
