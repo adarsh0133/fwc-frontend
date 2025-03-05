@@ -88,8 +88,9 @@ export const PartnerHome = () => {
             ))}
           </div>
         </div>
-        <div className="mt-10 text-center">
-          <Link to="/partner/submit-details" className="bg-black text-white py-3 px-6 roundg text-lg font-bold">Join Membership</Link>
+        <div className="mt-10 text-center space-x-3">
+          <Link to="/partner/submit-details" className="bg-black text-white py-3 px-6 roundg text-lg font-bold rounded-md">Join Membership</Link>
+          <a href="/" className="bg-black text-white py-3 px-6 roundg text-lg font-bold rounded-md">Home</a>
         </div>
       </div>
     </div>
