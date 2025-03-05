@@ -3,7 +3,7 @@ import Magnet from './../../UI/Magnet';
 import { Link } from 'react-router-dom';
 import { RiArrowDownSLine } from '@remixicon/react';
 import { useDispatch, useSelector } from 'react-redux';
-import { currentUser } from '../../store/Actions/userAction';
+import { currentUser, logoutUser } from '../../store/Actions/userAction';
 import { removeUser } from '../../store/Reducers/userSlice';
 
 const Nav = () => {
@@ -16,8 +16,8 @@ const Nav = () => {
   const dispatch = useDispatch();
   const { user } = useSelector(state => state.user);
 
-  const handelLogout = () => {
-    dispatch(removeUser());
+  const handelLogout =  () => {
+     dispatch(logoutUser());
   }
 
   const handleMouseEnter = (menu) => {
