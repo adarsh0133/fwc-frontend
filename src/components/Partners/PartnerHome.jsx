@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { currentUser } from '../../store/Actions/userAction'
 import { Link } from 'react-router-dom'
-import Magnet from '../../UI/Magnet';
 
 const benefits = [
   {

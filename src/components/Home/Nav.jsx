@@ -16,8 +16,8 @@ const Nav = () => {
   const dispatch = useDispatch();
   const { user } = useSelector(state => state.user);
 
-  const handelLogout =  () => {
-     dispatch(logoutUser());
+  const handelLogout = () => {
+    dispatch(logoutUser());
   }
 
   const handleMouseEnter = (menu) => {
@@ -112,7 +112,11 @@ const Nav = () => {
               </div>
             )}
           </li>
-          <li className='cursor-pointer'>Events</li>
+          <li className='cursor-pointer'>
+            <Link to={'/events'}>
+              Events
+            </Link>
+          </li>
           <li className='cursor-pointer'>FWC Stories</li>
           <li
             onMouseEnter={() => handleMouseEnter('vertices')}
