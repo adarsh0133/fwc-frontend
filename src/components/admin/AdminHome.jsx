@@ -6,12 +6,18 @@ import { currentUser } from "../../store/Actions/userAction";
 import AllMembers from "./AllMembers";
 import MembersForm from "./MembersForm";
 import AllUsers from "./AllUsers";
+import AllEvents from "./AllEvents";
+import WeeklyMeetup from "./WeeklyMeetup";
+import MasterClass from "./MasterClass";
 // Ensure this import is correct
 
 const componentMap = {
   AllUsers: AllUsers,
   AllMembers: AllMembers,
   MembersForm: MembersForm,
+  AllEvents: AllEvents,
+  WeeklyMeetup: WeeklyMeetup,
+  MasterClass: MasterClass,
 };
 
 export default function AdminHome() {

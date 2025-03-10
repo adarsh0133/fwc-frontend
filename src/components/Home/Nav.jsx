@@ -54,7 +54,9 @@ const Nav = () => {
   return (
     <div className='fixed z-50 w-full px-14 h-[10vh] max-[600px]:px-5 bg-zinc-900 flex justify-between items-center'>
       <div className="logo w-40">
-        <img className='w-full h-full object-cover' src="/images/Home/logo.png" alt="Logo" />
+        <a href="/">
+          <img className='w-full h-full object-cover' src="/images/Home/logo.png" alt="Logo" />
+        </a>
       </div>
       <div className="nav-links relative h-full max-[600px]:hidden">
         <ul className='flex gap-10 text-white text-base items-center h-full font-medium'>
@@ -113,9 +115,9 @@ const Nav = () => {
             )}
           </li>
           <li className='cursor-pointer'>
-            <Link to={'/events'}>
+            <a href={'/events'}>
               Events
-            </Link>
+            </a>
           </li>
           <li className='cursor-pointer'>FWC Stories</li>
           <li
