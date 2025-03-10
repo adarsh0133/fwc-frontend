@@ -14,8 +14,9 @@ export default function AdminLeftSlide({ selectedComponent, setSelectedComponent
     { label: 'All Users', component: 'AllUsers' },
     { label: 'All Members', component: 'AllMembers' },
     { label: 'Members Forms', component: 'MembersForm' },
-
-
+    { label: 'All Events', component: 'AllEvents' },
+    { label: 'Weekly Meetup', component: 'WeeklyMeetup' },
+    { label: 'MasterClass', component: 'MasterClass' }
   ];
 
   const filteredButtons = buttons.filter(button =>
