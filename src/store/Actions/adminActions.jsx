@@ -203,7 +203,7 @@ export const deletmasterClass = (masterclassid) => async (dispatch) => {
 export const getallatithi = () => async (dispatch) => {
   try {
     dispatch(setLoading(true));
-    const response = await axios.get(
+    const response = await axios.post(
       "/member/all-fwc-athithi",
       {},
       getBearerToken()
