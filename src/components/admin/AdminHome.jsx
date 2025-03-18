@@ -9,6 +9,7 @@ import AllUsers from "./AllUsers";
 import AllEvents from "./AllEvents";
 import WeeklyMeetup from "./WeeklyMeetup";
 import MasterClass from "./MasterClass";
+import Allatithi from "./Allatithi";
 // Ensure this import is correct
 
 const componentMap = {
@@ -18,6 +19,7 @@ const componentMap = {
   AllEvents: AllEvents,
   WeeklyMeetup: WeeklyMeetup,
   MasterClass: MasterClass,
+  Allatithi: Allatithi,
 };
 
 export default function AdminHome() {
