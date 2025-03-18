@@ -10,6 +10,7 @@ import AllEvents from "./AllEvents";
 import WeeklyMeetup from "./WeeklyMeetup";
 import MasterClass from "./MasterClass";
 import Allatithi from "./Allatithi";
+import AllInvestmentSeekingForm from "./AllInvestmentSeekingForm";
 // Ensure this import is correct
 
 const componentMap = {
@@ -20,6 +21,7 @@ const componentMap = {
   WeeklyMeetup: WeeklyMeetup,
   MasterClass: MasterClass,
   Allatithi: Allatithi,
+  AllInvestmentSeekingForm: AllInvestmentSeekingForm,
 };
 
 export default function AdminHome() {

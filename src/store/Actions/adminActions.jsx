@@ -227,8 +227,7 @@ export const getAllInvestmentFrom = () => async (dispatch) => {
       getBearerToken()
     );
     dispatch(setLoading(false));
-    console.log(response.data);
-    return response.data;
+    return response.data.investmentCircle;
   } catch (error) {
     dispatch(setLoading(false));
     throw error;
