@@ -4,6 +4,7 @@ import Nav from '../Home/Nav';
 import { useDispatch } from 'react-redux';
 import { submitInverstorCircleDetails } from '../../store/Actions/investorAction';
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 const InvestorCircle = () => {
     const dispatch = useDispatch();
@@ -47,13 +48,21 @@ const InvestorCircle = () => {
             return;
         }
         setformLoading(true);
-        dispatch(submitInverstorCircleDetails(formData));
-        setformLoading(false);
-        alert("Form submitted successfully!")
-        navigate("/");
+        try {
+            await dispatch(submitInverstorCircleDetails(formData));
+            setformLoading(false);
+            alert("Form submitted successfully!")
+            navigate("/");
+        } catch (error) {
+            console.log(error);
+            setformLoading(false);
+            toast.error(error.response.data.message);
+        }
+
     }
     return (
         <>
+             <ToastContainer />
             <Nav />
             <Stepper
                 initialStep={1}
