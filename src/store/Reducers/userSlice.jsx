@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     user: null,
+    isAuth: false,
     loading: false,
 }
 
@@ -11,12 +12,14 @@ export const userSlice = createSlice({
   reducers: {
     saveUser: (state, action) => {
       state.user = action.payload;
+      state.isAuth = true;
     },
     removeUser: (state) => {
       state.user = null;
+      state.isAuth = false;
     },
     setLoading: (state, action) => {
-      state.loading = action.payload; // Set loading state
+      state.loading = action.payload; 
     },
   },
 })

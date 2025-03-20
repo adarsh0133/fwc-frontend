@@ -1,17 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Stepper, { Step } from './../../UI/InputsStepper';
 import Nav from '../Home/Nav';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { submitInverstorCircleDetails } from '../../store/Actions/investorAction';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import { currentUser } from '../../store/Actions/userAction';
 
 const InvestorCircle = () => {
     const dispatch = useDispatch();
+  const isAuth = useSelector((state) => state.user.isAuth);
+    const { user } = useSelector(state => state.user);
     const navigate = useNavigate();
     const [selected, setSelected] = useState("");
     const [formLoading, setformLoading] = useState(false);
     const [formData, setFormData] = useState({
+        userId:"",
         name: "",
         website: "",
         description: "",
@@ -24,7 +28,15 @@ const InvestorCircle = () => {
         fundingUsage: "",
         usp: ""
     });
-
+    useEffect(() => {
+        if (user) {
+            setFormData((prevInput) => ({
+            ...prevInput,
+            userId: user._id,
+            name: user.name,
+          }));
+        }
+      }, [user]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -34,6 +46,7 @@ const InvestorCircle = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!formData.name ||
+            !formData.userId ||
             !formData.website ||
             !formData.description ||
             !formData.socialMedia ||
@@ -60,10 +73,42 @@ const InvestorCircle = () => {
         }
 
     }
+
+      useEffect(() => {
+        if (!isAuth) {
+            window.alert("Please login first");
+            navigate("/login", { state: { from: `/investor-circle` } });
+            return;
+          }
+        dispatch(currentUser());
+      }, [])
+
+
     return (
         <>
              <ToastContainer />
             <Nav />
+
+            {
+                        user && user.investmentCircle === "filled" ? (
+                            <div className="flex min-h-[100vh] bg-radial-[at_50%_75%] from-[#00113B] via-[#000d2d] to-[#00040e] to-90% max-[600px]:flex-col max-[600px]:gap-5 pb-10 pt-32 px-10 md:px-20">
+                            <div className="1st-step-text text-white w-1/2 max-[600px]:w-full max-[600px]:pr-0 pr-28 ">
+                                <h1 className='text-3xl mb-5 font-bold'>Start your <span className='text-[#F3BD02]'>investment Journey</span></h1>
+                                <p>Please fill all the details correctly. Our investors will see and check all the details, and if they would like your business, then we will schedule a session with them.</p>
+                                <h2 className='mt-5 text-2xl mb-5'>You have already filled Investor Circle form</h2>
+                            </div>
+                            <div className="1st-step-img flex text-white w-1/2 max-[600px]:w-full gap-10  justify-center">
+                                <div className="ck-sir-img size-32 rounded-full overflow-hidden">
+                                    <img className='size-full object-cover' src="/images/investorCircle/cksir.png" alt="" />
+                                </div>
+                                <div className="some-text w-1/2 mt-4">
+                                    <p className='leading-tight text-xs text-zinc-300'>"FWC is undoubtedly a valuable investment, and we are committed to continuing our membership for many years to come! I would highly recommend FWC to any business looking to grow, expand its network, and gain valuable knowledge along the way."</p>
+                                    <h1 className='mt-5 font-semibold'>
+                                        <span className='text-[#F3BD02]'>CK Ashok Kumar </span><br />Chairman | First World Community</h1>
+                                </div>
+                            </div>
+                        </div>
+                        ) : (
             <Stepper
                 initialStep={1}
                 backButtonText="Previous"
@@ -296,6 +341,8 @@ const InvestorCircle = () => {
                     </div>
                 </Step>
             </Stepper>
+                        )
+            }
         </>
     )
 }

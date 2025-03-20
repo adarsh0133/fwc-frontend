@@ -1,6 +1,6 @@
 import { RiEyeCloseLine, RiEyeLine } from "@remixicon/react";
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../../../store/Actions/userAction";
 import Googlelogin from "../../../utils/Googlelogin";
@@ -8,6 +8,7 @@ import Googlelogin from "../../../utils/Googlelogin";
 export default function Login() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const { isAuth, error } = useSelector((state) => state.user);
     const [loading, setloading] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
     const [formDetails, setFormDetails] = useState({
@@ -24,11 +25,18 @@ export default function Login() {
         try {
             dispatch(loginUser(formDetails))
             setloading(false)
-            navigate("/partner")
         } catch (error) {
             console.log(error)
         }
     }
+
+    useEffect(() => {
+        if (isAuth) {
+            const from = location.state?.from || "/";
+            navigate(from);
+        }
+    }, [isAuth, navigate, location.state]);
+
     return (
         <>
             <div className="w-full h-screen  center flex flex-col items-center justify-center bg-white rounded-l-[10vh] max-[600px]:w-full">
@@ -77,7 +85,7 @@ export default function Login() {
                                     to="/signup"
                                     className="text-[#3498DB] text-sm  max-[600px]:text-sm max-[600px]:mt-2"
                                 >
-                                   Create an account
+                                    Create an account
                                 </Link>
                             </div>
                         </div>
