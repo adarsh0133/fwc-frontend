@@ -167,22 +167,22 @@ const Nav = () => {
               <div
                 onMouseEnter={() => handleMouseEnter('aboutFwc')}
                 onMouseLeave={() => handleMouseLeave('aboutFwc')}
-                className="absolute z-[99] flex flex-col top-[70px]  w-40 p-4 bg-white text-black border border-gray-200 shadow-lg font-normal text-sm"
+                className="absolute z-[99] flex flex-col top-[70px]  w-48 p-4 bg-white text-black border border-gray-200 shadow-lg font-normal text-sm"
               >
-                <Link to="/about-us" className="flex gap-2 items-center py-2 px-2 cursor-pointer font-semibold hover:bg-gray-200">
-                  <img className='w-[25%]' src="/images/Home/nav/about.png" alt="" />
+                <Link to="/about-us" className="flex gap-3 items-center justify-start py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  <img className='w-[20%]' src="/images/Home/nav/about.png" alt="" />
                   <p className='whitespace-nowrap'>About Us</p>
                 </Link>
-                <Link to="/our-mission" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
-                  <img className='w-[25%]' src="/images/Home/nav/leadership.png" alt="" />
+                <Link to="/our-mission" className="flex gap-3 items-center justify-start py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  <img className='w-[20%]' src="/images/Home/nav/leadership.png" alt="" />
                   <p className='whitespace-nowrap'>Leadership </p>
                 </Link>
-                <Link to="/our-team" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
-                  <img className='w-[25%]' src="/images/Home/nav/careers.png" alt="" />
-                  <p className='whitespace-nowrap'>Careers</p>
+                <Link to="/privacy-policy" className="flex gap-3 items-center justify-start py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  <img className='w-[20%]' src="/images/Home/nav/careers.png" alt="" />
+                  <p className='whitespace-nowrap'>Privacy Policy</p>
                 </Link>
-                <Link to="/our-team" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
-                  <img className='w-[25%]' src="/images/Home/nav/gallery.png" alt="" />
+                <Link to="/our-team" className="flex gap-3 items-center justify-start py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  <img className='w-[20%]' src="/images/Home/nav/gallery.png" alt="" />
                   <p className='whitespace-nowrap'>Gallery</p>
                 </Link>
               </div>

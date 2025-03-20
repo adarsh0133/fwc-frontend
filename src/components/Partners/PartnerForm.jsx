@@ -255,7 +255,7 @@ export const PartnerForm = () => {
                 type="text"
                 placeholder="Bangalore/Mumbai/Delhi"
                 name="city"
-                onChange={handleChange("city")}
+                onChange={(e) => handleChange("city")(e.target.value.toLowerCase())}
                 value={userInput.city}
                 className="field rounded-xl"
               />

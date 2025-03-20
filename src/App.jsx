@@ -10,6 +10,8 @@ import { AdminRoutes } from './Routes/AdminRoutes';
 import AdminProtectedRoute from './utils/AdminProtectedRoute';
 import ErrorPage from './components/Home/ErrorPage';
 import Events from './components/Events/Events';
+import Terms from './components/Tndc';
+import InvestorCircle from './components/investorCircle/InvestorCircle';
 
 const App = () => {
 
@@ -36,6 +38,8 @@ const App = () => {
             <AdminRoutes />
           </AdminProtectedRoute>
         } />
+        <Route path='/privacy-policy' element={<Terms />} />
+        <Route path='/investor-circle' element={<InvestorCircle />} />
       </Routes>
     </div>
   )

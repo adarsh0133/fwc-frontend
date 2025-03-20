@@ -36,7 +36,7 @@ export const loginUser = (credentials) => async (dispatch) => {
 
 export const createUser = (user) => async (dispatch) => {
     try {
-        const { data } = await axios.get('/user/create_user', user);
+        const { data } = await axios.post('/user/create_user', user);
         localStorage.setItem('twk_fwc', (data.twk_fwc));
         dispatch(saveUser(data.user));
     } catch (error) {

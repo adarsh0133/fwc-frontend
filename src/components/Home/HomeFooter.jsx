@@ -161,10 +161,16 @@ const HomeFooter = () => {
                     Leadership
                   </a>
                   <a
-                    href="#"
+                    href="/privacy-policy"
                     className="text-gray-500 block text-sm font-medium"
                   >
-                    Careers
+                    privacy-policy
+                  </a>
+                  <a
+                    href="/privacy-policy"
+                    className="text-gray-500 block text-sm font-medium"
+                  >
+                    Terms & Conditions
                   </a>
                   <a
                     href="#"

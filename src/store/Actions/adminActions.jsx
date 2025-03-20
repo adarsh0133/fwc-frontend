@@ -197,3 +197,39 @@ export const deletmasterClass = (masterclassid) => async (dispatch) => {
     throw error;
   }
 };
+
+//////////////////////////////////////All Atithi //////////////////////////////////
+
+export const getallatithi = () => async (dispatch) => {
+  try {
+    dispatch(setLoading(true));
+    const response = await axios.post(
+      "/member/all-fwc-athithi",
+      {},
+      getBearerToken()
+    );
+    dispatch(setLoading(false));
+    return response.data.atithiRequests;
+  } catch (error) {
+    dispatch(setLoading(false));
+    throw error;
+  }
+};
+
+//////////////////////////////////////All investment form //////////////////////////////////
+
+export const getAllInvestmentFrom = () => async (dispatch) => {
+  try {
+    dispatch(setLoading(true));
+    const response = await axios.post(
+      "/investment_circle/all_investment_circle",
+      {},
+      getBearerToken()
+    );
+    dispatch(setLoading(false));
+    return response.data.investmentCircle;
+  } catch (error) {
+    dispatch(setLoading(false));
+    throw error;
+  }
+};
