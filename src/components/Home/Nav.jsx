@@ -139,7 +139,7 @@ const Nav = () => {
                   <img className='w-[15%]' src="/images/Home/nav/ysint.png" alt="" />
                   <p className='whitespace-nowrap'>Yuva Shakti International</p>
                 </Link>
-                <Link to="/vertex-2" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                <Link to="/vertices/thofa" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                   <img className='w-[15%]' src="/images/Home/nav/thofa.png" alt="" />
                   <p className='whitespace-nowrap'>THOFA</p>
                 </Link>
