@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Nav from './Nav';
 import RotatingText from '../../UI/RotatingText';
 import Magnet from '../../UI/Magnet';
@@ -9,6 +9,9 @@ import { currentUser } from '../../store/Actions/userAction';
 
 export const Home = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
+
+  const { isAuth, error } = useSelector((state) => state.user);
   const { user } = useSelector(state => state.user);
 
   useEffect(() => {
@@ -61,6 +64,14 @@ export const Home = () => {
     return timeLeft;
   };
 
+  const checkLoginHandler = () => {
+    if (!isAuth) {
+      window.alert("Please login first");
+      navigate("/login", { state: { from: `/partner` } });
+      return;
+    }
+  };
+
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
@@ -70,6 +81,8 @@ export const Home = () => {
 
     return () => clearInterval(timer);
   }, []);
+
+
 
   return (
     <div>
@@ -94,8 +107,16 @@ export const Home = () => {
           />
         </div>
         <p className='text-white text-xl max-[600px]:text-xs mb-5'>One World | One Community | One Future</p>
+
         <Magnet padding={50} disabled={false} magnetStrength={10}>
-          <Link to={user ? '/partner' : '/login'} className="bg-[#FFF700] text-black py-2 mt-14 max-[600px]:mt-7 px-5 text-lg font-semibold rounded-full cursor-pointer">Become a Member</Link>
+          {isAuth ? (
+            <Link to={'/partner'} className="bg-[#FFF700] text-black py-2 mt-14 max-[600px]:mt-7 px-5 text-lg font-semibold rounded-full cursor-pointer">Become a Member</Link>
+          ) : (
+            <button
+              onClick={checkLoginHandler}
+              className="bg-[#FFF700] text-black py-2 mt-14 max-[600px]:mt-7 px-5 text-lg font-semibold rounded-full cursor-pointer">Become a Member</button>
+          )}
+
         </Magnet>
       </div>
       <div className="delhi-launch w-full h-screen center flex-col items-center justify-center gap-5 p-5 max-[600px]:h-fit">
