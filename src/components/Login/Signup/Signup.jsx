@@ -26,7 +26,7 @@ export const Signup = () => {
         try {
             dispatch(createUser(formDetails));
             setLoading(false);
-            navigate("/partner");
+            navigate("/");
         } catch (error) {
             console.log(error);
         }
