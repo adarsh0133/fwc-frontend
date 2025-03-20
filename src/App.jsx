@@ -12,6 +12,7 @@ import ErrorPage from './components/Home/ErrorPage';
 import Events from './components/Events/Events';
 import Terms from './components/Tndc';
 import InvestorCircle from './components/investorCircle/InvestorCircle';
+import Thofa from './components/vertices/Thofa';
 
 const App = () => {
 
@@ -40,6 +41,10 @@ const App = () => {
         } />
         <Route path='/privacy-policy' element={<Terms />} />
         <Route path='/investor-circle' element={<InvestorCircle />} />
+
+        {/* VERTICES ROUTES */}
+        <Route path='/vertices/thofa' element={<Thofa />} />
+        
       </Routes>
     </div>
   )
