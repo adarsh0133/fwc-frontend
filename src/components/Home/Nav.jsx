@@ -75,7 +75,7 @@ const Nav = () => {
                 onMouseLeave={() => handleMouseLeave('benefits')}
                 className="absolute z-[99] flex flex-col top-[70px] -left-10 w-fit p-4 bg-white text-black border border-gray-200 shadow-lg font-normal text-sm"
               >
-                <Link to="/weekly-meetups" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                <Link to="/events" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                   <img className='w-[15%]' src="/images/Home/nav/gmeet.png" alt="Weekly Meetups" />
                   <p className='whitespace-nowrap'>Weekly Meetups</p>
                 </Link>
@@ -95,10 +95,10 @@ const Nav = () => {
                   <img className='w-[15%]' src="/images/Home/nav/athiti.png" alt="FWC Atithi" />
                   <p className='whitespace-nowrap'>FWC Atithi</p>
                 </Link>
-                <Link to="/exclusive-masterclass" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                <a href='/events/#masterclass' className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                   <img className='w-[15%]' src="/images/Home/nav/masterclass.png" alt="Exclusive Masterclass" />
                   <p className='whitespace-nowrap'>Exclusive Masterclass</p>
-                </Link>
+                </a>
                 <Link to="/resource-library" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                   <img className='w-[15%]' src="/images/Home/nav/library.png" alt="Resource Library" />
                   <p className='whitespace-nowrap'>Resource Library</p>
@@ -147,7 +147,7 @@ const Nav = () => {
                   <img className='w-[15%]' src="/images/Home/nav/asthra.png" alt="" />
                   <p className='whitespace-nowrap'>Edu Asthra</p>
                 </Link>
-                <Link to="/vertex-3" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                <Link to="/vertices/integrated-ayush" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                   <img className='w-[15%]' src="/images/Home/nav/ayush.png" alt="" />
                   <p className='whitespace-nowrap'>Integrated Ayush</p>
                 </Link>

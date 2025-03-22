@@ -311,7 +311,7 @@ const Events = () => {
 					}
 				</div>
 			</div>
-			<div className="">
+			<div  id='masterclass' className="">
 				<div className="bg-[#FBFBFB] w-full h-fit px-16 pt-32 max-[600px]:pt-8 max-[600px]:px-8 flex max-[600px]:flex-col">
 					<div className="hero-text w-1/2 max-[600px]:w-full font-semibold ">
 						<h1 className='text-7xl max-[600px]:text-3xl max-[600px]:font-bold'>Masterclasses</h1>

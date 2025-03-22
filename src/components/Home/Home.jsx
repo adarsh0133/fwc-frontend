@@ -121,7 +121,7 @@ export const Home = () => {
       </div>
       <div className="delhi-launch w-full h-screen center flex-col items-center justify-center gap-5 p-5 max-[600px]:h-fit">
         <div className="del-img w-[100vh] h-[60vh] max-[600px]:w-full max-[600px]:h-[40vh] rounded-lg overflow-hidden">
-          <img className='w-full h-full object-cover object-center' src="/images/Home/delhi.png" alt="" />
+          <img className='w-full h-full object-cover object-center' src="/images/Home/delhi.webp" alt="" />
         </div>
         <Link to={'https://nas.io/first-world-community/events/delhi-launch'} target='#' className='p-2 px-6 bg-gradient-to-b from-[#002A92] to-[#000719] text-white rounded-lg font-semibold text-xl'>Register</Link>
         <div className="timer flex items-center justify-evenly bg-white">

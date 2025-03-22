@@ -4,26 +4,26 @@ import HomeFooter from '../Home/HomeFooter'
 
 const Thofa = () => {
     const thofaImg = [
-        { img: "/images/vertices/thofa/1.png" },
-        { img: "/images/vertices/thofa/2.png" },
-        { img: "/images/vertices/thofa/3.png" },
-        { img: "/images/vertices/thofa/4.png" },
-        { img: "/images/vertices/thofa/5.png" },
-        { img: "/images/vertices/thofa/6.png" },
+        { img: "/images/vertices/thofa/1.webp" },
+        { img: "/images/vertices/thofa/2.webp" },
+        { img: "/images/vertices/thofa/3.webp" },
+        { img: "/images/vertices/thofa/4.webp" },
+        { img: "/images/vertices/thofa/5.webp" },
+        { img: "/images/vertices/thofa/6.webp" },
     ]
     return (
         <>
             <Nav />
             <div className="w-full h-fit">
-                <div className="hero_section flex flex-col items-center justify-center h-screen bg-[url('/images/vertices/thofa/thofaHero.png')] bg-cover bg-center text-zinc-50 text-center max-[600px]:p-5">
-                    <img src="/images/vertices/thofa/heroLogo.png" className='w-52 max-[600px]:w-28 max-[600px]:bg-white max-[600px]:rounded-md max-[600px]:mb-2' alt="" />
+                <div className="hero_section flex flex-col items-center justify-center h-screen bg-[url('/images/vertices/thofa/thofaHero.webp')] bg-cover bg-center text-zinc-50 text-center max-[600px]:p-5">
+                    <img src="/images/vertices/thofa/heroLogo.webp" className='w-52 max-[600px]:w-28 max-[600px]:bg-white max-[600px]:rounded-md max-[600px]:mb-2' alt="" />
                     <h1 className="text-4xl max-[600px]:text-xl font-bold w-1/2 max-[600px]:w-full">Sustainable Agriculture & Farmer Empowerment FWC’s Mission for a Resilient Future </h1>
                     <p className="mt-4 w-1/2 max-[600px]:w-full text-sm">FWC empowers farmers by encouraging organic farming, fostering group farming models, and helping smallholders become agripreneurs. Through collective efforts, farmers gain better market access, financial security, and long-term sustainability. Additionally, FWC integrates modern technology like drones, robotics, and sensors to enhance productivity and reduce costs.</p>
                 </div>
                 <div className="second-page w-full h-fit py-10 max-[600px]:py-5 flex max-[600px]:flex-col-reverse ">
                     <div className="second-page-left w-1/2 max-[600px]:w-full h-full flex flex-col items-center justify-center p-20 max-[600px]:p-5">
                         <div className="img-container">
-                            <img src="/images/vertices/thofa/page2-img.png" alt="" />
+                            <img src="/images/vertices/thofa/page2-img.webp" alt="" />
                         </div>
                     </div>
                     <div className="second-page-right w-1/2 max-[600px]:w-full h-full flex flex-col items-center justify-center p-20 max-[600px]:p-5">
@@ -40,7 +40,7 @@ const Thofa = () => {
                 <div className="third-page w-full h-fit flex max-[600px]:flex-col text-white bg-radial-[at_50%_75%] from-[#00113B] via-[#000d2d] to-[#00040e] to-90% py-5 pb-16 max-[600px]:pb-10">
                     <div className="third-page-left w-[45%] max-[600px]:w-full h-full p-10 max-[600px]:p-5 max-[600px]:flex max-[600px]:flex-col-reverse">
                         <div className="img-container-page3 w-full px-5 max-[600px]:mt-7">
-                            <img src="/images/vertices/thofa/third-thofa.png" alt="" />
+                            <img src="/images/vertices/thofa/third-thofa.webp" alt="" />
                         </div>
                         <div className="text-container mt-7 max-[600px]:mt-0">
                             <h1 className="text-2xl font-bold">Thamizh Organic Farmers Association (THOFA) </h1>

@@ -25,6 +25,7 @@ export default function Login() {
         try {
             dispatch(loginUser(formDetails))
             setloading(false)
+            navigate("/");
         } catch (error) {
             console.log(error)
         }

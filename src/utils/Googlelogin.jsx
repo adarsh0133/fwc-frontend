@@ -11,9 +11,6 @@ export default function Googlelogin() {
     try {
       if (response["code"]) {
         const result = dispatch(googleAuth(response["code"]));
-        if (result) {
-          navigate("/partner");
-      }
     }
     } catch (error) {
       console.error("Failed to fetch google login:", error);

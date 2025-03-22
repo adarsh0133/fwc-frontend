@@ -60,13 +60,13 @@ const HomeFooter = () => {
                 <h2 className=" font-semibold mb-2 uppercase">Benefits</h2>
                 <div className="mt-14 max-[600px]:mt-5 flex flex-col gap-3">
                   <a
-                    href="#"
+                    href="/events"
                     className="text-gray-500 block text-sm font-medium"
                   >
                     Weekly Meetups
                   </a>
                   <a
-                    href="#"
+                    href="/investor-circle"
                     className="text-gray-500 block text-sm font-medium"
                   >
                     Investor Circle
@@ -84,13 +84,13 @@ const HomeFooter = () => {
                     Partner Benefits
                   </a>
                   <a
-                    href="#"
+                    href="/fwc-atithi"
                     className="text-gray-500 block text-sm font-medium"
                   >
                     FWC Atithi
                   </a>
                   <a
-                    href="#"
+                    href="/events/#masterclass"
                     className="text-gray-500 block text-sm font-medium"
                   >
                     Exclusive Masterclass
@@ -124,12 +124,12 @@ const HomeFooter = () => {
                   >
                     Yuva Shakti International
                   </Link>
-                  <Link
-
+                  <a
+                    href='/vertices/thofa'
                     className="text-gray-500 block font-medium text-sm"
                   >
                     THOFA
-                  </Link>
+                  </a>
                   <Link
                     className="text-gray-500 block font-medium text-sm"
                   >
