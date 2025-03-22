@@ -13,6 +13,7 @@ import Events from './components/Events/Events';
 import Terms from './components/Tndc';
 import InvestorCircle from './components/investorCircle/InvestorCircle';
 import Thofa from './components/vertices/Thofa';
+import Ayush from './components/vertices/Ayush';
 
 const App = () => {
 
@@ -44,6 +45,7 @@ const App = () => {
 
         {/* VERTICES ROUTES */}
         <Route path='/vertices/thofa' element={<Thofa />} />
+        <Route path='/vertices/integrated-ayush' element={<Ayush />} />
         
       </Routes>
     </div>
