@@ -46,7 +46,7 @@ const App = () => {
         {/* VERTICES ROUTES */}
         <Route path='/vertices/thofa' element={<Thofa />} />
         <Route path='/vertices/integrated-ayush' element={<Ayush />} />
-        
+
       </Routes>
     </div>
   )
