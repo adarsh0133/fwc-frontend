@@ -16,6 +16,7 @@ export default function Stepper({
   nextButtonText = "Continue",
   disableStepIndicators = false,
   renderStepIndicator,
+  selected = "No",
   ...rest
 }) {
   const [currentStep, setCurrentStep] = useState(initialStep);
@@ -39,6 +40,29 @@ export default function Stepper({
   };
 
   const handleNext = () => {
+    const requiredFields = {
+      1: ['input[name="name"]'],
+      2: ['input[name="website"]'],
+      3: ['textarea[name="description"]'],
+      4: ['input[name="socialMedia"]'],
+      5: ['input[name="valuation"]'],
+      6: selected === "Yes" ? ['input[name="incorporationNumber"]'] : [],
+      7: ['textarea[name="pastInvestment"]'],
+      8: ['input[name="fundingRequirement"]'],
+      9: ['input[name="fundingUsage"]'],
+      10: ['textarea[name="usp"]']
+    };
+
+    // Check if all required fields for the current step are filled
+    const fields = requiredFields[currentStep] || [];
+    for (const selector of fields) {
+      const element = document.querySelector(selector);
+      if (!element || !element.value.trim()) {
+        alert('Please fill the required field');
+        return;
+      }
+    }
+    
     if (!isLastStep) {
       setDirection(1);
       updateStep(currentStep + 1);
