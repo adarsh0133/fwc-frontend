@@ -135,7 +135,7 @@ const Nav = () => {
                 onMouseLeave={() => handleMouseLeave('vertices')}
                 className="absolute z-[99] flex flex-col top-[70px] -left-10 w-56 p-4 px-0 bg-white text-black border border-gray-200 shadow-lg font-normal text-sm"
               >
-                <Link to="/vertex-1" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                <Link to="/vertices/yuva-shakti-international" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                   <img className='w-[15%]' src="/images/Home/nav/ysint.png" alt="" />
                   <p className='whitespace-nowrap'>Yuva Shakti International</p>
                 </Link>

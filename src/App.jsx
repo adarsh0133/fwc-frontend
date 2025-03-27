@@ -14,6 +14,7 @@ import Terms from './components/Tndc';
 import InvestorCircle from './components/investorCircle/InvestorCircle';
 import Thofa from './components/vertices/Thofa';
 import Ayush from './components/vertices/Ayush';
+import YuvaSakti from './components/vertices/YuvaSakti';
 
 const App = () => {
 
@@ -46,6 +47,7 @@ const App = () => {
         {/* VERTICES ROUTES */}
         <Route path='/vertices/thofa' element={<Thofa />} />
         <Route path='/vertices/integrated-ayush' element={<Ayush />} />
+        <Route path='/vertices/yuva-shakti-international' element={<YuvaSakti />} />
 
       </Routes>
     </div>
