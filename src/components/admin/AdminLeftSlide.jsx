@@ -19,6 +19,7 @@ export default function AdminLeftSlide({ selectedComponent, setSelectedComponent
     { label: 'MasterClass', component: 'MasterClass' },
     { label: 'All Atithi', component: 'Allatithi' },
     { label: 'All Investment Seeking Form', component: 'AllInvestmentSeekingForm' },
+    { label: 'All Yuva Shakti', component: 'AllYuvaShakti' },
   ];
 
   const filteredButtons = buttons.filter(button =>
