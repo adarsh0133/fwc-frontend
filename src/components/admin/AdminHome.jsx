@@ -11,6 +11,7 @@ import WeeklyMeetup from "./WeeklyMeetup";
 import MasterClass from "./MasterClass";
 import Allatithi from "./Allatithi";
 import AllInvestmentSeekingForm from "./AllInvestmentSeekingForm";
+import AllYuvaShakti from "./AllYuvaShakti.jsx";
 // Ensure this import is correct
 
 const componentMap = {
@@ -22,6 +23,7 @@ const componentMap = {
   MasterClass: MasterClass,
   Allatithi: Allatithi,
   AllInvestmentSeekingForm: AllInvestmentSeekingForm,
+  AllYuvaShakti: AllYuvaShakti,
 };
 
 export default function AdminHome() {
@@ -88,8 +90,8 @@ export default function AdminHome() {
         <div className="flex pt-20 w-full h-[100vh] items-center justify-between relative">
           <div
             className={`w-[18%] max-[600px]:w-[60%] bg-white z-50 max-[600px]:absolute relative max-[600px]:top-0 max-[600px]:left-0 max-[600px]:z-[99] h-full border-r-2 transition-transform duration-300 ${isSidebarVisible
-                ? "max-[600px]:translate-x-0"
-                : "max-[600px]:-translate-x-full"
+              ? "max-[600px]:translate-x-0"
+              : "max-[600px]:-translate-x-full"
               }`}
           >
             <RiCloseLine

@@ -15,7 +15,7 @@
   }
 .react-tel-input {
   width: 100%;
-  border: 2px solid #008bdc;
+  /* border: 2px solid #008bdc; */
   border-radius: 0.75rem;
   padding: 0.5rem;
 }
@@ -31,7 +31,7 @@
 .custom-phone-input-container {
   display: flex;
   align-items: center;
-  border: 2px solid #008bdc;
+  /* border: 2px solid #008bdc; */
   border-radius: 0.75rem;
   padding: 0.5rem;
 }
