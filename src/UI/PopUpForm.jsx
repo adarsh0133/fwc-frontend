@@ -81,24 +81,24 @@ const PopUpForm = ({ setpopup, fields, setFields, onSubmit }) => {
         <>
             <ToastContainer />
             <div className='fixed w-full h-screen flex items-center justify-center bg-[#000000b6] z-[100]'>
-                <div className='w-[40vw] h-[70vh] max-[600px]:h-[80vh]  max-[600px]:w-[80vw] bg-white flex flex-col items-center justify-between rounded-2xl overflow-y-scroll pb-24' style={{ textAlign: "center", marginTop: "50px" }}>
+                <div className='w-[80vw] md:w-[60vw] lg:w-[40vw] h-[70vh] max-[600px]:h-[80vh] bg-white flex flex-col items-center justify-between rounded-2xl overflow-y-scroll [&::-webkit-scrollbar]:invisible pb-24' style={{ textAlign: "center", marginTop: "50px" }}>
                     <div className="w-full p-1 flex items-center justify-between cursor-pointer">
                         <span></span>
                         <RiCloseFill size={35} onClick={() => setpopup(false)} />
                     </div>
                     <form className="" onSubmit={handleSubmit}>
                         <h2 className='text-xl'>Form:-</h2>
-                        <div className="w-full h-full grid ">
+                        <div className="w-full h-full grid lg:grid-cols-2 lg:pl-20 lg:gap-6 gap-4 p-4">
                             {fields.map((field, index) => (
                                 <div key={index} className="flex flex-col items-start">
                                     <h3>{field.label}</h3>
                                     {renderField(field)}
                                 </div>
                             ))}
-                        </div>
-                        <button type="submit" style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', background: '#f58220', color: 'white', border: 'none', borderRadius: '5px' }}>
+                        <button type="submit" className='w-1/2 lg:h-1/2 lg:mt-7' style={{ padding: '5px 10px', fontSize: '16px', cursor: 'pointer', background: '#f58220', color: 'white', border: 'none', borderRadius: '5px' }}>
                             Submit
                         </button>
+                        </div>
                     </form>
                 </div>
             </div>
