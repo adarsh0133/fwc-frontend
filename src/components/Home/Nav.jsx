@@ -173,7 +173,7 @@ const Nav = () => {
                   <img className='w-[20%]' src="/images/Home/nav/about.png" alt="" />
                   <p className='whitespace-nowrap'>About Us</p>
                 </Link>
-                <Link to="/our-mission" className="flex gap-3 items-center justify-start py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                <Link to="/leadership" className="flex gap-3 items-center justify-start py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                   <img className='w-[20%]' src="/images/Home/nav/leadership.png" alt="" />
                   <p className='whitespace-nowrap'>Leadership </p>
                 </Link>

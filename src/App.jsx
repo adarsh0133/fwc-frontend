@@ -16,6 +16,7 @@ import Thofa from './components/vertices/Thofa';
 import Ayush from './components/vertices/Ayush';
 import YuvaSakti from './components/vertices/YuvaSakti';
 import EduAstra from './components/vertices/EduAstra';
+import LeadershipHome from './components/leadership/LeadershipHome';
 
 const App = () => {
 
@@ -50,6 +51,10 @@ const App = () => {
         <Route path='/vertices/integrated-ayush' element={<Ayush />} />
         <Route path='/vertices/yuva-shakti-international' element={<YuvaSakti />} />
         <Route path='/vertices/edu-astra' element={<EduAstra />} />
+
+        {/* LEADERSHIP ROUTES */}
+        <Route path='/leadership' element={<LeadershipHome />} />
+
       </Routes>
     </div>
   )
