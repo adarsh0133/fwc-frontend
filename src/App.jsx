@@ -15,6 +15,7 @@ import InvestorCircle from './components/investorCircle/InvestorCircle';
 import Thofa from './components/vertices/Thofa';
 import Ayush from './components/vertices/Ayush';
 import YuvaSakti from './components/vertices/YuvaSakti';
+import EduAstra from './components/vertices/EduAstra';
 
 const App = () => {
 
@@ -48,7 +49,7 @@ const App = () => {
         <Route path='/vertices/thofa' element={<Thofa />} />
         <Route path='/vertices/integrated-ayush' element={<Ayush />} />
         <Route path='/vertices/yuva-shakti-international' element={<YuvaSakti />} />
-
+        <Route path='/vertices/edu-astra' element={<EduAstra />} />
       </Routes>
     </div>
   )
