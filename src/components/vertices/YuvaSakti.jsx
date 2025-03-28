@@ -98,7 +98,7 @@ const YuvaSakti = () => {
             <div className="w-full">
                 <div className="w-full h-fit pt-40 md:pt-23 text-zinc-900 flex flex-col justify-center items-center gap-20 lg:gap-12 lg:overflow-hidden">
                     <div className="flex flex-col justify-center items-center w-full px-5">
-                        <h1 className='text-4xl md:text-6xl lg:w-1/2 font-bold text-center'>FWC Yuvashakti International</h1>
+                        <h1 className='text-4xl md:text-6xl lg:w-1/2 font-bold text-center lg:mt-10'>FWC Yuvashakti International</h1>
                         <p className='text-center text-xs lg:w-1/2 text-zinc-600 mt-5 font-medium'>Led by CK Ashok Kumar and inspired by Sachet Revolution pioneer Chinnikrishnan, we empower India’s youth with mentorship, skills, and opportunities. Backed by the CK family’s legacy (CavinKare, Naturals, Velvette, Chik Shampoo) and partnerships like Zoho YEP, we foster training, jobs, and entrepreneurship, shaping future leaders.</p>
                         {
                             !isAuth ? (
@@ -113,16 +113,16 @@ const YuvaSakti = () => {
                     </div>
                 </div>
                 <div className="founder-chairman w-full h-fit bg-radial-[at_50%_75%] from-[#00113B] via-[#000d2d] to-[#00040e] to-90% px-5 text-white md:flex md:items-center md:gap-10">
-                    <div className="founder py-10 space-y-5 md:p-20">
+                    {/* <div className="founder py-10 space-y-5 md:p-20">
                         <h1 className='text-2xl font-bold text-center'>Founder & Chairman</h1>
                         <div className="founder-img w-full">
                             <img className='w-full h-full object-cover' src="/images/vertices/yuvaShakti/ys-cksir.png" alt="" />
                         </div>
                         <p className='text-sm font-bold text-center'>One World | One Community | One Future</p>
-                    </div>
+                    </div> */}
                     <div className="founder py-5 space-y-5 md:p-20">
                         <h1 className='text-2xl font-bold text-center'>President</h1>
-                        <div className="founder-img w-full">
+                        <div className="founder-img w-full sm:w-[70%] sm:mx-auto lg:w-[50%]">
                             <img className='w-full h-full object-cover' src="/images/vertices/yuvaShakti/president.png" alt="" />
                         </div>
                         <p className='text-sm font-bold text-center'>Helping Students in Crossing their Skylimits</p>
