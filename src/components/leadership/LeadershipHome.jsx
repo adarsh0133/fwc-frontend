@@ -89,10 +89,10 @@ const LeadershipHome = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-full h-fit py-10 grid grid-cols-1 place-items-center sm:grid-cols-3 lg:grid-cols-4 gap-8 gap-y-20">
+                <div className="w-full h-fit py-10 grid grid-cols-1 place-items-center sm:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-y-20">
                     {
                         leaders.map((leader, i) => (
-                            <div key={i} className="w-[30vh] h-[55vh] ">
+                            <div key={i} className="w-[30vh] h-fit lg:h-[55vh] ">
                                 <img alt="Dr JP Singh Sahni" className="w-full rounded-md" height="150" src={leader.image} width="150" />
                                 <h4 className="mt-4 text-lg font-bold text-gray-900">
                                     {leader.name}
