@@ -3,6 +3,51 @@ import Nav from '../Home/Nav'
 import HomeFooter from '../Home/HomeFooter'
 
 const FwcAtithi = () => {
+    const start = [{
+        title: "Join FWC Akhiti",
+        desc: "Fill in your basic details and travel plans to get started with our community.",
+        img: "/images/vertices/eduastra/start1.png"
+    },
+    {
+        title: "Connect Instantly",
+        desc: "Your request reaches all FWC members in your destination city immediately.",
+        img: "/images/vertices/eduastra/start2.png"
+    },
+    {
+        title: "Get Approved",
+        desc: "Available members will approve your request and offer their support.",
+        img: "/images/vertices/eduastra/start3.png"
+    },
+    {
+        title: "Collaborate",
+        desc: "Connect directly with approved members for accommodation and networking.",
+        img: "/images/vertices/eduastra/start3.png"
+    },
+    ]
+
+    const benefits = [{
+        title: "Free Accommodation",
+        desc: "Stay with fellow members and save on accommodation costs while traveling. ",
+        img: "/images/vertices/eduastra/start1.png"
+    },
+    {
+        title: "Instant Connections",
+        desc: "Connect with local members who are ready to support your journey.",
+        img: "/images/vertices/eduastra/start2.png"
+    },
+    {
+        title: "Exclusive Networking",
+        desc: "Build powerful connections across various industries and backgrounds.",
+        img: "/images/vertices/eduastra/start3.png"
+    },
+    {
+        title: "Local Insights",
+        desc: "Get personalized recommendations from locals who know their city best.",
+        img: "/images/vertices/eduastra/start3.png"
+    },
+    ]
+
+
     return (
         <>
             <Nav />
@@ -15,7 +60,7 @@ const FwcAtithi = () => {
                     <button className='rounded-full px-5 py-2 bg-[#04236F] text-white'>Become a Member</button>
                 </div>
                 <div className="hero-image mt-10 lg:w-1/2 lg:h-[50vh] lg:mt-0 lg:px-10 overflow-hidden">
-                    <img src="/images/vertices/eduastra/heroimg.png" alt="EduAstra" className='w-full h-full object-cover rounded-md' />
+                    <img src="/images/fwc-atithi/home.png" alt="atithi" className='w-full h-full object-cover rounded-md' />
                 </div>
             </div>
             <div className="learning-approch w-full h-fit lg:h-screen px-5 py-10 bg-radial-[at_50%_75%] from-[#00113B] via-[#000d2d] to-[#00040e] to-90% lg:flex lg:flex-col lg:items-center lg:justify-evenly">
@@ -24,14 +69,14 @@ const FwcAtithi = () => {
                     <h1 className='text-xl lg:text-2xl font-bold text-nowrap text-center text-white '>Simple Steps to Get Started</h1>
                     <div className="text-wrapper w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:px-12 lg:gap-20 mt-10 gap-5 ">
                         {
-                            [1, 2, 3, 4].map((item, i) => (
+                            start.map((item, i) => (
                                 <div key={i} className="w-full flex bg-white h-fit py-5 lg:py-10 rounded-md">
                                     <div className="img-container w-[25%] px-4 pt-1">
-                                        <img className='w-[70%]' src="/images/vertices/eduastra/laptop.png" alt="" />
+                                        <img className='w-[70%]' src={item.img} alt="" />
                                     </div>
                                     <div className="w-[75%]">
-                                        <h1 className='text-xl font-bold'>Skill-Based Learning</h1>
-                                        <p className='text-lg leading-none mt-2 text-zinc-500'>Practical exposure beyond textbooks ensuring real-world readiness.</p>
+                                        <h1 className='text-xl font-bold'>{item.title}</h1>
+                                        <p className='text-sm leading-none mt-2 text-zinc-500'>{item.desc}</p>
                                     </div>
                                 </div>
                             ))
@@ -43,14 +88,14 @@ const FwcAtithi = () => {
                     <h1 className='text-xl lg:text-2xl font-bold text-nowrap text-center text-white'>Why Join FWC Akhiti?</h1>
                     <div className="text-wrapper w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:px-12 lg:gap-20 mt-10 gap-5 ">
                         {
-                            [1, 2, 3, 4].map((item, i) => (
+                            benefits.map((item, i) => (
                                 <div key={i} className="w-full flex bg-white h-fit py-5 lg:py-10 rounded-md">
                                     <div className="img-container w-[25%] px-4 pt-1">
-                                        <img className='w-[70%]' src="/images/vertices/eduastra/laptop.png" alt="" />
+                                        <img className='w-[70%]' src={item.img} alt="" />
                                     </div>
                                     <div className="w-[75%]">
-                                        <h1 className='text-xl font-bold'>Skill-Based Learning</h1>
-                                        <p className='text-lg leading-none mt-2 text-zinc-500'>Practical exposure beyond textbooks ensuring real-world readiness.</p>
+                                        <h1 className='text-xl font-bold'>{item.title}</h1>
+                                        <p className='text-sm leading-none mt-2 text-zinc-500'>{item.desc}</p>
                                     </div>
                                 </div>
                             ))
@@ -64,7 +109,7 @@ const FwcAtithi = () => {
                     <p className='text-sm lg:text-lg  mt-5 lg:my-5 text-zinc-600'>The power of community is unstoppable when we all come together. Whether you're a traveler, entrepreneur, or start-up enthusiast, FWC Atithi is your gateway to not just a place, but to people, opportunities, and growth. It's about forming lasting connections and creating a supportive network wherever your journey takes you.</p>
                 </div>
                 <div className="hero-image mt-10 lg:w-1/2 lg:h-[50vh] lg:mt-0 lg:px-10 overflow-hidden">
-                    <img src="/images/vertices/eduastra/heroimg.png" alt="EduAstra" className='w-full h-full object-cover rounded-md' />
+                    <img src="/images/fwc-atithi/whyjoin.png" alt="EduAstra" className='w-full h-full object-cover rounded-md' />
                 </div>
             </div>
             <HomeFooter />

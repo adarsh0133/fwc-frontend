@@ -29,7 +29,6 @@ const HomeFooter = () => {
                 />
                 <div>
                   <p className="text-sm font-medium mt-10 max-[600px]:mt-5">
-                    Let’s  FWC <br />
                     (First World Community)
                   </p>
                 </div>
