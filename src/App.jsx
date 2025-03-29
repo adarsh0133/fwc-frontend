@@ -17,6 +17,7 @@ import Ayush from './components/vertices/Ayush';
 import YuvaSakti from './components/vertices/YuvaSakti';
 import EduAstra from './components/vertices/EduAstra';
 import LeadershipHome from './components/leadership/LeadershipHome';
+import FwcAtithi from './components/fwc-atithi/FwcAtithi';
 
 const App = () => {
 
@@ -55,6 +56,9 @@ const App = () => {
         {/* LEADERSHIP ROUTES */}
         <Route path='/leadership' element={<LeadershipHome />} />
 
+        {/* BENEFITS ROUTES */}
+        <Route path='/fwc-atithi' element={<FwcAtithi />} />
+        
       </Routes>
     </div>
   )
