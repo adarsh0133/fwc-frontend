@@ -17,6 +17,7 @@
     "axios": "^1.7.9",
     "dotenv": "^16.4.5",
     "framer-motion": "^12.4.7",
+    "lenis": "^1.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-phone-input-2": "^2.15.1",
