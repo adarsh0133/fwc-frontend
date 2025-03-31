@@ -13,7 +13,6 @@ export const submitYuvaShaktiForm = (formdata) => async (dispatch) => {
 export const getYuvaShaktiForm = () => async (dispatch) => {
     try {
         const { data } = await axios.post('/yuvaShakti/all_yuvaShakti',{}, getBearerToken());
-        console.log(data.yuvaShakti)
         return data.yuvaShakti;
     } catch (error) {
         console.error("Failed to fetch member details:", error);

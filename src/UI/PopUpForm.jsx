@@ -3,7 +3,7 @@ import React from 'react'
 import { ToastContainer } from 'react-toastify'
 import PhoneInputField from './PhoneInputField';
 
-const PopUpForm = ({ setpopup, fields, setFields, onSubmit }) => {
+const PopUpForm = ({ setpopup, fields, setFields, onSubmit, loading }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = {};
@@ -35,7 +35,7 @@ const PopUpForm = ({ setpopup, fields, setFields, onSubmit }) => {
                         value={field.value}
                         onChange={(e) => handleFieldChange(field.name, e.target.value)}
                         style={{ padding: '10px', fontSize: '16px', marginRight: '10px' }}
-                        className="focus:outline-[#f58220] focus:border-[#f58220] border border-gray-300 rounded-md"
+                        className="focus:outline-[#0037FF] focus:border-[#0037FF] border border-gray-300 rounded-md"
                     />
                 );
             case 'select':
@@ -45,7 +45,7 @@ const PopUpForm = ({ setpopup, fields, setFields, onSubmit }) => {
                         value={field.value}
                         onChange={(e) => handleFieldChange(field.name, e.target.value)}
                         style={{ padding: '10px', fontSize: '16px', marginRight: '10px' }}
-                        className="focus:outline-[#f58220] focus:border-[#f58220] border border-gray-300 rounded-md"
+                        className="focus:outline-[#0037FF] focus:border-[#0037FF] border border-gray-300 rounded-md"
                     >
                         {field.options.map((option, index) => (
                             <option key={index} value={option.value}>
@@ -62,6 +62,17 @@ const PopUpForm = ({ setpopup, fields, setFields, onSubmit }) => {
                         onChange={(value) => handleFieldChange(field.name, value)}
                     />
                 );
+            case 'date':
+                return (
+                    <input
+                        type="date"
+                        name={field.name}
+                        value={field.value}
+                        onChange={(e) => handleFieldChange(field.name, e.target.value)}
+                        style={{ padding: '10px', fontSize: '16px', marginRight: '10px' }}
+                        className="focus:outline-[#0037FF] focus:border-[#0037FF] border border-gray-300 rounded-md"
+                    />
+                );
             default:
                 return (
                     <input
@@ -71,7 +82,7 @@ const PopUpForm = ({ setpopup, fields, setFields, onSubmit }) => {
                         value={field.value}
                         onChange={(e) => handleFieldChange(field.name, e.target.value)}
                         style={{ padding: '10px', fontSize: '16px', marginRight: '10px' }}
-                        className="focus:outline-[#f58220] focus:border-[#f58220] border border-gray-300 rounded-md"
+                        className="focus:outline-[#0037FF] focus:border-[#0037FF] border border-gray-300 rounded-md"
                     />
                 );
         }
@@ -95,9 +106,19 @@ const PopUpForm = ({ setpopup, fields, setFields, onSubmit }) => {
                                     {renderField(field)}
                                 </div>
                             ))}
-                        <button type="submit" className='w-1/2 lg:h-1/2 lg:mt-7' style={{ padding: '5px 10px', fontSize: '16px', cursor: 'pointer', background: '#f58220', color: 'white', border: 'none', borderRadius: '5px' }}>
-                            Submit
-                        </button>
+                            {loading ? (
+
+                                <div className='w-fit  lg:h-1/2 lg:mt-7 center' style={{ padding: '5px 10px', fontSize: '16px', cursor: 'pointer', background: '#0037FF', color: 'white', border: 'none', borderRadius: '5px' }}>
+                                    <div className="w-8 shrink-0">
+                                        <div className="loader"></div>
+                                    </div>
+                                    submitting...
+                                </div>
+                            ) : (
+                                <button type="submit" className='w-1/2 lg:h-1/2 lg:mt-7' style={{ padding: '5px 10px', fontSize: '16px', cursor: 'pointer', background: '#0037FF', color: 'white', border: 'none', borderRadius: '5px' }}>
+                                    Submit
+                                </button>
+                            )}
                         </div>
                     </form>
                 </div>

@@ -63,3 +63,11 @@ export const getMembersPayments = () => async (dispatch) => {
     console.error("Failed to fetch member details:", error);
   }
 }
+
+export const submitAtithiDetails = (formData) => async (dispatch) => {
+  try {
+    const { data } = await axios.post('/member/submit-fwc-athithi-request', {formData}, getBearerToken());
+  } catch (error) {
+    return error;
+  }
+}
