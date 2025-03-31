@@ -89,10 +89,10 @@ const Nav = () => {
                     <img className='w-[15%]' src="/images/Home/nav/gmeet.png" alt="Weekly Meetups" />
                     <p className='whitespace-nowrap'>Weekly Meetups</p>
                   </a>
-                  <a href="/investor-circle" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  <Link to="/investor-circle" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/dollar.png" alt="Investor Circle" />
                     <p className='whitespace-nowrap'>Investor Circle</p>
-                  </a>
+                  </Link>
                   <a href="/expert-connect" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/expert.png" alt="Expert Connect" />
                     <p className='whitespace-nowrap'>Expert Connect</p>
@@ -258,10 +258,10 @@ const Nav = () => {
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Weekly Meetups</p>
               </a>
-              <a href="/investor-circle" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70   hover:bg-gray-200">
+              <Link to="/investor-circle" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70   hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Investor Circle</p>
-              </a>
+              </Link>
               <a href="/expert-connect" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Expert Connect</p>
