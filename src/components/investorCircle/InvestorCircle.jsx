@@ -52,7 +52,7 @@ const InvestorCircle = () => {
             !formData.socialMedia ||
             !formData.valuation ||
             !formData.incorporation ||
-            !formData.incorporationNumber ||
+            // !formData.incorporationNumber ||
             !formData.pastInvestment ||
             !formData.fundingRequirement ||
             !formData.fundingUsage ||
