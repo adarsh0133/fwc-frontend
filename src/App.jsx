@@ -18,6 +18,7 @@ import YuvaSakti from './components/vertices/YuvaSakti';
 import EduAstra from './components/vertices/EduAstra';
 import LeadershipHome from './components/leadership/LeadershipHome';
 import FwcAtithi from './components/fwc-atithi/FwcAtithi';
+import FwcStories from './components/FWC Stories/FwcStories';
 import Aboutus from './components/Aboutus/Aboutus';
 
 const App = () => {
@@ -59,6 +60,7 @@ const App = () => {
 
         {/* BENEFITS ROUTES */}
         <Route path='/fwc-atithi' element={<FwcAtithi />} />
+        {/* <Route path='/fwc-stories' element={<FwcStories />} /> */}
 
         {/* ABOUTUS ROUTE */}
         <Route path='/about-us' element={<Aboutus />} />

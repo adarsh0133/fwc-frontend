@@ -119,12 +119,12 @@ export const Home = () => {
 
         </Magnet>
       </div>
-      <div className="delhi-launch w-full h-screen center flex-col items-center justify-center gap-5 p-5 max-[600px]:h-fit">
+      {/* <div className="delhi-launch w-full h-screen center flex-col items-center justify-center gap-5 p-5 max-[600px]:h-fit">
         <div className="del-img w-[100vh] h-[60vh] max-[600px]:w-full max-[600px]:h-[40vh] rounded-lg overflow-hidden">
           <img className='w-full h-full object-cover object-center' src="/images/Home/delhi.webp" alt="" />
         </div>
         <Link to={'https://nas.io/first-world-community/events/delhi-launch'} target='#' className='p-2 px-6 bg-gradient-to-b from-[#002A92] to-[#000719] text-white rounded-lg font-semibold text-xl'>Register</Link>
-        {/* <div className="timer flex items-center justify-evenly bg-white">
+        <div className="timer flex items-center justify-evenly bg-white">
           <div className="days-wrapper center flex-col gap-2">
             <div className="days size-12 center rounded-md"><h1 className='text-3xl text-zinc-700 font-semibold'>{timeLeft.days}</h1></div>
             <p className='text-[10px] text-[#E74C3C] uppercase'>Days</p>
@@ -144,8 +144,8 @@ export const Home = () => {
             <div className="days size-12 center rounded-md"><h1 className='text-3xl text-zinc-700 font-semibold'>{timeLeft.seconds}</h1></div>
             <p className='text-[10px] text-[#E74C3C] uppercase'>seconds</p>
           </div>
-        </div> */}
-      </div>
+        </div>
+      </div> */}
       <div className="what-we-do w-full h-screen px-10 py-20 max-[600px]:py-5 max-[600px]:h-fit">
         <h1 className='text-4xl font-semibold'>What We Do</h1>
         <div className="circle-wrapper w-full py-16 max-[600px]:py-7 max-[600px]:grid max-[600px]:grid-col-2 grid-cols-2 flex gap-16">
