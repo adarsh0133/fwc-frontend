@@ -18,6 +18,7 @@ import YuvaSakti from './components/vertices/YuvaSakti';
 import EduAstra from './components/vertices/EduAstra';
 import LeadershipHome from './components/leadership/LeadershipHome';
 import FwcAtithi from './components/fwc-atithi/FwcAtithi';
+import Aboutus from './components/Aboutus/Aboutus';
 
 const App = () => {
 
@@ -58,6 +59,9 @@ const App = () => {
 
         {/* BENEFITS ROUTES */}
         <Route path='/fwc-atithi' element={<FwcAtithi />} />
+
+        {/* ABOUTUS ROUTE */}
+        <Route path='/about-us' element={<Aboutus />} />
         
       </Routes>
     </div>
