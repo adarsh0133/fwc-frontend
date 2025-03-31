@@ -97,8 +97,8 @@ const PopUpForm = ({ setpopup, fields, setFields, onSubmit, loading }) => {
                         <span></span>
                         <RiCloseFill size={35} onClick={() => setpopup(false)} />
                     </div>
-                    <form className="" onSubmit={handleSubmit}>
-                        <h2 className='text-xl'>Form:-</h2>
+                    <form className="lg:w-full" onSubmit={handleSubmit}>
+                        <h2 className='text-xl'>Fill All The Details</h2>
                         <div className="w-full h-full grid lg:grid-cols-2 lg:pl-20 lg:gap-6 gap-4 p-4">
                             {fields.map((field, index) => (
                                 <div key={index} className="flex flex-col items-start">

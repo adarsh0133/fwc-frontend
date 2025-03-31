@@ -117,7 +117,7 @@ const FwcAtithi = () => {
         { name: 'departureDate', type: 'date', label: 'Departure Date:', value: '', placeholder: 'Enter your  Departure Date' },
         { name: 'purpose', type: 'text', label: ' Purpose:', value: '', placeholder: 'Enter your Purpose' },
         {
-            name: 'food', type: 'select', label: 'Food:', value: '', options: [{ value: 'Veg', label: 'veg' }, { value: 'Non-Veg', label: 'non-veg' }, { value: 'Both', label: 'Both' }]
+            name: 'food', type: 'select', label: 'Food:', value: '', options: [{ value: '', label: 'not selected' }, { value: 'Veg', label: 'veg' }, { value: 'Non-Veg', label: 'non-veg' }, { value: 'Both', label: 'Both' }]
         },
         { name: 'additionalNotes', type: 'textarea', label: 'Additional Notes:', value: '', placeholder: 'Start additional notes' },
     ]);
@@ -144,13 +144,21 @@ const FwcAtithi = () => {
     return (
         <>
             {popup && (
-                <PopUpForm
-                    setpopup={setpopup}
-                    setFields={setFields}
-                    fields={fields.filter((field) => !field.hidden)} // Exclude hidden fields like userId
-                    loading={loading}
-                    onSubmit={(formData) => handleFormSubmit({ ...formData, userId: user._id })} // Include userId in the submission
-                />
+                user.role === 'member' ? (
+                    <PopUpForm
+                        setpopup={setpopup}
+                        setFields={setFields}
+                        fields={fields.filter((field) => !field.hidden)} // Exclude hidden fields like userId
+                        loading={loading}
+                        onSubmit={(formData) => handleFormSubmit({ ...formData, userId: user._id })} // Include userId in the submission
+                    />
+                ) : (
+                    (() => {
+                        window.alert("Only members can apply for FWC Atithi");
+                        setpopup(false);
+                        return null; // Return null to avoid rendering anything
+                    })()
+                )
             )}
             <Nav />
             <div className="w-full h-fit lg:h-screen px-5 pt-28 pb-5 lg:flex lg:px-10 lg:pt-40 lg:pb-20  ">
