@@ -50,44 +50,44 @@ const FwcAtithi = () => {
     const start = [{
         title: "Join FWC Akhiti",
         desc: "Fill in your basic details and travel plans to get started with our community.",
-        img: "/images/vertices/eduastra/start1.png"
+        img: "/images/fwc-atithi/start1.png"
     },
     {
         title: "Connect Instantly",
         desc: "Your request reaches all FWC members in your destination city immediately.",
-        img: "/images/vertices/eduastra/start2.png"
+        img: "/images/fwc-atithi/start2.png"
     },
     {
         title: "Get Approved",
         desc: "Available members will approve your request and offer their support.",
-        img: "/images/vertices/eduastra/start3.png"
+        img: "/images/fwc-atithi/start3.png"
     },
     {
         title: "Collaborate",
         desc: "Connect directly with approved members for accommodation and networking.",
-        img: "/images/vertices/eduastra/start3.png"
+        img: "/images/fwc-atithi/start4.png"
     },
     ]
 
     const benefits = [{
         title: "Free Accommodation",
         desc: "Stay with fellow members and save on accommodation costs while traveling. ",
-        img: "/images/vertices/eduastra/start1.png"
+        img: "/images/fwc-atithi/benefits1.png"
     },
     {
         title: "Instant Connections",
         desc: "Connect with local members who are ready to support your journey.",
-        img: "/images/vertices/eduastra/start2.png"
+        img: "/images/fwc-atithi/benefits2.png"
     },
     {
         title: "Exclusive Networking",
         desc: "Build powerful connections across various industries and backgrounds.",
-        img: "/images/vertices/eduastra/start3.png"
+        img: "/images/fwc-atithi/benefits3.png"
     },
     {
         title: "Local Insights",
         desc: "Get personalized recommendations from locals who know their city best.",
-        img: "/images/vertices/eduastra/start3.png"
+        img: "/images/fwc-atithi/benefits4.png"
     },
     ]
 
@@ -186,9 +186,9 @@ const FwcAtithi = () => {
                     <div className="text-wrapper w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:px-12 lg:gap-20 mt-10 gap-5 ">
                         {
                             start.map((item, i) => (
-                                <div key={i} className="w-full flex bg-white h-fit py-5 lg:py-10 rounded-md">
-                                    <div className="img-container w-[25%] px-4 pt-1">
-                                        <img className='w-[70%]' src={item.img} alt="" />
+                                <div key={i} className="w-full flex h-fit py-5 lg:py-10 lg:px-2 bg-white rounded-md">
+                                    <div className="img-container w-[25%]">
+                                        <img className='w-[80%]' src={item.img} alt="" />
                                     </div>
                                     <div className="w-[75%]">
                                         <h1 className='text-xl font-bold'>{item.title}</h1>
@@ -205,9 +205,9 @@ const FwcAtithi = () => {
                     <div className="text-wrapper w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:px-12 lg:gap-20 mt-10 gap-5 ">
                         {
                             benefits.map((item, i) => (
-                                <div key={i} className="w-full flex bg-white h-fit py-5 lg:py-10 rounded-md">
-                                    <div className="img-container w-[25%] px-4 pt-1">
-                                        <img className='w-[70%]' src={item.img} alt="" />
+                                <div key={i} className="w-full flex bg-white h-fit py-5 lg:px-2 lg:py-10 rounded-md">
+                                    <div className="img-container w-[25%]">
+                                        <img className='w-[60%]' src={item.img} alt="" />
                                     </div>
                                     <div className="w-[75%]">
                                         <h1 className='text-xl font-bold'>{item.title}</h1>
