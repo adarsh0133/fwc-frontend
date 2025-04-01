@@ -106,14 +106,14 @@ const Aboutus = () => {
                         <p>Our projects are the driving force behind transformation, turning bold ideas into impactful realities. From empowering entrepreneurs to fostering innovation and sustainability, every initiative we undertake fuels progrvess, uplifts communities, and shapes a future where dreams thrive without limits.</p>
                     </div>
                 </div>
-                <div className="w-full py-10 gap-14  grid  grid-cols-1 md:grid-cols-3 xl:grid-cols-5 ">
+                <div className="w-full py-10 gap-14 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 ">
                     {seedsArray.map((seed, index) => {
                         return (
                             <div key={index} className="  w-full ">
                                 <div className="w-full h-[85%] overflow-hidden p-1 border-2 border-[#47464688] ">
                                     <img className='w-full h-full object-cover' src={seed.img} alt="" />
                                 </div>
-                                <div className="w-full h-[15%] center">
+                                <div className="w-full h-[15%] center mt-2 md:mt-0">
                                     <p className='font-medium text-xl'>{seed.title} </p>
                                 </div>
                             </div>
