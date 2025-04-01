@@ -13,7 +13,7 @@ const Nav = () => {
   const [mobiledrop, setmobiledrop] = useState("none")
   const [dropdownOpen, setDropdownOpen] = useState({
     benefits: false,
-    vertices: false,
+    verticles: false,
     aboutFwc: false,
   });
 
@@ -42,7 +42,7 @@ const Nav = () => {
       if (!event.target.closest(".dropdown")) {
         setDropdownOpen({
           benefits: false,
-          vertices: false,
+          verticles: false,
           aboutFwc: false,
         });
       }
@@ -135,33 +135,37 @@ const Nav = () => {
               </a>
             </li>
             <li
-              onMouseEnter={() => handleMouseEnter('vertices')}
-              onMouseLeave={() => handleMouseLeave('vertices')}
+              onMouseEnter={() => handleMouseEnter('verticles')}
+              onMouseLeave={() => handleMouseLeave('verticles')}
               className='flex items-center cursor-pointer h-full relative dropdown'
             >
-              Vertices
+              Verticles
               <RiArrowDownSLine
-                className={`ml-1 ${dropdownOpen.vertices ? "-rotate-180" : "rotate-0"} duration-300`}
+                className={`ml-1 ${dropdownOpen.verticles ? "-rotate-180" : "rotate-0"} duration-300`}
               />
-              {dropdownOpen.vertices && (
+              {dropdownOpen.verticles && (
                 <div
-                  onMouseEnter={() => handleMouseEnter('vertices')}
-                  onMouseLeave={() => handleMouseLeave('vertices')}
+                  onMouseEnter={() => handleMouseEnter('verticles')}
+                  onMouseLeave={() => handleMouseLeave('verticles')}
                   className="absolute z-[99] flex flex-col top-[70px] -left-10 w-56 p-4 px-0 bg-white text-black border border-gray-200 shadow-lg font-normal text-sm"
                 >
-                  <a href="/vertices/yuva-shakti-international" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  <a href="/verticles/yuva-shakti-international" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/ysint.png" alt="" />
                     <p className='whitespace-nowrap'>Yuva Shakti International</p>
                   </a>
-                  <a href="/vertices/thofa" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  <a href="/verticles/nari-shakti" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                    <img className='w-[15%]' src="/images/Home/nav/ysint.png" alt="" />
+                    <p className='whitespace-nowrap'>Nari Shakti</p>
+                  </a>
+                  <a href="/verticles/thofa" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/thofa.png" alt="" />
                     <p className='whitespace-nowrap'>THOFA</p>
                   </a>
-                  <a href="/vertices/edu-astra" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  <a href="/verticles/edu-astra" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/asthra.png" alt="" />
                     <p className='whitespace-nowrap'>Edu Asthra</p>
                   </a>
-                  <a href="/vertices/integrated-ayush" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  <a href="/verticles/integrated-ayush" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/ayush.png" alt="" />
                     <p className='whitespace-nowrap'>Integrated Ayush</p>
                   </a>
@@ -303,32 +307,32 @@ const Nav = () => {
             </a>
           </div>
           <div className="w-full">
-            <div onClick={() => handleDropdown("vertices")} className="w-fit flex items-center gap-2 h-fit cursor-pointer">
-              <p>Vertices</p>
-              <RiArrowDownSLine className={`w-5 h-5 transition-transform duration-300 ${mobiledrop === "vertices" ? "rotate-180" : "rotate-0"}`} />
+            <div onClick={() => handleDropdown("verticles")} className="w-fit flex items-center gap-2 h-fit cursor-pointer">
+              <p>verticles</p>
+              <RiArrowDownSLine className={`w-5 h-5 transition-transform duration-300 ${mobiledrop === "verticles" ? "rotate-180" : "rotate-0"}`} />
             </div>
             <motion.div
               initial={{ height: 0 }}
-              animate={{ height: mobiledrop === "vertices" ? "auto" : 0 }}
+              animate={{ height: mobiledrop === "verticles" ? "auto" : 0 }}
               transition={{ duration: .3, ease: "easeInOut" }}
               className="w-full  overflow-hidden"
             >
-              <a href="/vertices/yuva-shakti-international" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              <a href="/verticles/yuva-shakti-international" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
 
                 <p className='whitespace-nowrap'>Yuva Shakti International</p>
               </a>
-              <a href="/vertices/thofa" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              <a href="/verticles/thofa" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
 
                 <p className='whitespace-nowrap'>THOFA</p>
               </a>
-              <a href="/vertices/edu-astra" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              <a href="/verticles/edu-astra" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
 
                 <p className='whitespace-nowrap'>Edu Asthra</p>
               </a>
-              <a href="/vertices/integrated-ayush" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              <a href="/verticles/integrated-ayush" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
 
                 <p className='whitespace-nowrap'>Integrated Ayush</p>
