@@ -6,8 +6,11 @@ const NariShakti = () => {
     return (
         <>
             <Nav />
-            <div className="w-full h-screen bg-[url('/images/Aboutus/aboutus/aboutushero.png')] bg-cover bg-center text-white center px-5 md:px-20">
-                <div className="h-fit lg:w-[50%] space-y-5 lg:space-y-10 text-center">
+            <div className="w-full h-screen bg-[url('/images/vertices/nariShakti/herobg.png')] bg-cover bg-center text-white center px-5 md:px-20">
+                <div className="h-fit lg:w-[50%] space-y-5 lg:space-y-10 text-center flex flex-col justify-center items-center">
+                    <div className="narishakti size-32 rounded-full overflow-hidden">
+                        <img className='w-full h-full object-cover' src="/images/vertices/nariShakti/narishakti.jpeg" alt="" />
+                    </div>
                     <h1 className='font-bold text-2xl md:text-4xl lg:text-5xl'>Unleashing Nari Shakti</h1>
                     <h2 className='font-bold text-lg lg:text-2xl'>“Nari Shakti: Empowering Women, Transforming Worlds”</h2>
                     <p className='font-light text-sm lg:text-lg'>“At FWC, Nari Shakti is more than a vision—it’s a revolution. We’re igniting the power of women to drive entrepreneurship, break barriers, and build a future where every woman thrives. Join us in celebrating and amplifying women’s unstoppable spirit.”</p>
