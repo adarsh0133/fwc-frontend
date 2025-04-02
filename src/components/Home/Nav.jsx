@@ -63,9 +63,9 @@ const Nav = () => {
   return (
     <>
       <div className='fixed z-50 hidden lg:flex  w-full lg:px-4 xl:px-10 h-[10vh]  bg-zinc-900  justify-between items-center'>
-        <div className="logo w-40">
+        <div className="logo w-20">
           <a href="/">
-            <img className='w-full h-full object-cover' src="/images/Home/logo.png" alt="Logo" />
+            <img className='w-full h-full object-cover' src="/images/Home/logo.PNG" alt="Logo" />
           </a>
         </div>
         <div className="nav-links relative h-full max-[600px]:hidden">
@@ -154,7 +154,7 @@ const Nav = () => {
                     <p className='whitespace-nowrap'>Yuva Shakti International</p>
                   </a>
                   <a href="/verticles/nari-shakti" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
-                    <img className='w-[15%]' src="/images/Home/nav/ysint.png" alt="" />
+                    <img className='w-[15%]' src="/images/Home/nav/nariShakti.png" alt="" />
                     <p className='whitespace-nowrap'>Nari Shakti</p>
                   </a>
                   <a href="/verticles/thofa" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
@@ -229,7 +229,7 @@ const Nav = () => {
       <div className=" fixed z-50 w-full flex items-center justify-between lg:hidden h-[10vh] bg-zinc-900">
         <div className="logo w-[30%] center  h-full">
           <a className='w-full h-full center' href="/">
-            <img className='w-[60%]' src="/images/Home/logo.png" alt="Logo" />
+            <img className='w-[60%]' src="/images/Home/logo.PNG" alt="Logo" />
           </a>
         </div>
         <div onClick={toggleMenu} className="w-[14%] h-full text-white center">
