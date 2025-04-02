@@ -63,9 +63,9 @@ const Nav = () => {
   return (
     <>
       <div className='fixed z-50 hidden lg:flex  w-full lg:px-4 xl:px-10 h-[10vh]  bg-zinc-900  justify-between items-center'>
-        <div className="logo w-20">
+        <div className="logo w-20 bg-emerald-400">
           <a href="/">
-            <img className='w-full h-full object-cover' src="/images/Home/logo.webp" alt="Logo" />
+            <img className='w-full h-full object-cover' src="/images/Home/logo.jpg" alt="Logo" />
           </a>
         </div>
         <div className="nav-links relative h-full max-[600px]:hidden">
@@ -229,7 +229,7 @@ const Nav = () => {
       <div className=" fixed z-50 w-full flex items-center justify-between lg:hidden h-[10vh] bg-zinc-900">
         <div className="logo w-[30%] center  h-full">
           <a className='w-full h-full center' href="/">
-            <img className='w-[60%]' src="/images/Home/logo.webp" alt="Logo" />
+            <img className='w-[60%]' src="/images/Home/logo.jpg" alt="Logo" />
           </a>
         </div>
         <div onClick={toggleMenu} className="w-[14%] h-full text-white center">
@@ -241,8 +241,8 @@ const Nav = () => {
           }`}
       >
         <div className="w-full flex items-center justify-between p-5">
-          <a className="w-[15%] max-[600px]:w-[30%] center" href="/">
-            <img className="w-full" src="/images/Home/logo.webp" alt="" />
+          <a className="w-[15%] max-[600px]:w-[15%] center" href="/">
+            <img className="w-full" src="/images/Home/logo.jpg" alt="" />
           </a>
           <RiCloseLine className="scale-150" onClick={toggleMenu} />
         </div>
