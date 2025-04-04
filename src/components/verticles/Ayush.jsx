@@ -7,34 +7,34 @@ const Ayush = () => {
         {
             name: 'Ayurveda',
             description: 'Ancient science of life',
-            image: '/images/vertices/ayush/ayurveda.png'
+            image: '/images/vertices/ayush/ayurveda.webp'
         },
         {
             name: 'Unani',
             description: 'Greek healing wisdom',
-            image: '/images/vertices/ayush/unani.png'
+            image: '/images/vertices/ayush/unani.webp'
         },
         {
             name: 'Siddha',
             description: 'Tamil medical tradition',
-            image: '/images/vertices/ayush/siddha.png'
+            image: '/images/vertices/ayush/siddha.webp'
         },
         {
             name: 'Yoga',
             description: 'Mind-body harmony',
-            image: '/images/vertices/ayush/yoga.png'
+            image: '/images/vertices/ayush/yoga.webp'
         },
         {
             name: 'Homeopathy',
             description: 'Natural healing system',
-            image: '/images/vertices/ayush/homeopathy.png'
+            image: '/images/vertices/ayush/homeopathy.webp'
         }
     ]
     return (
         <div className="bg-gray-50 text-gray-800">
             <Nav />
             {/* Hero Section */}
-            <header className="flex flex-col justify-center items-center bg-cover h-screen" style={{ backgroundImage: 'url(/images/vertices/ayush/heropage.png)' }}>
+            <header className="flex flex-col justify-center items-center bg-cover h-screen" style={{ backgroundImage: 'url(/images/vertices/ayush/heropage.webp)' }}>
                 <h1 className="text-xl md:text-4xl font-bold text-white">Balance Your Life with AYUSH</h1>
                 <p className="mt-4 text-xs text-white text-center">Discover the ancient wisdom of holistic healing combined with modern wellness practices</p>
             </header>
@@ -62,7 +62,7 @@ const Ayush = () => {
             <section className="py-16 px-12 bg-white">
                 <div className="md:flex w-full lg:gap-10 lg:justify-center">
                     <div className="img-container-ashokasir w-full md:w-1/2 lg:w-1/4">
-                        <img src="/images/vertices/ayush/samrathAshoka.png" alt="" />
+                        <img src="/images/vertices/ayush/samrathAshoka.webp" alt="" />
                     </div>
                     <div className="text-container md:w-1/2 md:ml-10 mt-5 md:mt-0">
                         <h2 className="text-xl md:text-3xl font-bold mt-5">Meet Dr. C.K. Ashok Kumar</h2>
@@ -78,7 +78,7 @@ const Ayush = () => {
                 <div className="md:flex w-full lg:items-center lg:flex-row-reverse">
                     <div className="md:w-1/2">
                         <div className="img-container-ashokasir w-full lg:p-20">
-                            <img src="/images/vertices/ayush/ayush.png" alt="" />
+                            <img src="/images/vertices/ayush/ayush.webp" alt="" />
                         </div>
                     </div>
                     <div className="lg:w-1/2 lg:pl-20">
@@ -87,13 +87,13 @@ const Ayush = () => {
                             <p>AYUSH represents the integration of Ayurveda, Yoga & Naturopathy, Unani, Siddha, and Homeopathy - traditional systems of medicine native to India. Our mission is to promote holistic health and well-being through these time-tested practices.</p>
                         </div>
                         <ul className="mt-4 text-zinc-100 space-y-4 font-light leading-tight">
-                            <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/vertices/ayush/CheckMark.png')] before:bg-contain before:bg-no-repeat">
+                            <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/vertices/ayush/CheckMark.webp')] before:bg-contain before:bg-no-repeat">
                                 AYUSH represents Ayurveda, Yoga & Naturopathy, Unani, Siddha, and Homeopathy, which are India's traditional systems of medicine.
                             </li>
-                            <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/vertices/ayush/CheckMark.png')] before:bg-contain before:bg-no-repeat">
+                            <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/vertices/ayush/CheckMark.webp')] before:bg-contain before:bg-no-repeat">
                                 AYUSH promotes holistic health and well-being through time-tested practices focusing on natural healing and preventive healthcare.
                             </li>
-                            <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/vertices/ayush/CheckMark.png')] before:bg-contain before:bg-no-repeat">
+                            <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/vertices/ayush/CheckMark.webp')] before:bg-contain before:bg-no-repeat">
                                 The AYUSH industry is worth $4 trillion and is growing due to increased awareness of natural and preventive healthcare.
                             </li>
                         </ul>
