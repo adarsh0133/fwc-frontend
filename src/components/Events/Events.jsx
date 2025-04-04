@@ -79,16 +79,16 @@ const Events = () => {
 					<div className="key-highlights mt-10">
 						<h3 className='text-2xl font-bold'>Key Highlights</h3>
 						<ul className="mt-4 ml-4 text-zinc-700">
-							<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.png')] before:bg-contain before:bg-no-repeat">
+							<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.webp')] before:bg-contain before:bg-no-repeat">
 								Network with peers and innovators.
 							</li>
-							<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.png')] before:bg-contain before:bg-no-repeat">
+							<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.webp')] before:bg-contain before:bg-no-repeat">
 								Learn from expert-led talks.
 							</li>
-							<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.png')] before:bg-contain before:bg-no-repeat">
+							<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.webp')] before:bg-contain before:bg-no-repeat">
 								Networking opportunities.
 							</li>
-							<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.png')] before:bg-contain before:bg-no-repeat">
+							<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.webp')] before:bg-contain before:bg-no-repeat">
 								Collaborate in interactive sessions.
 							</li>
 						</ul>
@@ -96,7 +96,7 @@ const Events = () => {
 					</div>
 				</div>
 				<div className="hero-img w-1/2 max-[600px]:w-full h-full pb-20 max-[600px]:p-10 max-[600px]:pb-10">
-					<img className='w-full h-full object-contain' src="/images/events/heroimg.png" alt="" />
+					<img className='w-full h-full object-contain' src="/images/events/heroimg.webp" alt="" />
 				</div>
 			</div>
 			<div className="w-full h-fit pb-10">
@@ -139,7 +139,7 @@ const Events = () => {
 												<div className="size-4 rounded-full overflow-hidden">
 													<img
 														className="size-full object-contain"
-														src="/images/events/clock.png"
+														src="/images/events/clock.webp"
 														alt=""
 													/>
 												</div>
@@ -149,7 +149,7 @@ const Events = () => {
 												<div className="size-4 rounded-full overflow-hidden">
 													<img
 														className="size-full object-contain"
-														src="/images/events/mode.png"
+														src="/images/events/mode.webp"
 														alt=""
 													/>
 												</div>
@@ -202,7 +202,7 @@ const Events = () => {
 													<div className="size-4 rounded-full overflow-hidden">
 														<img
 															className="size-full object-contain"
-															src="/images/events/link.png"
+															src="/images/events/link.webp"
 															alt=""
 														/>
 													</div>
@@ -218,7 +218,7 @@ const Events = () => {
 													<div className="size-4 rounded-full overflow-hidden">
 														<img
 															className="size-full object-contain"
-															src="/images/events/clock.png"
+															src="/images/events/clock.webp"
 															alt=""
 														/>
 													</div>
@@ -230,7 +230,7 @@ const Events = () => {
 													<div className="size-4 rounded-full overflow-hidden">
 														<img
 															className="size-full object-contain"
-															src="/images/events/mode.png"
+															src="/images/events/mode.webp"
 															alt=""
 														/>
 													</div>
@@ -268,13 +268,13 @@ const Events = () => {
 						<div className="key-highlights mt-10">
 							<h3 className='text-2xl font-bold'>Key Highlights</h3>
 							<ul className="mt-4 ml-4 text-zinc-400">
-								<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.png')] before:bg-contain before:bg-no-repeat">
+								<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.webp')] before:bg-contain before:bg-no-repeat">
 									Hear from globally recognized speakers
 								</li>
-								<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.png')] before:bg-contain before:bg-no-repeat">
+								<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.webp')] before:bg-contain before:bg-no-repeat">
 									Access cutting-edge industry trends
 								</li>
-								<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.png')] before:bg-contain before:bg-no-repeat">
+								<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.webp')] before:bg-contain before:bg-no-repeat">
 									Build strategic alliances
 								</li>
 							</ul>
@@ -282,7 +282,7 @@ const Events = () => {
 						</div>
 					</div>
 					<div className="exclusive-events-img w-1/2 max-[600px]:w-full">
-						<img className='w-full h-[50vh] object-contain' src="/images/events/ee.png" alt="" />
+						<img className='w-full h-[50vh] object-contain' src="/images/events/ee.webp" alt="" />
 					</div>
 				</div>
 				<div className="exclusive-events-cards-wrapper w-full pt-32 max-[600px]:pt-5 grid grid-cols-3 max-[820px]:grid-cols-1 max-[1150px]:grid-cols-2 place-items-center gap-20 max-[600px]:space-y-10">
@@ -295,13 +295,13 @@ const Events = () => {
 								</div>
 								<div className="flex items-center gap-2">
 									<div className="size-5 overflow-hidden rounded-full">
-										<img className='size-full object-contain' src={'/images/events/clock.png'} alt="" />
+										<img className='size-full object-contain' src={'/images/events/clock.webp'} alt="" />
 									</div>
 									<p className='timing-exclusive-event text-xs'>{event.time} IST</p>
 								</div>
 								<div className="flex items-center gap-2">
 									<div className="size-5 overflow-hidden rounded-full">
-										<img className='size-full object-contain' src={'/images/events/mode.png'} alt="" />
+										<img className='size-full object-contain' src={'/images/events/mode.webp'} alt="" />
 									</div>
 									<p className='timing-exclusive-event uppercase text-xs'>{event.location}</p>
 								</div>
@@ -321,20 +321,20 @@ const Events = () => {
 						<div className="key-highlights mt-10">
 							<h3 className='text-2xl font-bold'>Key Highlights</h3>
 							<ul className="mt-4 ml-4 text-zinc-700">
-								<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.png')] before:bg-contain before:bg-no-repeat">
+								<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.webp')] before:bg-contain before:bg-no-repeat">
 									Hands-on learning with industry pros
 								</li>
-								<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.png')] before:bg-contain before:bg-no-repeat">
+								<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.webp')] before:bg-contain before:bg-no-repeat">
 									Topics from marketing to funding.
 								</li>
-								<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.png')] before:bg-contain before:bg-no-repeat">
+								<li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-1 before:w-5 before:h-5 before:bg-[url('/images/events/eventsArrow.webp')] before:bg-contain before:bg-no-repeat">
 									Earn credentials for your expertise.
 								</li>
 							</ul>
 						</div>
 					</div>
 					<div className="hero-img w-1/2 max-[600px]:w-full h-[70vh] max-[600px]:h-[40vh] pb-20 max-[600px]:pb-5">
-						<img className='w-full h-full object-contain' src="/images/events/msc.png" alt="" />
+						<img className='w-full h-full object-contain' src="/images/events/msc.webp" alt="" />
 					</div>
 				</div>
 				<div className="w-full h-fit pb-10">
@@ -377,7 +377,7 @@ const Events = () => {
 													<div className="size-4 rounded-full overflow-hidden">
 														<img
 															className="size-full object-contain"
-															src="/Images/ivyAcceleratorProgram/clock.png"
+															src="/Images/ivyAcceleratorProgram/clock.webp"
 															alt=""
 														/>
 													</div>
@@ -387,7 +387,7 @@ const Events = () => {
 													<div className="size-4 rounded-full overflow-hidden">
 														<img
 															className="size-full object-contain"
-															src="/Images/ivyAcceleratorProgram/mode.png"
+															src="/Images/ivyAcceleratorProgram/mode.webp"
 															alt=""
 														/>
 													</div>
@@ -440,7 +440,7 @@ const Events = () => {
 														<div className="size-4 rounded-full overflow-hidden">
 															<img
 																className="size-full object-contain"
-																src="/images/events/link.png"
+																src="/images/events/link.webp"
 																alt=""
 															/>
 														</div>

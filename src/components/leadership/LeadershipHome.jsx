@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from '../Home/Nav'
 import HomeFooter from '../Home/HomeFooter'
+import { Link } from 'react-router-dom'
 
 const LeadershipHome = () => {
     const leaders = [
@@ -12,7 +13,7 @@ const LeadershipHome = () => {
         },
         {
             name: "DR. PARASHURAMAN",
-            designation: "Principal Scientist at MSSRF.",
+            designation: "Principal Scientist at MSSRF.Mentored by Padma Vibhushan Dr. M.S. Swaminathan, I strive for sustainable development, youth empowerment, and scientific literacy",
             image: "/images/Aboutus/leadership/PARASHURAMAN.png",
             link: ""
         },
@@ -40,6 +41,12 @@ const LeadershipHome = () => {
             image: "/images/Aboutus/leadership/Ganesh.png",
             link: ""
         },
+        {
+            name: "Dr. Jayanthi",
+            designation: "Visionary Leader | Disaster Risk Reduction & Crisis Management Expert | Director, Indian Skills Development Council | Trustee, Indian Council for Education & Culture | Guinness World Records Mentor | Skill Development",
+            image: "/images/Aboutus/leadership/Jayanthi.png",
+            link: ""
+        },
     ]
     return (
         <>
@@ -62,7 +69,7 @@ const LeadershipHome = () => {
                         <h3 className="text-4xl font-medium text-gray-900">
                             Founder & Chairman
                         </h3>
-                        <img alt="Founder standing in front of a large emblem" className="w-[80%] h-[90%] object-cover" src="/images/vertices/yuvaShakti/ys-cksir.png" width="300" />
+                        <img alt="Founder standing in front of a large emblem" className="w-[80%] h-[90%] object-cover" src="/images/vertices/yuvaShakti/ys-cksir.webp" width="300" />
                     </div>
                     <div className="w-full md:w-1/2 md:pl-8 lg:flex lg:flex-col lg:justify-between lg:py-20">
                         <div className="">
@@ -97,12 +104,12 @@ const LeadershipHome = () => {
                                 <h4 className="mt-4 text-lg font-bold text-gray-900">
                                     {leader.name}
                                 </h4>
-                                <p className="text-gray-600 leading-tight text-sm">
+                                <p className="text-gray-600 leading-tight text-sm mb-4">
                                     {leader.designation}
                                 </p>
-                                <button className="mt-4 px-4 py-2 text-blue-600 border-[1px] border-blue-600 rounded-full">
+                                <Link to={leader.link} className=" px-4 py-2 text-blue-600 border-[1px] border-blue-600 rounded-full">
                                     {leader.link ? "Read more" : "Coming soon"}
-                                </button>
+                                </Link>
                             </div>
                         ))
                     }

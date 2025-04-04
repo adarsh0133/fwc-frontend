@@ -6,10 +6,10 @@ const NariShakti = () => {
     return (
         <>
             <Nav />
-            <div className="w-full h-screen bg-[url('/images/vertices/nariShakti/herobg.png')] bg-cover bg-center text-white center px-5 md:px-20">
+            <div className="w-full h-screen bg-[url('/images/vertices/nariShakti/herobg.webp')] bg-cover bg-center text-white center px-5 md:px-20">
                 <div className="h-fit lg:w-[50%] space-y-5 lg:space-y-10 text-center flex flex-col justify-center items-center">
                     <div className="narishakti size-32 rounded-full overflow-hidden">
-                        <img className='w-full h-full object-cover' src="/images/vertices/nariShakti/narishakti.jpeg" alt="" />
+                        <img className='w-full h-full object-cover' src="/images/vertices/nariShakti/narishakti.webp" alt="" />
                     </div>
                     <h1 className='font-bold text-2xl md:text-4xl lg:text-5xl'>Unleashing Nari Shakti</h1>
                     <h2 className='font-bold text-lg lg:text-2xl'>“Nari Shakti: Empowering Women, Transforming Worlds”</h2>
@@ -25,7 +25,7 @@ const NariShakti = () => {
                         <div className="w-full flex justify-end">
                             <div className="cylinder w-[90%] lg:w-[50%] h-24 lg:h-36 flex rounded-full p-2 overflow-hidden bg-[#DFDAFF]">
                                 <div className="circle h-20 w-20 lg:h-32 lg:w-32 rounded-full overflow-hidden">
-                                    <img className='w-full h-full object-cover' src="/images/vertices/nariShakti/boost.png" alt="" />
+                                    <img className='w-full h-full object-cover' src="/images/vertices/nariShakti/boost.webp" alt="" />
                                 </div>
                                 <div className="circle h-full w-[70%] pl-4">
                                     <h1 className='font-semibold lg:text-2xl'>Entrepreneurship Boost</h1>
@@ -44,7 +44,7 @@ const NariShakti = () => {
                                         created by women, for women.</p>
                                 </div>
                                 <div className="circle h-20 w-20 lg:h-32 lg:w-32 rounded-full overflow-hidden">
-                                    <img className='w-full h-full object-cover' src="/images/vertices/nariShakti/skill.png" alt="" />
+                                    <img className='w-full h-full object-cover' src="/images/vertices/nariShakti/skill.webp" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -53,7 +53,7 @@ const NariShakti = () => {
                         <div className="w-full flex justify-end">
                             <div className="cylinder w-[90%] lg:w-[50%] h-24 lg:h-36 flex rounded-full p-2 overflow-hidden bg-[#DFDAFF]">
                                 <div className="circle h-20 w-20 lg:h-32 lg:w-32 rounded-full overflow-hidden">
-                                    <img className='w-full h-full object-cover' src="/images/vertices/nariShakti/networking.png" alt="" />
+                                    <img className='w-full h-full object-cover' src="/images/vertices/nariShakti/networking.webp" alt="" />
                                 </div>
                                 <div className="circle h-full w-[70%] pl-4">
                                     <h1 className='font-semibold lg:text-2xl'>Networking Circles</h1>
@@ -71,7 +71,7 @@ const NariShakti = () => {
                                     <p className='text-xs lg:text-lg font-light leading-none mt-2'>Access exclusive funding programs designed to support women-led startups and businesses. Get financial backing, mentorship, and resources to turn your ideas into reality.</p>
                                 </div>
                                 <div className="circle h-20 w-20 lg:h-32 lg:w-32 rounded-full overflow-hidden">
-                                    <img className='w-full h-full object-cover' src="/images/vertices/nariShakti/Funding.png" alt="" />
+                                    <img className='w-full h-full object-cover' src="/images/vertices/nariShakti/Funding.webp" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@ const NariShakti = () => {
 
             <div className="roots-global w-full h-fit px-5 py-10 md:flex md:gap-20 lg:gap-10 lg:py-20 lg:px-10 bg-[#ECEBFF]">
                 <div className="img-container w-full h-[40vh] lg:h-[75vh] lg:w-[80%] lg:px-10 rounded-md overflow-hidden">
-                    <img className='w-full h-full object-contain' src="/images/vertices/nariShakti/neena.png" alt="" />
+                    <img className='w-full h-full object-contain' src="/images/vertices/nariShakti/neena.webp" alt="" />
                 </div>
                 <div className="w-full h-fit flex flex-col justify-center items-start py-10 lg:px-20">
                     <h1 className='font-bold text-2xl md:text-4xl lg:text-5xl'>Dr. Neena Gayatri</h1>
