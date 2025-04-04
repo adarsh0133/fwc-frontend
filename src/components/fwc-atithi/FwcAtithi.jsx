@@ -50,61 +50,61 @@ const FwcAtithi = () => {
     const start = [{
         title: "Join FWC Akhiti",
         desc: "Fill in your basic details and travel plans to get started with our community.",
-        img: "/images/fwc-atithi/start1.png"
+        img: "/images/fwc-atithi/start1.webp"
     },
     {
         title: "Connect Instantly",
         desc: "Your request reaches all FWC members in your destination city immediately.",
-        img: "/images/fwc-atithi/start2.png"
+        img: "/images/fwc-atithi/start2.webp"
     },
     {
         title: "Get Approved",
         desc: "Available members will approve your request and offer their support.",
-        img: "/images/fwc-atithi/start3.png"
+        img: "/images/fwc-atithi/start3.webp"
     },
     {
         title: "Collaborate",
         desc: "Connect directly with approved members for accommodation and networking.",
-        img: "/images/fwc-atithi/start4.png"
+        img: "/images/fwc-atithi/start4.webp"
     },
     ]
 
     const benefits = [{
         title: "Free Accommodation",
         desc: "Stay with fellow members and save on accommodation costs while traveling. ",
-        img: "/images/fwc-atithi/benefits1.png"
+        img: "/images/fwc-atithi/benefits1.webp"
     },
     {
         title: "Instant Connections",
         desc: "Connect with local members who are ready to support your journey.",
-        img: "/images/fwc-atithi/benefits2.png"
+        img: "/images/fwc-atithi/benefits2.webp"
     },
     {
         title: "Exclusive Networking",
         desc: "Build powerful connections across various industries and backgrounds.",
-        img: "/images/fwc-atithi/benefits3.png"
+        img: "/images/fwc-atithi/benefits3.webp"
     },
     {
         title: "Local Insights",
         desc: "Get personalized recommendations from locals who know their city best.",
-        img: "/images/fwc-atithi/benefits4.png"
+        img: "/images/fwc-atithi/benefits4.webp"
     },
     ]
 
     const cards = [{
         title: "Travel with Purpose",
         description: "Join a community of like-minded travelers who share your passion for exploration.",
-        image: "/images/vertices/eduastra/card1.png"
+        image: "/images/vertices/eduastra/card1.webp"
     },
     {
         title: "Empower Local Communities",
         description: "Support local members by staying with them and contributing to their economy.",
-        image: "/images/vertices/eduastra/card2.png"
+        image: "/images/vertices/eduastra/card2.webp"
     },
     {
         title: "Global Network",
         description: "Expand your network and connect with members from around the world.",
-        image: "/images/vertices/eduastra/card3.png"
+        image: "/images/vertices/eduastra/card3.webp"
     },
     ]
 
@@ -176,7 +176,7 @@ const FwcAtithi = () => {
                     }
                 </div>
                 <div className="hero-image mt-10 lg:w-1/2 lg:h-[50vh] lg:mt-0 lg:px-10 overflow-hidden">
-                    <img src="/images/fwc-atithi/home.png" alt="atithi" className='w-full h-full object-cover rounded-md' />
+                    <img src="/images/fwc-atithi/home.webp" alt="atithi" className='w-full h-full object-cover rounded-md' />
                 </div>
             </div>
             <div className="learning-approch w-full h-fit lg:h-screen px-5 py-10 bg-radial-[at_50%_75%] from-[#00113B] via-[#000d2d] to-[#00040e] to-90% lg:flex lg:flex-col lg:items-center lg:justify-evenly">
@@ -225,7 +225,7 @@ const FwcAtithi = () => {
                     <p className='text-sm lg:text-lg  mt-5 lg:my-5 text-zinc-600'>The power of community is unstoppable when we all come together. Whether you're a traveler, entrepreneur, or start-up enthusiast, FWC Atithi is your gateway to not just a place, but to people, opportunities, and growth. It's about forming lasting connections and creating a supportive network wherever your journey takes you.</p>
                 </div>
                 <div className="hero-image mt-10 lg:w-1/2 lg:h-[50vh] lg:mt-0 lg:px-10 overflow-hidden">
-                    <img src="/images/fwc-atithi/whyjoin.png" alt="EduAstra" className='w-full h-full object-cover rounded-md' />
+                    <img src="/images/fwc-atithi/whyjoin.webp" alt="EduAstra" className='w-full h-full object-cover rounded-md' />
                 </div>
             </div>
             <div className="learning-approch w-full h-fit px-5 py-10">
