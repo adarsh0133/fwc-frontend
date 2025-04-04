@@ -32,7 +32,7 @@ const YuvaSakti = () => {
     ]);
 
     const imgs = Array.from({ length: 10 }, (_, index) => ({
-        img: `/images/vertices/yuvaShakti/swiperimg/img${index + 1}.png`,
+        img: `/images/vertices/yuvaShakti/swiperimg/img${index + 1}.webp`,
     }));
 
     const [popup, setpopup] = useState(false);
@@ -109,21 +109,21 @@ const YuvaSakti = () => {
                         }
                     </div>
                     <div className="w-full lg:w-[70%] lg:">
-                        <img src="/images/vertices/yuvaShakti/yuvashaktihero.png" alt="" />
+                        <img src="/images/vertices/yuvaShakti/yuvashaktihero.webp" alt="" />
                     </div>
                 </div>
                 <div className="founder-chairman w-full h-fit bg-radial-[at_50%_75%] from-[#00113B] via-[#000d2d] to-[#00040e] to-90% px-5 text-white md:flex md:items-center md:gap-10">
                     {/* <div className="founder py-10 space-y-5 md:p-20">
                         <h1 className='text-2xl font-bold text-center'>Founder & Chairman</h1>
                         <div className="founder-img w-full">
-                            <img className='w-full h-full object-cover' src="/images/vertices/yuvaShakti/ys-cksir.png" alt="" />
+                            <img className='w-full h-full object-cover' src="/images/vertices/yuvaShakti/ys-cksir.webp" alt="" />
                         </div>
                         <p className='text-sm font-bold text-center'>One World | One Community | One Future</p>
                     </div> */}
                     <div className="founder py-5 space-y-5 md:p-20">
                         <h1 className='text-2xl font-bold text-center'>President</h1>
                         <div className="founder-img w-full sm:w-[70%] sm:mx-auto lg:w-[50%]">
-                            <img className='w-full h-full object-cover' src="/images/vertices/yuvaShakti/president.png" alt="" />
+                            <img className='w-full h-full object-cover' src="/images/vertices/yuvaShakti/president.webp" alt="" />
                         </div>
                         <p className='text-sm font-bold text-center'>Helping Students in Crossing their Skylimits</p>
                     </div>
@@ -151,7 +151,7 @@ const YuvaSakti = () => {
                 </div>
                 <div className="yashobhoomi w-full h-fit py-10 lg:flex lg:px-20 lg:gap-10 lg:items-center lg:justify-center lg:bg-radial-[at_50%_75%] from-[#00113B] via-[#000d2d] to-[#00040e] to-90%">
                     <div className="yasho-img w-full lg:w-1/2">
-                        <img className='w-full object-cover' src="/images/vertices/yuvaShakti/ysaho.png" alt="" />
+                        <img className='w-full object-cover' src="/images/vertices/yuvaShakti/ysaho.webp" alt="" />
                     </div>
                     <div className="yasho-text px-5 space-y-5 lg:w-1/2">
                         <div className="lg:text-white">
