@@ -85,10 +85,10 @@ const Nav = () => {
                   onMouseLeave={() => handleMouseLeave('benefits')}
                   className="absolute z-[99] flex flex-col top-[70px] -left-10 w-fit p-4 bg-white text-black border border-gray-200 shadow-lg font-normal text-sm"
                 >
-                  <a href="/events" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  {/* <a href="/events" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/gmeet.png" alt="Weekly Meetups" />
                     <p className='whitespace-nowrap'>Weekly Meetups</p>
-                  </a>
+                  </a> */}
                   <Link to="/investor-circle" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/dollar.png" alt="Investor Circle" />
                     <p className='whitespace-nowrap'>Investor Circle</p>
@@ -124,11 +124,11 @@ const Nav = () => {
                 </div>
               )}
             </li>
-            <li className='cursor-pointer'>
+            {/* <li className='cursor-pointer'>
               <a href={'/events'}>
                 Events
               </a>
-            </li>
+            </li> */}
             <li className='cursor-pointer'>
               <a href="/fwc-stories">
                 FWC Stories
@@ -258,10 +258,10 @@ const Nav = () => {
               transition={{ duration: .3, ease: "easeInOut" }}
               className="w-full  overflow-hidden"
             >
-              <a href="/events" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              {/* <a href="/events" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Weekly Meetups</p>
-              </a>
+              </a> */}
               <Link to="/investor-circle" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70   hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Investor Circle</p>
@@ -296,11 +296,11 @@ const Nav = () => {
               </a>
             </motion.div>
           </div>
-          <div className="w-full">
+          {/* <div className="w-full">
             <a href={'/events'} className='w-fit flex items-center gap-2 h-fit cursor-pointer'>
               Events
             </a>
-          </div>
+          </div> */}
           <div className="w-full">
             <a href={'/fwc-stories'} className='w-fit flex items-center gap-2 h-fit cursor-pointer'>
               FWC Stories
