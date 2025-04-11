@@ -63,7 +63,7 @@ const Nav = () => {
   return (
     <>
       <div className='fixed z-50 hidden lg:flex  w-full lg:px-4 xl:px-10 h-[10vh]  bg-zinc-900  justify-between items-center'>
-        <div className="logo w-40">
+        <div className="logo w-20 overflow-hidden h-full ">
           <a href="/">
             <img className='w-full h-full object-cover' src="/images/Home/logo.jpg" alt="Logo" />
           </a>
