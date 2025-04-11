@@ -180,7 +180,7 @@ export const Home = () => {
       </div>
       <div className="w-full h-[70vh] max-[600px]:h-fit max-[600px]:p-5 flex max-[600px]:flex-col items-center justify-center bg-radial-[at_50%_75%] from-[#00113B] via-[#000d2d] to-[#00040e] to-90%">
         <div className="h-full w-[40%] max-[600px]:w-full  p-16 max-[600px]:p-10">
-          <img className='w-full h-full object-cover brightness-90' src="/images/Home/ckashok sir.JPG" alt="" />
+          <img className='w-full h-full object-cover brightness-90' src="/images/Home/ckashok sir.webp" alt="" />
         </div>
         <div className="h-full w-[40%] max-[600px]:w-full max-[600px]:mt-5 flex flex-col items-start text-white justify-center">
           <p className='text-4xl max-[600px]:text-2xl font-bold'>CK Ashok Kumar </p>

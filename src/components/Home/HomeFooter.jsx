@@ -23,8 +23,8 @@ const HomeFooter = () => {
             <div className=" w-[30%] max-[600px]:w-full flex flex-col h-fit max-[600px]:grid max-[600px]:grid-cols-1 lg:mt-8">
               <div className="image-wrapper w-[300px]">
                 <img
-                  className="max-[600px]:w-[60%] max-[600px]:mt-6 w-1/2"
-                  src="/images/Home/logo.png"
+                  className="max-[600px]:w-[40%] max-[600px]:mt-6 w-1/2 border-2"
+                  src="/images/Home/logo.jpg"
                   alt=""
                 />
                 <div>
