@@ -9,17 +9,18 @@ import { Signup } from './components/Login/Signup/Signup';
 import { AdminRoutes } from './Routes/AdminRoutes';
 import AdminProtectedRoute from './utils/AdminProtectedRoute';
 import ErrorPage from './components/Home/ErrorPage';
-import Events from './components/Events/Events';
+// import Events from './components/Events/Events';
 import Terms from './components/Tndc';
 import InvestorCircle from './components/investorCircle/InvestorCircle';
-import Thofa from './components/vertices/Thofa';
-import Ayush from './components/vertices/Ayush';
-import YuvaSakti from './components/vertices/YuvaSakti';
-import EduAstra from './components/vertices/EduAstra';
+import Thofa from './components/verticles/Thofa';
+import Ayush from './components/verticles/Ayush';
+import YuvaSakti from './components/verticles/YuvaSakti';
+import EduAstra from './components/verticles/EduAstra';
 import LeadershipHome from './components/leadership/LeadershipHome';
 import FwcAtithi from './components/fwc-atithi/FwcAtithi';
 import FwcStories from './components/FWC Stories/FwcStories';
 import Aboutus from './components/Aboutus/Aboutus';
+import NariShakti from './components/verticles/NariShakti';
 
 const App = () => {
 
@@ -40,7 +41,7 @@ const App = () => {
         <Route path="/Signup" element={<GoogleAuthWrapper isLogin={false} />} />
         <Route path="/login" element={<GoogleAuthWrapper isLogin={true} />} />
         <Route path="/partner/*" element={<PartnerRoutes />} />
-        <Route path="/events" element={<Events />} />
+        {/* <Route path="/events" element={<Events />} /> */}
         <Route path="/admin/*" element={
           <AdminProtectedRoute>
             <AdminRoutes />
@@ -49,11 +50,13 @@ const App = () => {
         <Route path='/privacy-policy' element={<Terms />} />
         <Route path='/investor-circle' element={<InvestorCircle />} />
 
-        {/* VERTICES ROUTES */}
-        <Route path='/vertices/thofa' element={<Thofa />} />
-        <Route path='/vertices/integrated-ayush' element={<Ayush />} />
-        <Route path='/vertices/yuva-shakti-international' element={<YuvaSakti />} />
-        <Route path='/vertices/edu-astra' element={<EduAstra />} />
+        {/* verticles ROUTES */}
+        <Route path='/verticles/thofa' element={<Thofa />} />
+        <Route path='/verticles/integrated-ayush' element={<Ayush />} />
+        <Route path='/verticles/yuva-shakti-international' element={<YuvaSakti />} />
+        <Route path='/verticles/edu-astra' element={<EduAstra />} />
+        {/* NARISHAKTI ROUTE */}
+        <Route path='/verticles/nari-shakti' element={<NariShakti/> } />
 
         {/* LEADERSHIP ROUTES */}
         <Route path='/leadership' element={<LeadershipHome />} />
@@ -64,7 +67,7 @@ const App = () => {
 
         {/* ABOUTUS ROUTE */}
         <Route path='/about-us' element={<Aboutus />} />
-        
+      
       </Routes>
     </div>
   )

@@ -180,6 +180,9 @@ export const PartnerForm = () => {
       case "coreteammember":
         setUserInput((prevInput) => ({ ...prevInput, categoryprice: 11999 }));
         break;
+      case "nariShakti":
+        setUserInput((prevInput) => ({ ...prevInput, categoryprice: 1999 }));
+        break;
       default:
         setUserInput((prevInput) => ({ ...prevInput, categoryprice: 1999 }));
     }
@@ -765,6 +768,7 @@ export const PartnerForm = () => {
             <option value="Startup/Business">Startup/Business</option>
             <option value="Investor">Investor</option>
             <option value="coreteammember">Core Team Member</option>
+            <option value="nariShakti">Nari Shakti</option>
           </select>
 
           {/* Referred By */}
