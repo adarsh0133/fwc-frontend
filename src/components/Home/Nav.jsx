@@ -65,7 +65,7 @@ const Nav = () => {
       <div className='fixed z-50 hidden lg:flex  w-full lg:px-4 xl:px-10 h-[10vh]  bg-zinc-900  justify-between items-center'>
         <div className="logo w-40">
           <a href="/">
-            <img className='w-full h-full object-cover' src="/images/Home/logo.png" alt="Logo" />
+            <img className='w-full h-full object-cover' src="/images/Home/logo.jpg" alt="Logo" />
           </a>
         </div>
         <div className="nav-links relative h-full max-[600px]:hidden">
