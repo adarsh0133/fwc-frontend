@@ -116,7 +116,7 @@ const Nav = () => {
                   </a>
                   <a href="/zoom-premium" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/zoom.png" alt="Zoom Premium" />
-                    <p className='whitespace-nowrap'>Zoom Premium</p>
+                    <p className='whitespace-nowrap'>Event Organiser</p>
                   </a>
                   <a href="/spotlight-boost" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/spotlight.png" alt="Spotlight Boost" />
@@ -295,7 +295,7 @@ const Nav = () => {
               </a>
               <a href="/zoom-premium" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
-                <p className='whitespace-nowrap'>Zoom Premium</p>
+                <p className='whitespace-nowrap'>Event Organiser</p>
               </a>
               <a href="/spotlight-boost" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70   hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />

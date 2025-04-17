@@ -1,4 +1,4 @@
-const MAX_FILE_SIZE_MB = 1;
+const MAX_FILE_SIZE_MB = 5;
 
 export const isFileSizeValid = (file, maxSizeMB = MAX_FILE_SIZE_MB) => {
   if (!file) return true; // No file selected yet
