@@ -101,13 +101,13 @@ const HomeFooter = () => {
                     Resource Library
                   </a>
                   <a
-                    href="#"
+                    href="/zoom-premium"
                     className="text-gray-500 block text-sm font-medium"
                   >
-                    Zoom Premium
+                    Event Organiser
                   </a>
                   <a
-                    href="#"
+                    href="/spotlight-boost"
                     className="text-gray-500 block text-sm font-medium"
                   >
                     Spotlight Boost
@@ -117,28 +117,36 @@ const HomeFooter = () => {
               <div className="section">
                 <h2 className=" font-semibold mb-2 uppercase">Vertices</h2>
                 <div className="mt-14 max-[600px]:mt-5 flex flex-col gap-3 mb-10">
-                  <Link
-
+                  <a
+                    href={'/verticles/yuva-shakti-international'}
                     className="text-gray-500 block font-medium text-sm"
                   >
                     Yuva Shakti International
-                  </Link>
+                  </a>
+                  <a
+                    href='/verticles/nari-shakti'
+                    className="text-gray-500 block font-medium text-sm"
+                  >
+                    Nari Shakti
+                  </a>
                   <a
                     href='/vertices/thofa'
                     className="text-gray-500 block font-medium text-sm"
                   >
                     THOFA
                   </a>
-                  <Link
+                  <a 
+                    href="/verticles/edu-astra"
                     className="text-gray-500 block font-medium text-sm"
                   >
                     Edu Asthra
-                  </Link>
-                  <Link
+                  </a>
+                  <a
+                    href="/verticles/integrated-ayush"
                     className="text-gray-500 block font-medium text-sm"
                   >
                     Integrated Ayush
-                  </Link>
+                  </a>
                 </div>
                 <Link to={'/partner'} className="bg-[#000000] text-white py-2 px-4 whitespace-nowrap  font-semibold rounded-full cursor-pointer max-[600px]:-ml-4">Become a Member</Link>
               </div>
@@ -148,13 +156,13 @@ const HomeFooter = () => {
                 <div className="mt-14 max-[600px]:mt-5 flex flex-col gap-3">
 
                   <a
-                    href="#"
+                    href="/about-us"
                     className="text-gray-500 block text-sm font-medium"
                   >
                     About Us
                   </a>
                   <a
-                    href="#"
+                    href="/leadership"
                     className="text-gray-500 block text-sm font-medium"
                   >
                     Leadership
