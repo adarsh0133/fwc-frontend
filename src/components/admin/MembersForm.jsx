@@ -30,13 +30,13 @@ function AllMembers() {
     };
     fetchData();
   }, [dispatch]);
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         setcomploading(true);
         const response = await dispatch(getMemberDetails());
-        const filteredMembers = response.members.filter(member => 
+        const filteredMembers = response.members.filter(member =>
           member.financialAidBenefit && member.financialAidCommitment && member.financialAidReason
         );
         setFAForms(filteredMembers);
@@ -181,7 +181,7 @@ function AllMembers() {
                             <p className={` w-fit py-2 rounded-lg text-white  px-4 ${payment.status === "created"
                               ? "bg-blue-400"
                               : payment.status === "paid"
-                                ? "bg-green-400"
+                                ? "bg-green-500"
                                 : payment.status === "cancelled"
                                   ? "bg-red-400"
                                   : ""
@@ -214,10 +214,18 @@ function AllMembers() {
                                   </button>
                                 ) : (
                                   <button
-                                    className="bg-green-500 cursor-pointer px-4 py-2 rounded-lg text-white"
-                                    onClick={() => ApproveHandler(user.email)}
+                                    className={`px-4 py-2 rounded-lg text-white ${payment.status === "created"
+                                        ? "bg-gray-400 cursor-not-allowed"
+                                        : "bg-green-500 cursor-pointer"
+                                      }`}
+                                    onClick={() => {
+                                      if (payment.status === "paid") {
+                                        ApproveHandler(user.email);
+                                      }
+                                    }}
+                                    disabled={payment.status === "created"}
                                   >
-                                    Approve Member
+                                    {payment.status === "created" ? "Payment Pending" : "Approve Member"}
                                   </button>
                                 )}
                               </td>

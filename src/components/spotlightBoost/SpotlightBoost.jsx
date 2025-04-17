@@ -3,7 +3,7 @@ import Nav from '../Home/Nav'
 import HomeFooter from '../Home/HomeFooter'
 import PopUpForm from '../../UI/PopUpForm';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { submitSpotlightBoost } from '../../store/Actions/partnerAction';
 import { toast } from 'react-toastify';
 
@@ -104,12 +104,16 @@ const SpotlightBoost = () => {
                     !isAuth ? (
                         <button onClick={checkLoginHandler} className='mt-5 cursor-pointer bg-[#020F2F] text-white rounded-full px-5 py-2'>Become a Member</button>
                     ) : (
-                        <button onClick={() => setPopup(true)} className='mt-5 cursor-pointer bg-[#020F2F] text-white rounded-full px-5 py-2'>Apply Now</button>
+                        user.role === 'member' ? (
+                            <button onClick={() => setPopup(true)} className='mt-5 cursor-pointer bg-[#020F2F] text-white rounded-full px-5 py-2'>Apply Now</button>) :
+                            (
+                                <Link to={'/partner'} className='mt-5 cursor-pointer bg-[#020F2F] text-white rounded-full px-5 py-2'>Become a Member</Link>
+                            )
                     )
                 }
             </div>
             {popup && (
-                user.role === 'member' ? (
+                user.role === 'member' && (
                     <PopUpForm
                         setpopup={setPopup}
                         // fields={fields.filter((field) => !field.hidden)}
@@ -126,14 +130,7 @@ const SpotlightBoost = () => {
                             We’ll review your application and notify you within 7 days. Approved? Get ready to shine!
                         </p>
                     </PopUpForm>
-                ) :
-                    (
-                        (() => {
-                            window.alert("Only members can apply for Spotlight Boost.");
-                            setPopup(false);
-                            return null;
-                        })()
-                    ))}
+                ))}
 
 
             <div className="howItWorks w-full h-fit px-5 bg-[#DFDCFF] py-10 md:px-20 lg:px-40 lg:flex lg:justify-evenly lg:items-center lg:h-[80vh] lg:gap-36">
