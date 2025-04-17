@@ -6,7 +6,6 @@ const HomePageSpotlight = () => {
     const [spotlights, setSpotlights] = useState([]);
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch();
-    console.log(spotlights, "spotlight");
 
     useEffect(() => {
         const fetchSpotlights = async () => {

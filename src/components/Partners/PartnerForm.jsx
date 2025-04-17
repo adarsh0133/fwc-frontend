@@ -15,6 +15,7 @@ export const PartnerForm = () => {
   const [showFinancialAid, setShowFinancialAid] = useState(false);
   const { user } = useSelector(state => state.user)
   const [userInput, setUserInput] = useState({
+    userId: null,
     // first step
     fullName: "",
     contact: "",
@@ -121,7 +122,7 @@ export const PartnerForm = () => {
     try {
       const order = await dispatch(sendMemberPayment(userInput));
       const options = {
-        key: key,
+        key: "rzp_live_9WOK0fTG1KbtbE",
         amount: userInput.amount,
         currency: "INR",
         name: "FWC Membership",
@@ -147,7 +148,7 @@ export const PartnerForm = () => {
           wallet: false,
           paylater: false,
           banktransfer: true,
-          qr: false,
+          qr: true,
         },
       };
       const razor = new window.Razorpay(options);
@@ -161,6 +162,7 @@ export const PartnerForm = () => {
 
   if (user) {
     userInput.email = user.email
+    userInput.userId = user._id
   }
   useEffect(() => {
     dispatch(currentUser())
