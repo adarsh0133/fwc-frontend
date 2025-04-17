@@ -113,11 +113,11 @@ export const PartnerForm = () => {
       alert("Please accept the terms and conditions to proceed!");
       return;
     }
-    // if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country || !userInput.userType || !userInput.lookingForCollaboration || !userInput.needFWCConnection || !userInput.offerServices || !userInput.platform || !userInput.needTechSupport || !userInput.helpInBranding || !userInput.investmentSupport || !userInput.expandInternationally || !userInput.membershipCategory )
-    //  {
-    //   alert("Please fill all the fields to proceed!");
-    //   return;
-    // }
+    if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country || !userInput.userType || !userInput.lookingForCollaboration || !userInput.needFWCConnection || !userInput.offerServices || !userInput.platform || !userInput.needTechSupport || !userInput.helpInBranding || !userInput.investmentSupport || !userInput.expandInternationally || !userInput.membershipCategory )
+     {
+      alert("Please fill all the fields to proceed!");
+      return;
+    }
     setformLoading(true)
     try {
       const order = await dispatch(sendMemberPayment(userInput));

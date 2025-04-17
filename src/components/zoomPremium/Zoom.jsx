@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import HomeFooter from '../Home/HomeFooter'
 import Nav from '../Home/Nav'
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { submitZoomPremium } from '../../store/Actions/partnerAction';
 import { currentUser } from '../../store/Actions/userAction';
 
@@ -141,28 +141,28 @@ const Zoom = () => {
                     ))
                 }
             </div>
-                <div className="threeSimpleSteps h-fit w-full bg-[#F6F5FD] lg:py-10">
-                    <h1 className='text-center text-xl lg:text-3xl font-semibold'>Three Simple Steps to Success</h1>
-                    <div className="steps py-10 flex flex-col items-center gap-5 lg:flex-row lg:items-center lg:justify-center lg:gap-10">
-                        <div className="num1 center flex-col">
-                            <div className="circle center size-20 rounded-full border-[2px] ">1</div>
-                            <h1 className='text-xl font-semibold mt-5'>Submit Details</h1>
-                            <p className='text-lg'>Share your event vision</p>
-                        </div>
-                        <div className="Arrow"></div>
-                        <div className="num1 center flex-col">
-                            <div className="circle center size-20 rounded-full border-[2px] ">2</div>
-                            <h1 className='text-xl font-semibold mt-5'>We Setup</h1>
-                            <p className='text-lg'>72hr approval process</p>
-                        </div>
-                        <div className="Arrow"></div>
-                        <div className="num1 center flex-col">
-                            <div className="circle center size-20 rounded-full border-[2px] ">3</div>
-                            <h1 className='text-xl font-semibold mt-5'>Go Live</h1>
-                            <p className='text-lg'>Share your event vision</p>
-                        </div>
+            <div className="threeSimpleSteps h-fit w-full bg-[#F6F5FD] lg:py-10">
+                <h1 className='text-center text-xl lg:text-3xl font-semibold'>Three Simple Steps to Success</h1>
+                <div className="steps py-10 flex flex-col items-center gap-5 lg:flex-row lg:items-center lg:justify-center lg:gap-10">
+                    <div className="num1 center flex-col">
+                        <div className="circle center size-20 rounded-full border-[2px] ">1</div>
+                        <h1 className='text-xl font-semibold mt-5'>Submit Details</h1>
+                        <p className='text-lg'>Share your event vision</p>
+                    </div>
+                    <div className="Arrow"></div>
+                    <div className="num1 center flex-col">
+                        <div className="circle center size-20 rounded-full border-[2px] ">2</div>
+                        <h1 className='text-xl font-semibold mt-5'>We Setup</h1>
+                        <p className='text-lg'>72hr approval process</p>
+                    </div>
+                    <div className="Arrow"></div>
+                    <div className="num1 center flex-col">
+                        <div className="circle center size-20 rounded-full border-[2px] ">3</div>
+                        <h1 className='text-xl font-semibold mt-5'>Go Live</h1>
+                        <p className='text-lg'>Share your event vision</p>
                     </div>
                 </div>
+            </div>
 
             <div id='formpage' className="form-age w-full py-10">
                 <h1 className='text-2xl font-semibold text-center lg:text-3xl'>Ignite Your Stage</h1>
@@ -171,137 +171,252 @@ const Zoom = () => {
                     onSubmit={handleSubmit}
                     className="max-w-3xl mx-auto bg-white p-5 rounded-lg shadow-md space-y-5 border mt-5 border-gray-300"
                 >
-                    {/* Event Type */}
-                    <div className="flex flex-col">
-                        <label htmlFor="eventType" className="text-sm font-medium mb-1">
-                            Event Type
-                        </label>
-                        <select
-                            name="type"
-                            id="eventType"
-                            value={formData.type}
-                            onChange={handleChange}
-                            className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
-                            required
-                        >
-                            <option value="">Select Event Type</option>
-                            <option value="Class">Class</option>
-                            <option value="Webinar">Webinar</option>
-                            <option value="Event">Event</option>
-                            <option value="Others">Others</option>
-                        </select>
-                    </div>
+                    {!isAuth || user.role !== 'member' ? (
+                        <>
+                            <div className="text-center">
+                                <p className="text-lg font-semibold text-red-500">
+                                    Please become a member to fill out this form.
+                                </p>
+                                <button
+                                    onClick={checkLoginHandler}
+                                    type="button"
+                                    className="mt-5 cursor-pointer bg-[#020F2F] text-white rounded-full px-5 py-2"
+                                >
+                                    Become a Member
+                                </button>
+                            </div>
+                            {/* Disabled Form Fields */}
+                            <fieldset disabled className="opacity-50">
+                                {/* Event Type */}
+                                <div className="flex flex-col">
+                                    <label htmlFor="eventType" className="text-sm font-medium mb-1">
+                                        Event Type
+                                    </label>
+                                    <select
+                                        name="type"
+                                        id="eventType"
+                                        className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
+                                    >
+                                        <option value="">Select Event Type</option>
+                                        <option value="Class">Class</option>
+                                        <option value="Webinar">Webinar</option>
+                                        <option value="Event">Event</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
 
-                    {/* Event Title */}
-                    <div className="flex flex-col">
-                        <label htmlFor="eventTitle" className="text-sm font-medium mb-1">
-                            Event Title
-                        </label>
-                        <input
-                            type="text"
-                            name="title"
-                            id="eventTitle"
-                            placeholder="e.g., Startup Secrets Webinar"
-                            value={formData.title}
-                            onChange={handleChange}
-                            className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
-                            required
-                        />
-                    </div>
+                                {/* Event Title */}
+                                <div className="flex flex-col">
+                                    <label htmlFor="eventTitle" className="text-sm font-medium mb-1">
+                                        Event Title
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="title"
+                                        id="eventTitle"
+                                        placeholder="e.g., Startup Secrets Webinar"
+                                        className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
+                                    />
+                                </div>
 
-                    {/* Date */}
-                    <div className="flex flex-col">
-                        <label htmlFor="date" className="text-sm font-medium mb-1">
-                            Date
-                        </label>
-                        <input
-                            type="date"
-                            name="date"
-                            id="date"
-                            value={formData.date}
-                            onChange={handleChange}
-                            className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
-                            required
-                        />
-                    </div>
+                                {/* Date */}
+                                <div className="flex flex-col">
+                                    <label htmlFor="date" className="text-sm font-medium mb-1">
+                                        Date
+                                    </label>
+                                    <input
+                                        type="date"
+                                        name="date"
+                                        id="date"
+                                        className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
+                                    />
+                                </div>
 
-                    {/* Description */}
-                    <div className="flex flex-col">
-                        <label htmlFor="description" className="text-sm font-medium mb-1">
-                            Description
-                        </label>
-                        <textarea
-                            name="description"
-                            id="description"
-                            placeholder="Describe your event"
-                            value={formData.description}
-                            onChange={handleChange}
-                            className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
-                            rows="4"
-                            required
-                        ></textarea>
-                    </div>
+                                {/* Description */}
+                                <div className="flex flex-col">
+                                    <label htmlFor="description" className="text-sm font-medium mb-1">
+                                        Description
+                                    </label>
+                                    <textarea
+                                        name="description"
+                                        id="description"
+                                        placeholder="Describe your event"
+                                        className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
+                                        rows="4"
+                                    ></textarea>
+                                </div>
 
-                    {/* Audience Goal */}
-                    <div className="flex flex-col">
-                        <label htmlFor="audienceGoal" className="text-sm font-medium mb-1">
-                            Audience Goal
-                        </label>
-                        <select
-                            name="audience"
-                            id="audienceGoal"
-                            value={formData.audience}
-                            onChange={handleChange}
-                            className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
-                            required
-                        >
-                            <option value="">Select Audience Goal</option>
-                            <option value="<50">&lt;50</option>
-                            <option value="50-100">50-100</option>
-                            <option value="100+">100+</option>
-                            <option value="Not sure">Not sure</option>
-                        </select>
-                    </div>
+                                {/* Audience Goal */}
+                                <div className="flex flex-col">
+                                    <label htmlFor="audienceGoal" className="text-sm font-medium mb-1">
+                                        Audience Goal
+                                    </label>
+                                    <select
+                                        name="audience"
+                                        id="audienceGoal"
+                                        className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
+                                    >
+                                        <option value="">Select Audience Goal</option>
+                                        <option value="<50">&lt;50</option>
+                                        <option value="50-100">50-100</option>
+                                        <option value="100+">100+</option>
+                                        <option value="Not sure">Not sure</option>
+                                    </select>
+                                </div>
 
-                    {/* Thumbnail */}
-                    <div className="flex flex-col">
-                        <label htmlFor="thumbnail" className="text-sm font-medium mb-1">
-                            Thumbnail (Optional)
-                        </label>
-                        <input
-                            type="file"
-                            name="thumbnail"
-                            id="thumbnail"
-                            accept="image/jpeg, image/png"
-                            onChange={handleFileChange}
-                            className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
-                        />
-                        {thumbnailError && (
-                            <p className="text-sm text-red-500 mt-1">{thumbnailError}</p>
-                        )}
-                        {formData.thumbnail && (
-                            <p className="text-sm text-gray-500 mt-1">
-                                Selected File: {formData.thumbnail.name}
-                            </p>
-                        )}
-                    </div>
+                                {/* Thumbnail */}
+                                <div className="flex flex-col">
+                                    <label htmlFor="thumbnail" className="text-sm font-medium mb-1">
+                                        Thumbnail (Optional)
+                                    </label>
+                                    <input
+                                        type="file"
+                                        name="thumbnail"
+                                        id="thumbnail"
+                                        accept="image/jpeg, image/png"
+                                        className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
+                                    />
+                                </div>
+                            </fieldset>
+                        </>
+                    ) : (
+                        <>
+                            {/* Form Fields for Members */}
+                            {/* Event Type */}
+                            <div className="flex flex-col">
+                                <label htmlFor="eventType" className="text-sm font-medium mb-1">
+                                    Event Type
+                                </label>
+                                <select
+                                    name="type"
+                                    id="eventType"
+                                    value={formData.type}
+                                    onChange={handleChange}
+                                    className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
+                                    required
+                                >
+                                    <option value="">Select Event Type</option>
+                                    <option value="Class">Class</option>
+                                    <option value="Webinar">Webinar</option>
+                                    <option value="Event">Event</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
 
-                    {/* Submit Button */}
-                    <div className="flex justify-center">
-                        {
-                            !isAuth ? (
-                                <button onClick={checkLoginHandler} className='mt-5 cursor-pointer bg-[#020F2F] text-white rounded-full px-5 py-2'>Become a Member</button>
-                            ) : (
-                                loading ? (
-                                    <button disabled className="bg-blue-500 text-white px-5 py-2 rounded-md hover:bg-blue-600">Loading...</button>
+                            {/* Event Title */}
+                            <div className="flex flex-col">
+                                <label htmlFor="eventTitle" className="text-sm font-medium mb-1">
+                                    Event Title
+                                </label>
+                                <input
+                                    type="text"
+                                    name="title"
+                                    id="eventTitle"
+                                    placeholder="e.g., Startup Secrets Webinar"
+                                    value={formData.title}
+                                    onChange={handleChange}
+                                    className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
+                                    required
+                                />
+                            </div>
+
+                            {/* Date */}
+                            <div className="flex flex-col">
+                                <label htmlFor="date" className="text-sm font-medium mb-1">
+                                    Date
+                                </label>
+                                <input
+                                    type="date"
+                                    name="date"
+                                    id="date"
+                                    value={formData.date}
+                                    onChange={handleChange}
+                                    className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
+                                    required
+                                />
+                            </div>
+
+                            {/* Description */}
+                            <div className="flex flex-col">
+                                <label htmlFor="description" className="text-sm font-medium mb-1">
+                                    Description
+                                </label>
+                                <textarea
+                                    name="description"
+                                    id="description"
+                                    placeholder="Describe your event"
+                                    value={formData.description}
+                                    onChange={handleChange}
+                                    className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
+                                    rows="4"
+                                    required
+                                ></textarea>
+                            </div>
+
+                            {/* Audience Goal */}
+                            <div className="flex flex-col">
+                                <label htmlFor="audienceGoal" className="text-sm font-medium mb-1">
+                                    Audience Goal
+                                </label>
+                                <select
+                                    name="audience"
+                                    id="audienceGoal"
+                                    value={formData.audience}
+                                    onChange={handleChange}
+                                    className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
+                                    required
+                                >
+                                    <option value="">Select Audience Goal</option>
+                                    <option value="<50">&lt;50</option>
+                                    <option value="50-100">50-100</option>
+                                    <option value="100+">100+</option>
+                                    <option value="Not sure">Not sure</option>
+                                </select>
+                            </div>
+
+                            {/* Thumbnail */}
+                            <div className="flex flex-col">
+                                <label htmlFor="thumbnail" className="text-sm font-medium mb-1">
+                                    Thumbnail (Optional)
+                                </label>
+                                <input
+                                    type="file"
+                                    name="thumbnail"
+                                    id="thumbnail"
+                                    accept="image/jpeg, image/png"
+                                    onChange={handleFileChange}
+                                    className="border border-gray-300 rounded-md p-2 focus:outline-none focus-within:ring-2 ring-blue-500"
+                                />
+                                {thumbnailError && (
+                                    <p className="text-sm text-red-500 mt-1">{thumbnailError}</p>
+                                )}
+                                {formData.thumbnail && (
+                                    <p className="text-sm text-gray-500 mt-1">
+                                        Selected File: {formData.thumbnail.name}
+                                    </p>
+                                )}
+                            </div>
+
+                            {/* Submit Button */}
+                            <div className="flex justify-center">
+                                {loading ? (
+                                    <button
+                                        disabled
+                                        className="bg-blue-500 text-white px-5 py-2 rounded-md hover:bg-blue-600"
+                                    >
+                                        Loading...
+                                    </button>
                                 ) : (
-                                    <button type="submit" className="bg-blue-500 text-white px-5 py-2 rounded-md hover:bg-blue-600">Ignite Now 🔥</button>
-                                )
-
-                            )
-                        }
-
-                    </div>
+                                    <button
+                                        type="submit"
+                                        className="bg-blue-500 text-white px-5 py-2 rounded-md hover:bg-blue-600"
+                                    >
+                                        Ignite Now 🔥
+                                    </button>
+                                )}
+                            </div>
+                        </>
+                    )}
                 </form>
             </div>
 
