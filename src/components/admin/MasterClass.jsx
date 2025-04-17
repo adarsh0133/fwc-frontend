@@ -115,7 +115,7 @@ const MasterClass = () => {
             ) : (
                 <div>
                     <div className="flex items-center justify-between h-[10vh] px-10">
-                        <p className="font-medium text-xl">All Events</p>
+                        <p className="font-medium text-xl">All Master Class</p>
                         <button
                             onClick={() => {
                                 setformData({

@@ -40,7 +40,7 @@ const AllYuvaShakti = () => {
             ) : (
                 <div className="overflow-hidden font-medium">
                     <div className="w-full text-2xl pt-5 font-medium uppercase flex items-center justify-center">
-                        <p>All Atithi Details</p>
+                        <p>All YuvaShakti Details</p>
                     </div>{" "}
                     <br />
                     <div className="w-full flex justify-center mb-5">

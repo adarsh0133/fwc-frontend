@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import PopUpForm from '../../UI/PopUpForm';
 import { submitAtithiDetails } from '../../store/Actions/partnerAction';
+import { toast } from 'react-toastify';
 
 const FwcAtithi = () => {
     const { user } = useSelector(state => state.user);
@@ -43,7 +44,6 @@ const FwcAtithi = () => {
         } catch (error) {
             toast.error(error.response.data.message);
         }
-        console.log('Form Data:', formData);
         setpopup(false);
     };
 
