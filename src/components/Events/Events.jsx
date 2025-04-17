@@ -72,7 +72,7 @@ const Events = () => {
 			<Nav />
 			<div className="bg-[#FBFBFB] w-full h-screen px-16 pt-32 flex max-[600px]:flex-col max-[600px]:h-fit max-[600px]:px-8 max-[600px]:pt-20">
 				<div className="hero-text w-1/2 max-[600px]:w-full font-semibold">
-					<h1 className='text-7xl max-[600px]:text-3xl max-[600px]:font-bold'><span className='text-[#E74C3C]'>Weakley</span> Meetups</h1>
+					<h1 className='text-7xl max-[600px]:text-3xl max-[600px]:font-bold'><span className='text-[#E74C3C]'>Weekley</span> Meetups</h1>
 					<h2 className='text-3xl max-[600px]:text-xl my-6 max-[600px]:my-3 font-bold'>Your Weekly Dose of Inspiration</h2>
 					<p className='w-[65%] max-[600px]:w-full text-zinc-700 max-[600px]:leading-tight'>Join us every week for dynamic meetups designed to spark ideas and connections. Expect networking, guest speakers, and workshops—available both in-person and virtually</p>
 
