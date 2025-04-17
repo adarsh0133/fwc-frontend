@@ -95,7 +95,7 @@ const SpotlightBoost = () => {
     return (
         <>
             <Nav />
-            <div className="homepage w-full h-screen bg-amber-50 center flex-col px-5 text-center md:px-20">
+            <div className="homepage w-full h-screen bg-amber-50 center flex-col px-5 text-center md:px-20 bg-[url('/images/zoomprem/bgdot.png')] bg-cover bg-center">
                 <h1 className='text-3xl lg:text-5xl font-bold'>FWC <span className='text-[#000DFF]'>Spotlight Boost</span></h1>
                 <h1 className='text-3xl lg:text-5xl font-bold my-3'>Get Your Business in the Spotlight</h1>
                 <h2 className='text-xl lg:text-2xl font-bold mt-2'>Shine Bright with Spotlight Boost</h2>

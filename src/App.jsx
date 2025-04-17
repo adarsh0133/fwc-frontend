@@ -9,7 +9,7 @@ import { Signup } from './components/Login/Signup/Signup';
 import { AdminRoutes } from './Routes/AdminRoutes';
 import AdminProtectedRoute from './utils/AdminProtectedRoute';
 import ErrorPage from './components/Home/ErrorPage';
-// import Events from './components/Events/Events';
+import Events from './components/Events/Events';
 import Terms from './components/Tndc';
 import InvestorCircle from './components/investorCircle/InvestorCircle';
 import Thofa from './components/verticles/Thofa';
@@ -43,7 +43,7 @@ const App = () => {
         <Route path="/Signup" element={<GoogleAuthWrapper isLogin={false} />} />
         <Route path="/login" element={<GoogleAuthWrapper isLogin={true} />} />
         <Route path="/partner/*" element={<PartnerRoutes />} />
-        {/* <Route path="/events" element={<Events />} /> */}
+        <Route path="/events" element={<Events />} />
         <Route path="/admin/*" element={
           <AdminProtectedRoute>
             <AdminRoutes />
