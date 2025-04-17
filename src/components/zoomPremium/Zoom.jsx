@@ -124,7 +124,7 @@ const Zoom = () => {
                     </button>
                 </div>
                 <div className="hero-image mt-10 lg:w-1/2 lg:h-[50vh] lg:mt-0 lg:px-10 overflow-hidden">
-                    <img src="/images/fwc-atithi/home.webp" alt="atithi" className='w-full h-full object-cover rounded-md' />
+                    <img src="/images/Spotlight/eventOrganiser.png" alt="atithi" className='w-full h-full object-cover rounded-md' />
                 </div>
             </div>
 
