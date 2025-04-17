@@ -122,7 +122,7 @@ export const PartnerForm = () => {
     try {
       const order = await dispatch(sendMemberPayment(userInput));
       const options = {
-        key: "rzp_live_9WOK0fTG1KbtbE",
+        key: key,
         amount: userInput.amount,
         currency: "INR",
         name: "FWC Membership",
