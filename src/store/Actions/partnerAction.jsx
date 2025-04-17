@@ -57,7 +57,7 @@ export const RemoveMember = (email) => async (dispatch) => {
 
 export const getMembersPayments = () => async (dispatch) => {
   try {
-    const { data } = await axios.post('/member/all_members_payments', {} ,getBearerToken());
+    const { data } = await axios.post('/member/all_members_payments', {}, getBearerToken());
     return data;
   } catch (error) {
     console.error("Failed to fetch member details:", error);
@@ -66,8 +66,48 @@ export const getMembersPayments = () => async (dispatch) => {
 
 export const submitAtithiDetails = (formData) => async (dispatch) => {
   try {
-    const { data } = await axios.post('/member/submit-fwc-athithi-request', {formData}, getBearerToken());
+    const { data } = await axios.post('/member/submit-fwc-athithi-request', { formData }, getBearerToken());
   } catch (error) {
+    return error;
+  }
+}
+
+export const submitSpotlightBoost = (formData) => async (dispatch) => {
+  try {
+    const realFormData = new FormData();
+    for (const key in formData) {
+      realFormData.append(key, formData[key]);
+    }
+    const config = {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Authorization: getBearerToken().headers.Authorization,
+      },
+    };
+    const { data } = await axios.post('/spotlightBoost/create_spotlight', realFormData, config);
+    return data;
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+};
+
+export const submitZoomPremium = (formData) => async (dispatch) => {
+  try {
+    const realFormData = new FormData();
+    for (const key in formData) {
+      realFormData.append(key, formData[key]);
+    }
+    const config = {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Authorization: getBearerToken().headers.Authorization,
+      },
+    };
+    const { data } = await axios.post('/zoomPremium/create_zoom', realFormData, config);
+    return data;
+  } catch (error) {
+    console.error(error);
     return error;
   }
 }

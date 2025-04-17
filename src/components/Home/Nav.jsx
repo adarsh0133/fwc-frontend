@@ -63,7 +63,7 @@ const Nav = () => {
   return (
     <>
       <div className='fixed z-50 hidden lg:flex  w-full lg:px-4 xl:px-10 h-[10vh]  bg-zinc-900  justify-between items-center'>
-        <div className="logo w-20 bg-emerald-400">
+        <div className="logo w-20">
           <a href="/">
             <img className='w-full h-full object-cover' src="/images/Home/logo.jpg" alt="Logo" />
           </a>
@@ -236,6 +236,7 @@ const Nav = () => {
           <RiMenu2Line />
         </div>
       </div>
+
       <div
         className={`w-full h-fit pb-10 fixed top-0 left-0 z-[9999] lg:hidden transition-transform duration-500 bg-zinc-900 text-white shadow-md rounded-md ${menuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
@@ -399,7 +400,7 @@ const Nav = () => {
             </Link>
           </div>
         )}
-      </div>
+      </div>  
     </>
 
   );
