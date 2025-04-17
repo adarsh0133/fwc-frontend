@@ -85,3 +85,7 @@
   font-weight: 700;
   color: #008bdc;
 }
+
+button {
+ cursor: pointer;
+}

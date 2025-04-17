@@ -4,68 +4,68 @@ import axios from "../../utils/axios";
 
 //////////////////////////////////////events actions //////////////////////////////////
 export const getallevents = () => async (dispatch) => {
-    try {
-      dispatch(setLoading(true));
-      const response = await axios.post(
-        "/events/all_event",
-        {},
-        getBearerToken()
-      );
-      dispatch(setLoading(false));
-      return response.data.event;
-    } catch (error) {
-      dispatch(setLoading(false));
-      throw error;
-    }
-  };
-  
-  
-  export const createevents = (data) => async (dispatch) => {
-    try {
-      dispatch(setLoading(true));
-      const response = await axios.post(
-        "/events/create_event",
-        data,
-        getBearerToken()
-      );
-      dispatch(setLoading(false));
-      return response.data.forms;
-    } catch (error) {
-      dispatch(setLoading(false));
-      throw error;
-    }
-  };
-  
-  export const editevents = (data) => async (dispatch) => {
-    // console.log(data);
-    try {
-      dispatch(setLoading(true));
-      const response = await axios.post(
-        "/events/update_event",
-        data,
-        getBearerToken()
-      );
-      dispatch(setLoading(false));
-    } catch (error) {
-      dispatch(setLoading(false));
-      throw error;
-    }
-  };
-  
-  export const deletevents = (eventid) => async (dispatch) => {
-    try {
-      dispatch(setLoading(true));
-      const response = await axios.post(
-        "/events/delete_event",
-        {eventid},
-        getBearerToken()
-      );
-      dispatch(setLoading(false));
-    } catch (error) {
-      dispatch(setLoading(false));
-      throw error;
-    }
-  };
+  try {
+    dispatch(setLoading(true));
+    const response = await axios.post(
+      "/events/all_event",
+      {},
+      getBearerToken()
+    );
+    dispatch(setLoading(false));
+    return response.data.event;
+  } catch (error) {
+    dispatch(setLoading(false));
+    throw error;
+  }
+};
+
+
+export const createevents = (data) => async (dispatch) => {
+  try {
+    dispatch(setLoading(true));
+    const response = await axios.post(
+      "/events/create_event",
+      data,
+      getBearerToken()
+    );
+    dispatch(setLoading(false));
+    return response.data.forms;
+  } catch (error) {
+    dispatch(setLoading(false));
+    throw error;
+  }
+};
+
+export const editevents = (data) => async (dispatch) => {
+  // console.log(data);
+  try {
+    dispatch(setLoading(true));
+    const response = await axios.post(
+      "/events/update_event",
+      data,
+      getBearerToken()
+    );
+    dispatch(setLoading(false));
+  } catch (error) {
+    dispatch(setLoading(false));
+    throw error;
+  }
+};
+
+export const deletevents = (eventid) => async (dispatch) => {
+  try {
+    dispatch(setLoading(true));
+    const response = await axios.post(
+      "/events/delete_event",
+      { eventid },
+      getBearerToken()
+    );
+    dispatch(setLoading(false));
+  } catch (error) {
+    dispatch(setLoading(false));
+    throw error;
+  }
+};
 
 //////////////////////////////////////Weekly Meetup actions //////////////////////////////////
 
@@ -122,7 +122,7 @@ export const deletmeetup = (meetupid) => async (dispatch) => {
     dispatch(setLoading(true));
     const response = await axios.post(
       "/meetups/delete_meetup",
-      {meetupid},
+      { meetupid },
       getBearerToken()
     );
     dispatch(setLoading(false));
@@ -188,7 +188,7 @@ export const deletmasterClass = (masterclassid) => async (dispatch) => {
     dispatch(setLoading(true));
     const response = await axios.post(
       "/masterClass/delete_master_class",
-      {masterclassid},
+      { masterclassid },
       getBearerToken()
     );
     dispatch(setLoading(false));
@@ -228,6 +228,61 @@ export const getAllInvestmentFrom = () => async (dispatch) => {
     );
     dispatch(setLoading(false));
     return response.data.investmentCircle;
+  } catch (error) {
+    dispatch(setLoading(false));
+    throw error;
+  }
+};
+
+//////////////////////////////////////All SpotlightBoost form //////////////////////////////////
+
+export const getAllSpotlightFrom = () => async (dispatch) => {
+  try {
+    dispatch(setLoading(true));
+    const response = await axios.post(
+      "/spotlightBoost/all_spotlight",
+      {},
+      getBearerToken()
+    );
+    dispatch(setLoading(false));
+    return response.data.spotlight;
+  } catch (error) {
+    dispatch(setLoading(false));
+    throw error;
+  }
+};
+
+export const addSpotlightToHomepage = (id) => async (dispatch) => {
+  try {
+    await axios.post(`/spotlightBoost/show_on_homepage/${id}`, {}, getBearerToken());
+  } catch (error) {
+    console.error("Failed to add Spotlight to homepage:", error);
+    throw error;
+  }
+};
+
+export const removeSpotlightFromHomepage = (id) => async (dispatch) => {
+  try {
+    await axios.post(`/spotlightBoost/remove_from_homepage/${id}`, {}, getBearerToken());
+  } catch (error) {
+    console.error("Failed to remove Spotlight from homepage:", error);
+    throw error;
+  }
+};
+
+
+//////////////////////////////////////All ZoomPremium form //////////////////////////////////
+
+export const getAllZoomPremiumFrom = () => async (dispatch) => {
+  try {
+    dispatch(setLoading(true));
+    const response = await axios.post(
+      "/zoomPremium/all_zoom",
+      {},
+      getBearerToken()
+    );
+    dispatch(setLoading(false));
+    return response.data.zoom;
   } catch (error) {
     dispatch(setLoading(false));
     throw error;

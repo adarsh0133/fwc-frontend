@@ -21,6 +21,8 @@ import FwcAtithi from './components/fwc-atithi/FwcAtithi';
 import FwcStories from './components/FWC Stories/FwcStories';
 import Aboutus from './components/Aboutus/Aboutus';
 import NariShakti from './components/verticles/NariShakti';
+import SpotlightBoost from './components/spotlightBoost/SpotlightBoost';
+import Zoom from './components/zoomPremium/Zoom';
 
 const App = () => {
 
@@ -67,7 +69,12 @@ const App = () => {
 
         {/* ABOUTUS ROUTE */}
         <Route path='/about-us' element={<Aboutus />} />
-      
+
+        {/* Spotlight Boost */}
+        <Route path='/spotlight-boost' element={<SpotlightBoost/>} />
+        
+        {/* Zoom Premium */}
+        <Route path='/zoom-premium' element={<Zoom/>} />
       </Routes>
     </div>
   )

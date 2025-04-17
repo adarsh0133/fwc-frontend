@@ -1,16 +1,21 @@
 import { RiCloseFill } from '@remixicon/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { ToastContainer } from 'react-toastify'
 import PhoneInputField from './PhoneInputField';
+import { isFileSizeValid, getFileSizeError } from '../helpers/FileSize';
+import { toast } from 'react-toastify';
 
-const PopUpForm = ({ setpopup, fields, setFields, onSubmit, loading }) => {
+
+const PopUpForm = ({ setpopup, fields, setFields, onSubmit, loading, children }) => {
+    const [file, setFile] = useState(null);
+    const [sizeError, setsizeError] = useState(null);
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = {};
 
         // Collect values from the fields array
         fields.forEach((field) => {
-            formData[field.name] = field.value || '';
+            formData[field.name] = field.type === 'file' ? file : field.value || '';
         });
 
         onSubmit(formData);
@@ -23,6 +28,20 @@ const PopUpForm = ({ setpopup, fields, setFields, onSubmit, loading }) => {
                 field.name === name ? { ...field, value } : field
             )
         );
+
+    };
+
+    const handleFileChange = (e) => {
+        setsizeError(null);
+        const uploadedFile = e.target.files[0];
+
+        // Check file size
+        if (!isFileSizeValid(uploadedFile)) {
+            setsizeError(getFileSizeError(uploadedFile));
+            return;
+        }
+
+        setFile(uploadedFile);
     };
 
     const renderField = (field) => {
@@ -73,6 +92,27 @@ const PopUpForm = ({ setpopup, fields, setFields, onSubmit, loading }) => {
                         className="focus:outline-[#0037FF] focus:border-[#0037FF] border border-gray-300 rounded-md"
                     />
                 );
+
+            case 'file':
+                return (
+                    <div className="border border-dashed border-gray-400 rounded-md p-4 w-full text-center">
+                        <input
+                            type="file"
+                            name={field.name}
+                            onChange={handleFileChange}
+                            className="hidden"
+                            id="file-upload"
+                        />
+                        <label
+                            htmlFor="file-upload"
+                            className="cursor-pointer text-blue-500 underline"
+                        >
+                            Upload a file pdf/jpeg/word up to 5MB
+                        </label>
+                        {file && <p className="mt-2 text-sm text-gray-600">{file.name}</p>}
+                        {sizeError && <p className="mt-2 text-sm text-red-500">{sizeError}</p>}
+                    </div>
+                );
             default:
                 return (
                     <input
@@ -91,31 +131,44 @@ const PopUpForm = ({ setpopup, fields, setFields, onSubmit, loading }) => {
     return (
         <>
             <ToastContainer />
-            <div className='fixed w-full h-screen flex items-center justify-center bg-[#000000b6] z-[100]'>
-                <div className='w-[80vw] md:w-[60vw] lg:w-[40vw] h-[70vh] max-[600px]:h-[80vh] bg-white flex flex-col items-center justify-between rounded-2xl overflow-y-scroll [&::-webkit-scrollbar]:invisible pb-24' style={{ textAlign: "center", marginTop: "50px" }}>
-                    <div className="w-full p-1 flex items-center justify-between cursor-pointer">
-                        <span></span>
-                        <RiCloseFill size={35} onClick={() => setpopup(false)} />
+            <div className="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-[#000000b6] z-[99999]">
+                <div className="w-[80vw] md:w-[60vw] lg:w-[40vw] h-[80vh] bg-white rounded-2xl overflow-y-scroll">
+                    <div className="flex justify-between items-center p-4 border-b">
+                        <h2 className="text-lg font-bold">Form Submission</h2>
+                        <RiCloseFill
+                            size={30}
+                            className="cursor-pointer"
+                            onClick={() => setpopup(false)}
+                        />
                     </div>
-                    <form className="lg:w-full" onSubmit={handleSubmit}>
-                        <h2 className='text-xl'>Fill All The Details</h2>
-                        <div className="w-full h-full grid lg:grid-cols-2 lg:pl-20 lg:gap-6 gap-4 p-4">
-                            {fields.map((field, index) => (
-                                <div key={index} className="flex flex-col items-start">
-                                    <h3>{field.label}</h3>
-                                    {renderField(field)}
-                                </div>
-                            ))}
-                            {loading ? (
+                    <form onSubmit={handleSubmit} className="p-4  md:px-20">
+                        {children}
+                        <div className="grid gap-4 mt-4">
+                            {fields.map((field, index) => {
+                                if (field.hidden) return null;
 
-                                <div className='w-fit  lg:h-1/2 lg:mt-7 center' style={{ padding: '5px 10px', fontSize: '16px', cursor: 'pointer', background: '#0037FF', color: 'white', border: 'none', borderRadius: '5px' }}>
-                                    <div className="w-8 shrink-0">
-                                        <div className="loader"></div>
+                                return (
+                                    <div key={index} className="flex flex-col">
+                                        <label className="text-sm font-medium mb-1">{field.label}</label>
+                                        {renderField(field)}
                                     </div>
-                                    submitting...
-                                </div>
+                                );
+                            })}
+                        </div>
+                        <div className="mt-6 flex justify-end">
+                            {loading ? (
+                                <button
+                                    type="button"
+                                    className="bg-gray-400 text-white px-4 py-2 rounded-md"
+                                    disabled
+                                >
+                                    Submitting...
+                                </button>
                             ) : (
-                                <button type="submit" className='w-1/2 lg:h-1/2 lg:mt-7' style={{ padding: '5px 10px', fontSize: '16px', cursor: 'pointer', background: '#0037FF', color: 'white', border: 'none', borderRadius: '5px' }}>
+                                <button
+                                    type="submit"
+                                    className="bg-blue-500 text-white px-4 py-2 rounded-md"
+                                >
                                     Submit
                                 </button>
                             )}
@@ -124,7 +177,7 @@ const PopUpForm = ({ setpopup, fields, setFields, onSubmit, loading }) => {
                 </div>
             </div>
         </>
-    )
+    );
 }
 
 export default PopUpForm

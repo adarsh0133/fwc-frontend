@@ -6,6 +6,7 @@ import Magnet from '../../UI/Magnet';
 import HomeFooter from './HomeFooter';
 import { useDispatch, useSelector } from 'react-redux';
 import { currentUser } from '../../store/Actions/userAction';
+import HomePageSpotlight from '../spotlightBoost/HomePageSpotlight';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -45,24 +46,24 @@ export const Home = () => {
     },
   ]
 
-  const calculateTimeLeft = () => {
-    const now = new Date();
-    const targetDate = new Date(2025, 2, 23); // January 5, 2025
-    const difference = targetDate - now;
+  // const calculateTimeLeft = () => {
+  //   const now = new Date();
+  //   const targetDate = new Date(2025, 2, 23); // January 5, 2025
+  //   const difference = targetDate - now;
 
-    let timeLeft = {};
+  //   let timeLeft = {};
 
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
-    }
+  //   if (difference > 0) {
+  //     timeLeft = {
+  //       days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+  //       hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+  //       minutes: Math.floor((difference / 1000 / 60) % 60),
+  //       seconds: Math.floor((difference / 1000) % 60),
+  //     };
+  //   }
 
-    return timeLeft;
-  };
+  //   return timeLeft;
+  // };
 
   const checkLoginHandler = () => {
     if (!isAuth) {
@@ -72,15 +73,15 @@ export const Home = () => {
     }
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  // const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setTimeLeft(calculateTimeLeft());
+  //   }, 1000);
 
-    return () => clearInterval(timer);
-  }, []);
+  //   return () => clearInterval(timer);
+  // }, []);
 
 
 
@@ -119,6 +120,7 @@ export const Home = () => {
 
         </Magnet>
       </div>
+      <HomePageSpotlight />
       {/* <div className="delhi-launch w-full h-screen center flex-col items-center justify-center gap-5 p-5 max-[600px]:h-fit">
         <div className="del-img w-[100vh] h-[60vh] max-[600px]:w-full max-[600px]:h-[40vh] rounded-lg overflow-hidden">
           <img className='w-full h-full object-cover object-center' src="/images/Home/delhi.webp" alt="" />

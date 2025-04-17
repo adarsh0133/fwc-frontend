@@ -12,6 +12,8 @@ import MasterClass from "./MasterClass";
 import Allatithi from "./Allatithi";
 import AllInvestmentSeekingForm from "./AllInvestmentSeekingForm";
 import AllYuvaShakti from "./AllYuvaShakti.jsx";
+import AllSpotlightBoost from "./AllSpotlightBoost.jsx";
+import AllZoomPremium from "./AllZoomPremium.jsx";
 // Ensure this import is correct
 
 const componentMap = {
@@ -24,6 +26,8 @@ const componentMap = {
   Allatithi: Allatithi,
   AllInvestmentSeekingForm: AllInvestmentSeekingForm,
   AllYuvaShakti: AllYuvaShakti,
+  AllSpotlightBoost: AllSpotlightBoost,
+  AllZoomPremium: AllZoomPremium,
 };
 
 export default function AdminHome() {
