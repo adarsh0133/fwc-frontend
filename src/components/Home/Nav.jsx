@@ -87,61 +87,61 @@ const Nav = () => {
                   onMouseLeave={() => handleMouseLeave('benefits')}
                   className="absolute z-[99] flex flex-col top-[70px] -left-10 w-fit p-4 bg-white text-black border border-gray-200 shadow-lg font-normal text-sm"
                 >
-                  {/* <a href="/events" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  <a href="/events" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/gmeet.png" alt="Weekly Meetups" />
                     <p className='whitespace-nowrap'>Weekly Meetups</p>
-                  </a> */}
-                  <a href="/investor-circle" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  </a>
+                  <Link to="/investor-circle" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/dollar.png" alt="Investor Circle" />
                     <p className='whitespace-nowrap'>Investor Circle</p>
-                  </a>
-                  {/* <a href="/expert-connect" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  </Link>
+                  <a href="/expert-connect" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/expert.png" alt="Expert Connect" />
                     <p className='whitespace-nowrap'>Expert Connect</p>
-                  </a> */}
-                  {/* <a href="/partner-benefits" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  </a>
+                  <a href="/partner-benefits" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/partner.png" alt="Partner Benefits" />
                     <p className='whitespace-nowrap'>Partner Benefits</p>
-                  </a> */}
+                  </a>
                   <a href="/fwc-atithi" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/athiti.png" alt="FWC Atithi" />
                     <p className='whitespace-nowrap'>FWC Atithi</p>
                   </a>
-                  {/* <a href='/events/#masterclass' className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  <a href='/events/#masterclass' className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/masterclass.png" alt="Exclusive Masterclass" />
                     <p className='whitespace-nowrap'>Exclusive Masterclass</p>
-                  </a> */}
-                  {/* <a href="/resource-library" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  </a>
+                  <a href="/resource-library" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/library.png" alt="Resource Library" />
                     <p className='whitespace-nowrap'>Resource Library</p>
-                  </a> */}
-                  {/* <a href="/zoom-premium" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  </a>
+                  <a href="/zoom-premium" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/zoom.png" alt="Zoom Premium" />
                     <p className='whitespace-nowrap'>Zoom Premium</p>
-                  </a> */}
-                  {/* <a href="/spotlight-boost" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  </a>
+                  <a href="/spotlight-boost" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/spotlight.png" alt="Spotlight Boost" />
                     <p className='whitespace-nowrap'>Spotlight Boost</p>
-                  </a> */}
+                  </a>
                 </div>
               )}
             </li>
-            {/* <li className='cursor-pointer'>
+            <li className='cursor-pointer'>
               <a href={'/events'}>
                 Events
               </a>
-            </li> */}
-            {/* <li className='cursor-pointer'>
+            </li>
+            <li className='cursor-pointer'>
               <a href="/fwc-stories">
                 FWC Stories
               </a>
-            </li> */}
+            </li>
             <li
               onMouseEnter={() => handleMouseEnter('verticles')}
               onMouseLeave={() => handleMouseLeave('verticles')}
               className='flex items-center cursor-pointer h-full relative dropdown'
             >
-              verticles
+              Verticles
               <RiArrowDownSLine
                 className={`ml-1 ${dropdownOpen.verticles ? "-rotate-180" : "rotate-0"} duration-300`}
               />
@@ -154,6 +154,10 @@ const Nav = () => {
                   <a href="/verticles/yuva-shakti-international" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/ysint.png" alt="" />
                     <p className='whitespace-nowrap'>Yuva Shakti International</p>
+                  </a>
+                  <a href="/verticles/nari-shakti" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                    <img className='w-[15%]' src="/images/Home/nav/nariShakti.png" alt="" />
+                    <p className='whitespace-nowrap'>Nari Shakti</p>
                   </a>
                   <a href="/verticles/thofa" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/thofa.png" alt="" />
@@ -197,19 +201,18 @@ const Nav = () => {
                     <img className='w-[20%]' src="/images/Home/nav/careers.png" alt="" />
                     <p className='whitespace-nowrap'>Privacy Policy</p>
                   </a>
-                  {/* <a href="/our-team" className="flex gap-3 items-center justify-start py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  <a href="/our-team" className="flex gap-3 items-center justify-start py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[20%]' src="/images/Home/nav/gallery.png" alt="" />
                     <p className='whitespace-nowrap'>Gallery</p>
-                  </a> */}
+                  </a>
                 </div>
               )}
             </li>
-              <li className='cursor-pointer'>
+            {/* <li className='cursor-pointer'>
               <a href="/privacy-policy">
               Privacy Policy
               </a>
-            </li>
-          
+            </li> */}
           </ul>
         </div>
         {
@@ -233,7 +236,7 @@ const Nav = () => {
       <div className=" fixed z-50 w-full flex items-center justify-between lg:hidden h-[10vh] bg-zinc-900">
         <div className="logo w-[30%] center  h-full">
           <a className='w-full h-full center' href="/">
-            <img className='w-[60%]' src="/images/Home/logo.png" alt="Logo" />
+            <img className='w-[60%]' src="/images/Home/logo.jpg" alt="Logo" />
           </a>
         </div>
         <div onClick={toggleMenu} className="w-[14%] h-full text-white center">
@@ -263,54 +266,54 @@ const Nav = () => {
               transition={{ duration: .3, ease: "easeInOut" }}
               className="w-full  overflow-hidden"
             >
-              {/* <a href="/events" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              <a href="/events" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Weekly Meetups</p>
-              </a> */}
+              </a>
               <a href="/investor-circle" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70   hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Investor Circle</p>
               </a>
-              {/* <a href="/expert-connect" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              <a href="/expert-connect" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Expert Connect</p>
-              </a> */}
-              {/* <a href="/partner-benefits" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              </a>
+              <a href="/partner-benefits" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Partner Benefits</p>
-              </a> */}
+              </a>
               <a href="/fwc-atithi" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>FWC Atithi</p>
               </a>
-              {/* <a href='/events/#masterclass' className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70   hover:bg-gray-200">
+              <a href='/events/#masterclass' className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70   hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Exclusive Masterclass</p>
-              </a> */}
-              {/* <a href="/resource-library" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              </a>
+              <a href="/resource-library" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Resource Library</p>
-              </a> */}
-              {/* <a href="/zoom-premium" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              </a>
+              <a href="/zoom-premium" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Zoom Premium</p>
-              </a> */}
-              {/* <a href="/spotlight-boost" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70   hover:bg-gray-200">
+              </a>
+              <a href="/spotlight-boost" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70   hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Spotlight Boost</p>
-              </a> */}
+              </a>
             </motion.div>
           </div>
-          {/* <div className="w-full">
+          <div className="w-full">
             <a href={'/events'} className='w-fit flex items-center gap-2 h-fit cursor-pointer'>
               Events
             </a>
-          </div> */}
-          {/* <div className="w-full">
+          </div>
+          <div className="w-full">
             <a href={'/fwc-stories'} className='w-fit flex items-center gap-2 h-fit cursor-pointer'>
               FWC Stories
             </a>
-          </div> */}
+          </div>
           <div className="w-full">
             <div onClick={() => handleDropdown("verticles")} className="w-fit flex items-center gap-2 h-fit cursor-pointer">
               <p>verticles</p>
@@ -324,12 +327,15 @@ const Nav = () => {
             >
               <a href="/verticles/yuva-shakti-international" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
-
                 <p className='whitespace-nowrap'>Yuva Shakti International</p>
+              </a>
+              <a href="/verticles/nari-shakti" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+                <RiArrowDropRightLine size={20} />
+
+                <p className='whitespace-nowrap'>Nari Shakti</p>
               </a>
               <a href="/verticles/thofa" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
-
                 <p className='whitespace-nowrap'>THOFA</p>
               </a>
               <a href="/verticles/edu-astra" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
@@ -371,11 +377,11 @@ const Nav = () => {
 
                 <p className='whitespace-nowrap'>Privacy Policy</p>
               </a>
-              {/* <a href="/our-team" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              <a href="/our-team" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
 
                 <p className='whitespace-nowrap'>Gallery</p>
-              </a> */}
+              </a>
             </motion.div>
           </div>
         </div>
@@ -404,7 +410,7 @@ const Nav = () => {
             </Link>
           </div>
         )}
-      </div>  
+      </div>
     </>
 
   );
