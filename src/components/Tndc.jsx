@@ -23,7 +23,7 @@ const Tndc = () => {
               CIN: <b>U85300TN2020NPL134685</b><br />
               Registered Office: <b>
                 No. 10, Anna Enclave, East Coast Road, Enjambakkam, Chennai, Tamil Nadu, India – 600115</b> <br />
-              Email: <b>admin@fwc-india.org</b> | Phone: <b>+91 96263 79667</b>
+              Email: <b>support@fwc-india.org</b> | Phone: <b>+91 96263 79667</b>
             </p>
             <br />
             <p className="Rubik mt-4 text-sm"><b>Effective Date:</b> March 13, 2025</p><br />
