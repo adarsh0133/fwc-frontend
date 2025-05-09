@@ -89,3 +89,8 @@
 button {
  cursor: pointer;
 }
+
+.stroke-text {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.078); /* or any stroke color you want */
+  color: transparent;
+}

@@ -61,10 +61,14 @@ function AllMembers() {
   };
 
   const filteredPayment = allPayments.filter((payment) =>
-    (payment.form.name && payment.form.name.toLowerCase().includes(searchQuery.toLowerCase())) ||
-    (payment.form.email && payment.form.email.toLowerCase().includes(searchQuery.toLowerCase())) ||
-    (payment.form.contact && payment.form.contact.includes(searchQuery))
+    payment.form &&
+    (
+      (payment.form.name && payment.form.name.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (payment.form.email && payment.form.email.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (payment.form.contact && payment.form.contact.includes(searchQuery))
+    )
   );
+  
   const filteredFAForms = FAForms.filter((data) =>
     (data.name && data.name.toLowerCase().includes(searchQuery.toLowerCase())) ||
     (data.email && data.email.toLowerCase().includes(searchQuery.toLowerCase())) ||

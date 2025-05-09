@@ -47,8 +47,9 @@ export const PartnerForm = () => {
     helpInBranding: "",
 
     // fifth step
-    shortTermGoals: "",
-    longTermGoals: "",
+    goals: "",
+    problem: "",
+    shortDescription: "",
     expandInternationally: "",
     investmentSupport: "",
     investmentAmount: "",
@@ -113,8 +114,7 @@ export const PartnerForm = () => {
       alert("Please accept the terms and conditions to proceed!");
       return;
     }
-    if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country || !userInput.userType || !userInput.lookingForCollaboration || !userInput.needFWCConnection || !userInput.offerServices || !userInput.platform || !userInput.needTechSupport || !userInput.helpInBranding || !userInput.investmentSupport || !userInput.expandInternationally || !userInput.membershipCategory )
-     {
+    if (!userInput.fullName || !userInput.contact || !userInput.city || !userInput.email || !userInput.country || !userInput.userType || !userInput.lookingForCollaboration || !userInput.needFWCConnection || !userInput.offerServices || !userInput.platform || !userInput.needTechSupport || !userInput.helpInBranding || !userInput.investmentSupport || !userInput.expandInternationally || !userInput.membershipCategory) {
       alert("Please fill all the fields to proceed!");
       return;
     }
@@ -345,19 +345,6 @@ export const PartnerForm = () => {
                     className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
                   />
                   <span className="text-gray-800">Investor</span>
-                </label>
-
-                {/* others */}
-                <label className="flex items-center space-x-2 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="userType"
-                    value="others"
-                    checked={userInput.userType === "others"}
-                    onChange={handleChange("userType")}
-                    className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
-                  />
-                  <span className="text-gray-800">others</span>
                 </label>
               </div>
             </div>
@@ -654,20 +641,37 @@ export const PartnerForm = () => {
           <h2 className='text-center font-semibold text-2xl mb-2'>Future Goals & Vision</h2>
           {/* Future Goals & Vision */}
           <p className="font-medium text-sm text-gray-600 mb-2">
-            What are your short-term (1-2 years) and long-term (5+ years) goals?
+            What are your goals (1-2 years) and long-term (5+ years) goals?
           </p>
           <textarea
-            name="shortTermGoals"
-            value={userInput.shortTermGoals}
-            onChange={handleChange("shortTermGoals")}
+            name="goals"
+            value={userInput.goals}
+            onChange={handleChange("goals")}
             placeholder="Enter your short-term goals..."
             className="w-full p-2 border rounded-md focus:ring-blue-400 focus:outline-none"
           />
+
+          {/* Problem */}
+          <p className="font-medium text-sm text-gray-600 mt-2 mb-2">
+            What type of problem you are facing? <span className='text-red-500 text-lg'>*</span>
+          </p>
           <textarea
-            name="longTermGoals"
-            value={userInput.longTermGoals}
-            onChange={handleChange("longTermGoals")}
-            placeholder="Enter your long-term goals..."
+            name="problem"
+            value={userInput.problem}
+            onChange={handleChange("problem")}
+            placeholder="Enter your problem..."
+            className="w-full mt-2 p-2 border rounded-md focus:ring-blue-400 focus:outline-none"
+          />
+
+          {/* shortDescription */}
+          <p className="font-medium text-sm text-gray-600 mt-2 mb-2">
+            Write a short Description of your Company/Startup <span className='text-red-500 text-lg'>*</span>
+          </p>
+          <textarea
+            name="shortDescription"
+            value={userInput.shortDescription}
+            onChange={handleChange("shortDescription")}
+            placeholder="Enter your Description..."
             className="w-full mt-2 p-2 border rounded-md focus:ring-blue-400 focus:outline-none"
           />
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Magnet from './../../UI/Magnet';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { RiArrowDownSLine, RiArrowDropRightLine, RiCloseLine, RiLoginBoxLine, RiMenu2Line } from '@remixicon/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { currentUser, logoutUser } from '../../store/Actions/userAction';
@@ -16,6 +16,24 @@ const Nav = () => {
     verticles: false,
     aboutFwc: false,
   });
+
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
+  
+    const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+      if (!isHomePage) return;
+  
+      const handleScroll = () => {
+        setIsSticky(window.scrollY > 65);
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, [isHomePage]);
 
   const dispatch = useDispatch();
   const { user } = useSelector(state => state.user);
@@ -62,7 +80,7 @@ const Nav = () => {
 
   return (
     <>
-      <div className='fixed z-50 hidden lg:flex  w-full lg:px-4 xl:px-10 h-[10vh]  bg-zinc-900  justify-between items-center'>
+      <div className={`w-full lg:px-4 xl:px-10 h-[10vh] hidden lg:flex justify-between items-center bg-white z-50 transition-all duration-300 ${isSticky ? 'fixed top-0 shadow-md' : 'relative'}`}>
 
         <div className="logo w-20 h-full overflow-hidden ">
           <a href="/" className='w-full h-full center'>
@@ -70,11 +88,11 @@ const Nav = () => {
           </a>
         </div>
         <div className="nav-links relative h-full max-[600px]:hidden">
-          <ul className='flex gap-10 text-white text-base items-center h-full font-medium'>
+          <ul className='flex gap-10 text-base items-center h-full font-medium text-zinc-700'>
             <li
               onMouseEnter={() => handleMouseEnter('benefits')}
               onMouseLeave={() => handleMouseLeave('benefits')}
-              className='flex items-center cursor-pointer h-full relative dropdown'
+              className='flex items-center cursor-pointer h-full relative dropdown hover:text-[#2965FF]'
             >
               Benefits
               <RiArrowDownSLine
@@ -125,12 +143,12 @@ const Nav = () => {
                 </div>
               )}
             </li>
-            <li className='cursor-pointer'>
+            <li className='cursor-pointer hover:text-[#2965FF]'>
               <a href={'/events'}>
                 Events
               </a>
             </li>
-            <li className='cursor-pointer'>
+            <li className='cursor-pointer hover:text-[#2965FF]'>
               <a href="/fwc-stories">
                 FWC Stories
               </a>
@@ -138,7 +156,7 @@ const Nav = () => {
             <li
               onMouseEnter={() => handleMouseEnter('verticles')}
               onMouseLeave={() => handleMouseLeave('verticles')}
-              className='flex items-center cursor-pointer h-full relative dropdown'
+              className='flex items-center cursor-pointer h-full relative dropdown hover:text-[#2965FF]'
             >
               Verticles
               <RiArrowDownSLine
@@ -176,7 +194,7 @@ const Nav = () => {
             <li
               onMouseEnter={() => handleMouseEnter('aboutFwc')}
               onMouseLeave={() => handleMouseLeave('aboutFwc')}
-              className='flex items-center cursor-pointer h-full relative dropdown'
+              className='flex items-center cursor-pointer h-full relative dropdown hover:text-[#2965FF]'
             >
               About FWC
               <RiArrowDownSLine
@@ -218,34 +236,32 @@ const Nav = () => {
           user && user ? (
             <div className="flex items-center gap-4 max-[600px]:hidden">
               <img className='w-10 h-10 object-cover rounded-full' src={user.avatar.url} alt="" />
-              <p className='text-white font-semibold'>{user.name}</p>
-              <button onClick={handelLogout} className="bg-black border-2 border-white text-white py-0.5 px-5 text-lg font-semibold rounded-full cursor-pointer">Logout</button>
+              <p className='hover:text-[#2965FF] font-semibold'>{user.name}</p>
+              <button onClick={handelLogout} className="border-2 border-black hover:text-white hover:bg-[#2965FF] hover:border-white py-0.5 px-5 text-lg font-semibold rounded-full cursor-pointer">Logout</button>
             </div>
           ) : (
             <div className="login-signup-btn space-x-4 max-[600px]:hidden">
-              <Magnet padding={50} disabled={false} magnetStrength={5}>
-                <Link to={'/Signup'} className="bg-white border-2 border-white text-black py-0.5 px-5 text-lg font-semibold rounded-full cursor-pointer">Get Start</Link>
-              </Magnet>
-              <Link to={'/login'} className="bg-black border-2 border-white text-white py-0.5 px-5 text-lg font-semibold rounded-full cursor-pointer">Login</Link>
+              <Link to={'/Signup'} className="bg-[#2965FF] border-2 border-[#2965FF] text-white px-6 py-2 text-lg font-semibold rounded-full cursor-pointer">Get Start</Link>
+              <Link to={'/login'} className="border-2 border-zinc-700 text-zinc-700 px-6 py-2 text-lg font-semibold rounded-full cursor-pointer">Login</Link>
             </div>
           )
         }
       </div>
 
-      <div className=" fixed z-50 w-full flex items-center justify-between lg:hidden h-[10vh] bg-zinc-900">
+      <div className=" fixed z-50 w-full flex items-center justify-between lg:hidden h-[10vh] bg-zinc-900 ">
         <div className="logo w-[30%] md:w-[10%] center  h-full overflow-hidden">
           <a className='w-full h-full center' href="/">
             <img className='w-[60%]' src="/images/Home/logo.jpg" alt="Logo" />
           </a>
         </div>
-        <div onClick={toggleMenu} className="w-[14%] h-full text-white center">
-          <RiMenu2Line />
+        <div onClick={toggleMenu} className="w-[14%] h-full hover:text-[#2965FF] center">
+          <RiMenu2Line color='white' />
         </div>
       </div>
 
       <div
-        className={`w-full h-fit pb-10 fixed top-0 left-0 z-[9999] lg:hidden transition-transform duration-500 bg-zinc-900 text-white shadow-md rounded-md ${menuOpen ? "translate-y-0" : "-translate-y-full"
-          }`}
+        className={`w-full h-fit pb-10 fixed top-0 left-0 z-[9999] lg:hidden transition-transform duration-500 bg-zinc-900 shadow-md rounded-md ${menuOpen ? "translate-y-0" : "-translate-y-full"
+          } text-white`}
       >
         <div className="w-full flex items-center justify-between p-5">
           <a className="w-[15%] max-[600px]:w-[30%] center" href="/">
@@ -397,7 +413,7 @@ const Nav = () => {
           <div className="login-sigup flex gap-4 mt-5 ml-6">
             <Link
               to="/login"
-              className=" border-2 border-white text-white py-0.5 px-5  font-semibold rounded-full cursor-pointer"
+              className=" border-2 border-white py-0.5 px-5  font-semibold rounded-full cursor-pointer"
             >
               <button>LOG IN</button>
             </Link>
