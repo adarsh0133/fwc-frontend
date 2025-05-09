@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Info = () => {
-    const social = [
+const HomeInfo = () => {
+ const social = [
         {
             icon: "/images/infoHeader/linkedin.png",
             link: "/events"
@@ -58,4 +58,4 @@ const Info = () => {
     )
 }
 
-export default Info
+export default HomeInfo

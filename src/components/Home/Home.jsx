@@ -7,7 +7,7 @@ import HomeFooter from './HomeFooter';
 import { useDispatch, useSelector } from 'react-redux';
 import { currentUser } from '../../store/Actions/userAction';
 import HomePageSpotlight from '../spotlightBoost/HomePageSpotlight';
-import Info from './info';
+import Info from './HomeInfo';
 import Marquee from "react-fast-marquee";
 
 export const Home = () => {
