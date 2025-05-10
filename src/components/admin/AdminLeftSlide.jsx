@@ -22,6 +22,7 @@ export default function AdminLeftSlide({ selectedComponent, setSelectedComponent
     { label: 'All Yuva Shakti', component: 'AllYuvaShakti' },
     { label: 'All Spotlight Boost', component: 'AllSpotlightBoost' },
     { label: 'All Zoom Premium', component: 'AllZoomPremium' },
+    { label: 'Expert Connect', component: 'ExpertConnect' },
   ];
 
   const filteredButtons = buttons.filter(button =>

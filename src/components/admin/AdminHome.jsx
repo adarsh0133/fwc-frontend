@@ -14,6 +14,7 @@ import AllInvestmentSeekingForm from "./AllInvestmentSeekingForm";
 import AllYuvaShakti from "./AllYuvaShakti.jsx";
 import AllSpotlightBoost from "./AllSpotlightBoost.jsx";
 import AllZoomPremium from "./AllZoomPremium.jsx";
+import ExpertConnect from "./ExpertConnect.jsx";
 // Ensure this import is correct
 
 const componentMap = {
@@ -28,6 +29,7 @@ const componentMap = {
   AllYuvaShakti: AllYuvaShakti,
   AllSpotlightBoost: AllSpotlightBoost,
   AllZoomPremium: AllZoomPremium,
+  ExpertConnect: ExpertConnect,
 };
 
 export default function AdminHome() {

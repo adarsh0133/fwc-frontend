@@ -23,6 +23,7 @@ import Aboutus from './components/Aboutus/Aboutus';
 import NariShakti from './components/verticles/NariShakti';
 import SpotlightBoost from './components/spotlightBoost/SpotlightBoost';
 import Zoom from './components/zoomPremium/Zoom';
+import ExpertConnectHomePage from './components/ExpertConnect/ExpertConnectHomePage';
 
 const App = () => {
 
@@ -74,7 +75,10 @@ const App = () => {
         <Route path='/spotlight-boost' element={<SpotlightBoost/>} />
         
         {/* Zoom Premium */}
-        <Route path='/zoom-premium' element={<Zoom/>} />
+        <Route path='/event-organiser' element={<Zoom/>} />
+
+        {/* Expert connect */}
+        <Route path='/expert-connect' element={<ExpertConnectHomePage />} />
       </Routes>
     </div>
   )
