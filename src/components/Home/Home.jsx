@@ -391,9 +391,9 @@ export const Home = () => {
           <img className='h-full object-contain' src="/images/Home/world.png" alt="" />
         </div>
       </div>
-      <div className="our-sponsers w-full h-fit px-5 py-10 md:px-16">
-        <div className="our-sponser-top lg:flex">
-          <div className="our-sponser-top-left lg:w-1/2">
+      <div className="our-sponsors w-full h-fit px-5 py-10 md:px-16">
+        <div className="our-sponsor-top lg:flex">
+          <div className="our-sponsor-top-left lg:w-1/2">
             <div className="relative">
               <h1 className="text-6xl uppercase stroke-text font-bold lg:text-8xl">Our Sponsor</h1>
               <div className="flex items-center gap-1 absolute top-1 lg:top-[25%] left-0  -translate-y-[-50%]">
@@ -406,11 +406,11 @@ export const Home = () => {
             <h1 className='text-4xl font-semibold mt-5 text-[#2965FF] lg:text-5xl'>A Vision by <span className='text-black'>First
               Worlds Community </span></h1>
           </div>
-          <div className="our-sponser-top-right lg:w-1/2">
-            <p className='text-zinc-500 text-sm mt-5'>FWC Spencer’s, a First Worlds Community initiative, is a vibrant space where creativity, unity, and innovation thrive. Through events, learning, and outreach, we empower individuals and build a collaborative, inclusive future.</p>
+          <div className="our-sponsor-top-right lg:w-1/2">
+            <p className='text-zinc-500 text-sm mt-5'>FWC Sponsor’s, a First Worlds Community initiative, is a vibrant space where creativity, unity, and innovation thrive. Through events, learning, and outreach, we empower individuals and build a collaborative, inclusive future.</p>
           </div>
         </div>
-        <div className="our-sponser-btm w-full py-2 md:mt-10">
+        <div className="our-sponsor-btm w-full py-2 md:mt-10">
           <div className="cards w-full flex">
             <Marquee pauseOnHover={true}>
               {
