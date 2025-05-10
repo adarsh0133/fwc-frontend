@@ -101,7 +101,7 @@ const HomeFooter = () => {
                     Resource Library
                   </a>
                   <a
-                    href="/zoom-premium"
+                    href="/event-organiser"
                     className="text-gray-500 block text-sm font-medium"
                   >
                     Event Organiser
