@@ -78,7 +78,10 @@ const App = () => {
         <Route path='/event-organiser' element={<Zoom/>} />
 
         {/* Expert connect */}
-        <Route path='/expert-connect' element={<ExpertConnectHomePage />} />
+        <Route path='/business-matching' element={<ExpertConnectHomePage />} />
+
+        {/* FWC Stories */}
+        <Route path='/fwc-stories' element={<FwcStories />} />
       </Routes>
     </div>
   )

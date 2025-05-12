@@ -35,13 +35,12 @@ const HomeInfo = () => {
                     </div>
                     <h1 className='text-white text-sm font-normal'>info@firstworldcommunity.org</h1>
                 </div>
-                <div className="flex items-center justify-center gap-2">
+                {/* <div className="flex items-center justify-center gap-2">
                     <div className="icon size-5">
                         <img className='size-full object-cover' src="/images/infoHeader/location.png" alt="" />
                     </div>
                     <h1 className='text-white text-sm font-normal'>4th floor, New No. 20, Old No. 3, Avenue Road, Nungambakkam, Chennai 600034</h1>
-                </div>
-
+                </div> */}
             </div>
             <div className="rgt-container w-[20%] h-full bg-[url('/images/infoHeader/rectangle.png')] bg-contain bg-no-repeat bg-right center gap-4 pl-10">
                 {

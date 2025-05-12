@@ -112,14 +112,14 @@ const Nav = () => {
                     <img className='w-[15%]' src="/images/Home/nav/dollar.png" alt="Investor Circle" />
                     <p className='whitespace-nowrap'>Investor Circle</p>
                   </Link>
-                  <a href="/expert-connect" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  <a href="/business-matching" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/expert.png" alt="Expert Connect" />
-                    <p className='whitespace-nowrap'>Expert Connect</p>
+                    <p className='whitespace-nowrap'>Business Matching</p>
                   </a>
-                  <a href="/partner-benefits" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  {/* <a href="/partner-benefits" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/partner.png" alt="Partner Benefits" />
                     <p className='whitespace-nowrap'>Partner Benefits</p>
-                  </a>
+                  </a> */}
                   <a href="/fwc-atithi" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/athiti.png" alt="FWC Atithi" />
                     <p className='whitespace-nowrap'>FWC Atithi</p>
@@ -128,10 +128,10 @@ const Nav = () => {
                     <img className='w-[15%]' src="/images/Home/nav/masterclass.png" alt="Exclusive Masterclass" />
                     <p className='whitespace-nowrap'>Exclusive Masterclass</p>
                   </a>
-                  <a href="/resource-library" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  {/* <a href="/resource-library" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/library.png" alt="Resource Library" />
                     <p className='whitespace-nowrap'>Resource Library</p>
-                  </a>
+                  </a> */}
                   <a href="/event-organiser" className="flex gap-2 items-center py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[15%]' src="/images/Home/nav/zoom.png" alt="Zoom Premium" />
                     <p className='whitespace-nowrap'>Event Organiser</p>
@@ -289,14 +289,14 @@ const Nav = () => {
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Investor Circle</p>
               </a>
-              <a href="/expert-connect" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              <a href="/business-matching" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
-                <p className='whitespace-nowrap'>Expert Connect</p>
+                <p className='whitespace-nowrap'>Business Matching</p>
               </a>
-              <a href="/partner-benefits" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              {/* <a href="/partner-benefits" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Partner Benefits</p>
-              </a>
+              </a> */}
               <a href="/fwc-atithi" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>FWC Atithi</p>
@@ -305,10 +305,10 @@ const Nav = () => {
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Exclusive Masterclass</p>
               </a>
-              <a href="/resource-library" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              {/* <a href="/resource-library" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Resource Library</p>
-              </a>
+              </a> */}
               <a href="/event-organiser" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
                 <p className='whitespace-nowrap'>Event Organiser</p>
