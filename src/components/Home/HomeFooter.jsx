@@ -71,17 +71,17 @@ const HomeFooter = () => {
                     Investor Circle
                   </a>
                   <a
-                    href="#"
+                    href="/business-matching"
                     className="text-gray-500 block text-sm font-medium"
                   >
-                    Expert Connect
+                    Business Matching
                   </a>
-                  <a
+                  {/* <a
                     href="#"
                     className="text-gray-500 block text-sm font-medium"
                   >
                     Partner Benefits
-                  </a>
+                  </a> */}
                   <a
                     href="/fwc-atithi"
                     className="text-gray-500 block text-sm font-medium"
@@ -94,12 +94,12 @@ const HomeFooter = () => {
                   >
                     Exclusive Masterclass
                   </a>
-                  <a
+                  {/* <a
                     href="#"
                     className="text-gray-500 block text-sm font-medium"
                   >
                     Resource Library
-                  </a>
+                  </a> */}
                   <a
                     href="/event-organiser"
                     className="text-gray-500 block text-sm font-medium"

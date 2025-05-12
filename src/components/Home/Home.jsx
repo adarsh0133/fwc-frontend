@@ -200,8 +200,11 @@ export const Home = () => {
             </Magnet>
           </div>
         </div>
-        <div className="rgt-text w-full lg:w-1/2 h-full overflow-hidden mt-5 lg:mt-0">
-          <img className='w-full h-full lg:-mt-20 lg:h-[110vh] object-cover' src="/images/Home/homepage.webp" alt="" />
+        <div className="rgt-text w-full lg:w-1/2 h-full overflow-hidden mt-5 lg:mt-0 center bg-[url('/images/Home/ellips.png')] bg-cover bg-center">
+          <div className="w-full h-[55vh] overflow-hidden rounded-md">
+            <img className='w-full h-full lg:-mt-20 lg:h-[110vh] object-contain object-top' src="/images/Home/landing.JPG" alt="" />
+          </div>
+          {/* <img className='w-full h-full lg:-mt-20 lg:h-[110vh] object-cover' src="/images/Home/homepage.webp" alt="" /> */}
         </div>
       </div>
 
@@ -304,11 +307,11 @@ export const Home = () => {
             <div className="img-container w-32">
               <img className='w-full h-full object-cover' src="/images/Home/FounderOfFWC.png" alt="" />
             </div>
-            <p className='text text-zinc-800 flex items-center gap-2'>Dr. CK Ashok Kumar <span className='block size-2 bg-[#2965FF] rounded-full'></span> CEO</p>
+            <p className='text text-zinc-800 flex items-center gap-2'>Dr. CK Ashok Kumar <span className='block size-2 bg-[#2965FF] rounded-full'></span> Chairman</p>
           </div>
         </div>
         <div className="rgt w-full pt-8 md:w-1/2 md:h-full lg:p-16">
-          <img className='w-full object-cover' src="/images/Home/aboutus.webp" alt="" />
+          <img className='w-full object-cover' src="/images/Home/aboutus.png" alt="" />
         </div>
       </div>
 
