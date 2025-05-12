@@ -1,18 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Nav from '../Home/Nav'
 import HomeFooter from '../Home/HomeFooter'
-import { useDispatch, useSelector } from 'react-redux';
-import { currentUser } from '../../store/Actions/userAction';
-import { Link } from 'react-router-dom';
-import { createMatchmaking } from '../../store/Actions/matchMakingActions';
 
 const ExpertConnectHomePage = () => {
-    const dispatch = useDispatch();
-
-    const { user } = useSelector(state => state.user);
-    const userId  = user?._id;
-    console.log(user);
-
     const systum = [
         {
             name: 'Free Zoom Premium',
@@ -36,14 +26,6 @@ const ExpertConnectHomePage = () => {
         },
     ]
 
-    useEffect(() => {
-        dispatch(currentUser());
-    }, [])
-
-    const handleClick = () => {
-        dispatch(createMatchmaking(userId ));
-    }
-
     return (
         <>
             <Nav />
@@ -54,20 +36,11 @@ const ExpertConnectHomePage = () => {
                     <p className='text-sm lg:text-lg mt-5 lg:my-5 text-zinc-600'>
                         Looking to share your expertise or find the right mentor? Expert Connect by FWC helps you match with verified professionals, gain visibility, and access free Zoom Premium. Let’s grow together!
                     </p>
-
-                    {
-                        user?.role === "member" ? (
-                            <button 
-                            onClick={handleClick} className='mt-5 cursor-pointer bg-gradient-to-r from-[#1700C8] to-[#0B0062] text-white rounded-full px-5 py-2'>
-                                Request a Match
-                            </button>
-                        ) : (
-                            <button className='mt-5 cursor-pointer bg-gradient-to-r from-[#1700C8] to-[#0B0062] text-white rounded-full px-5 py-2'>
-                                <Link to={'/partner'} >Become a member</Link>
-                            </button>
-                        )
-                    }
-
+                    <button className='mt-5 cursor-pointer bg-gradient-to-r from-[#1700C8] to-[#0B0062] text-white rounded-full px-5 py-2'>
+                        <a href="#formpage">
+                            Request a Match
+                        </a>
+                    </button>
                 </div>
                 <div className="hero-image mt-10 lg:w-1/2 lg:h-[50vh] lg:mt-0 lg:px-10 overflow-hidden">
                     <img src="/images/Spotlight/eventOrganiser.png" alt="Expert Connect" className='w-full h-full object-cover rounded-md' />
