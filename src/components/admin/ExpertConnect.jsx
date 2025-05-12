@@ -1,38 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { RiCloseFill } from "@remixicon/react";
+import { allowMatchmaking, createMatchmaking, getAllMatchmakings } from "../../store/Actions/matchMakingActions";
+import { useDispatch } from "react-redux";
 
 const ExpertConnect = () => {
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const [allUsers, setAllUsers] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [btnLoading, setBtnLoading] = useState({});
   const [selectedMember, setSelectedMember] = useState(null);
 
-  // Dummy data to simulate API response
-  const dummyUsers = [
-    { id: 1, name: "John Doe", email: "john@example.com", contact: "1234567890", requestMatching: true },
-    { id: 2, name: "Jane Smith", email: "jane@example.com", contact: "9876543210", requestMatching: true },
-    { id: 3, name: "Alice Johnson", email: "alice@example.com", contact: "4567891230", requestMatching: false },
-    { id: 4, name: "Bob Brown", email: "bob@example.com", contact: "7891234560", requestMatching: true },
-  ];
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        // Simulate API call delay
-        setTimeout(() => {
-          const matchingRequests = dummyUsers.filter(user => user.requestMatching === true);
-          setAllUsers(matchingRequests);
-          setLoading(false);
-        }, 1000); // Simulate 1-second delay
-      } catch (error) {
-        console.error("Failed to fetch users:", error);
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
 
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
@@ -46,20 +24,31 @@ const ExpertConnect = () => {
     setSelectedMember(null);
   };
 
-  const filteredUsers = allUsers.filter((user) =>
-    (user.name && user.name.toLowerCase().includes(searchQuery.toLowerCase())) ||
-    (user.email && user.email.toLowerCase().includes(searchQuery.toLowerCase())) ||
-    (user.contact && user.contact.includes(searchQuery))
-  );
+const filteredUsers = Array.isArray(allUsers)
+  ? allUsers.filter((user) =>
+      (user.name && user.name.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (user.email && user.email.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (user.contact && user.contact.includes(searchQuery))
+    )
+  : [];
 
-  const sendMatchingHandler = async (email) => {
-    setBtnLoading((prev) => ({ ...prev, [email]: true }));
-    // Simulate sending email
-    setTimeout(() => {
-      alert(`Matching email sent to ${email}`);
-      setBtnLoading((prev) => ({ ...prev, [email]: false }));
-    }, 1000); // Simulate 1-second delay
-  };
+
+
+
+useEffect(() => {
+  dispatch(getAllMatchmakings())
+    .then((data) => {
+      setAllUsers(Array.isArray(data) ? data : data.users || []);
+      setLoading(false);
+    })
+    .catch((error) => {
+      console.error("Failed to fetch matchmakings:", error);
+      setLoading(false);
+    });
+}, []);
+
+
+  
 
   return (
     <>
@@ -83,7 +72,7 @@ const ExpertConnect = () => {
             />
           </div>
           <div className="w-full h-[80vh] px-5 pb-10 overflow-hidden capitalize">
-            {filteredUsers.length === 0 ? (
+            {allUsers.length === 0 ? (
               <p>No Matching Requests Found</p>
             ) : (
               <div className="overflow-y-auto h-full pb-10">
@@ -105,16 +94,16 @@ const ExpertConnect = () => {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {filteredUsers.slice().reverse().map((user, index) => (
-                      <tr key={user.id}>
+                    {allUsers.slice().reverse().map((user, index) => (
+                      <tr key={index}>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                           {index + 1}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                          {user.name}
+                          {user.memberId.fullName}
                         </td>
                         <td className="px-6 py-4 lowercase whitespace-nowrap text-sm text-gray-700">
-                          {user.email}
+                          {user.memberId.email}
                         </td>
                         <td className="px-6 py-4 lowercase whitespace-nowrap text-sm text-gray-700">
                           {btnLoading[user.email] ? (
@@ -124,7 +113,9 @@ const ExpertConnect = () => {
                           ) : (
                             <button
                               className="bg-blue-500 cursor-pointer px-4 py-2 rounded-lg text-white"
-                              onClick={() => sendMatchingHandler(user.email)}
+                              onClick={() => dispatch(allowMatchmaking(user.memberId._id))
+                                
+                              }
                             >
                               Send Matching
                             </button>
