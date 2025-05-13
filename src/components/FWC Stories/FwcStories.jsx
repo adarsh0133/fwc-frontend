@@ -7,9 +7,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 const FwcStories = () => {
-  const testimonials = [
-    {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}
-  ];
 
   const data = [
     {
@@ -23,10 +20,12 @@ const FwcStories = () => {
     },
     {
       id: 1,
-      name: "Name 2",
-      desc: "Decrepitation",
-      message: "Hello! Hope you're having a great day. Let me know if you need anything—I’m happy to help with anything!",
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nullam vehicula, felis in cursus venenatis, est libero fermentum lacus, nec aliquam felis ligula nec libero.Pellentesque habitant morbi tristique senectus et netus.`,
+      name: "Satish K.",
+      img: "/images/fwcStories/satish.K.jpeg",
+      desc: "FWC Member",
+      readmore: "https://www.linkedin.com/in/auroville?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      message: "Serial Entrepreneur",
+      content: `Thanks to the First World Community, we successfully secured a deal worth crores with the support of an incredible group of revolutionary individuals. Their backing helped me triple my efficiency. Thank you, FWC community! It is essential for every aspiring businessman to join the CTS community.`,
     },
     {
       id: 2,
@@ -35,7 +34,6 @@ const FwcStories = () => {
       message: "Hello! Hope you're having a great day. Let me know if you need anything—I’m happy to help with anything!",
       content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula, felis in cursus venenatis, est libero fermentum lacus, nec aliquam felis ligula nec libero.Pellentesque habitant morbi tristique senectus et netus.`,
     },
-    // ...continue similarly for items 4 to 9
   ];
 
 
@@ -87,9 +85,9 @@ const FwcStories = () => {
               <div className="p-1 h-[90vh] max-[600px]:h-fit relative w-full  bg-[#C6C6EE] center rounded-4xl px-20 max-[600px]:px-2 py-5">
                 <div className="bg-gradient-to-br from-[#A98DFD]/30 to-[#7B82F8]/30 backdrop-blur-md rounded-3xl p-6 md:p-10 flex flex-col md:flex-row items-start gap-8 text-white h-[70vh] max-[600px]:h-fit border-2 border-white ">
                   <div className="flex flex-col max-[600px]:flex-row items-center max-[600px]:items-start max-[600px]:justify-start justify-end p-10 pb-20 max-[600px]:pb-0 max-[600px]:p-0 text-center max-[600px]:text-start md:text-left md:items-start max-w-xs  md:w-[40%] w-full h-full max-[600px]:h-20">
-                    <div className="img-container rounded-xl size-20 md:w-52 md:h-64 bg-green-200 md:absolute md:top-[15%] md:left-[17%] md:-translate-x-1/2 md:-translate-y-1/2 z-30 overflow-hidden">
+                    <div className="img-container rounded-xl size-20 md:w-52 md:h-64 bg-white md:absolute md:top-[15%] md:left-[17%] md:-translate-x-1/2 md:-translate-y-1/2 z-30 overflow-hidden">
                       <img
-                        src={``}
+                        src={item.img}
                         alt="User"
                         className="w-full h-full object-cover"
                       />
