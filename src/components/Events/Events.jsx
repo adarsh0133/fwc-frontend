@@ -70,7 +70,7 @@ const Events = () => {
 	return (
 		<>
 			<Nav />
-			<div className="bg-[#FBFBFB] w-full h-screen px-16 pt-32 flex max-[600px]:flex-col max-[600px]:h-fit max-[600px]:px-8 max-[600px]:pt-20">
+			<div className="bg-[#FBFBFB] w-full h-screen px-16 pt-20 flex max-[600px]:flex-col max-[600px]:h-fit max-[600px]:px-8 max-[600px]:pt-20">
 				<div className="hero-text w-1/2 max-[600px]:w-full font-semibold">
 					<h1 className='text-7xl max-[600px]:text-3xl max-[600px]:font-bold'><span className='text-[#E74C3C]'>Weekley</span> Meetups</h1>
 					<h2 className='text-3xl max-[600px]:text-xl my-6 max-[600px]:my-3 font-bold'>Your Weekly Dose of Inspiration</h2>
@@ -96,7 +96,7 @@ const Events = () => {
 					</div>
 				</div>
 				<div className="hero-img w-1/2 max-[600px]:w-full h-full pb-20 max-[600px]:p-10 max-[600px]:pb-10">
-					<img className='w-full h-full object-contain' src="/images/events/heroimg.webp" alt="" />
+					<img className='w-full h-full object-contain' src="/images/events/event.jpeg" alt="" />
 				</div>
 			</div>
 			<div className="w-full h-fit pb-10">
