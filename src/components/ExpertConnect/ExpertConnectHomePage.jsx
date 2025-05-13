@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Nav from '../Home/Nav'
 import HomeFooter from '../Home/HomeFooter'
+import { useDispatch, useSelector } from 'react-redux';
+import { currentUser } from '../../store/Actions/userAction';
+import { Link, useNavigate } from 'react-router-dom';
+import { createMatchmaking } from '../../store/Actions/matchMakingActions';
 
 const ExpertConnectHomePage = () => {
     const systum = [
@@ -26,6 +30,32 @@ const ExpertConnectHomePage = () => {
         },
     ]
 
+    const dispatch = useDispatch();
+
+    const { user } = useSelector(state => state.user);
+    const isAuth = useSelector((state) => state.user.isAuth);
+    const navigate = useNavigate();
+
+
+    const userId = user?._id;
+
+    useEffect(() => {
+        dispatch(currentUser());
+    }, [])
+
+
+    const handleClick = () => {
+        dispatch(createMatchmaking(userId));
+        dispatch(currentUser());
+    }
+
+    const checkLoginHandler = () => {
+        if (!isAuth) {
+            window.alert("Please login first");
+            navigate("/login", { state: { from: `/business-matching` } });
+            return;
+        }
+    };
     return (
         <>
             <Nav />
@@ -36,11 +66,34 @@ const ExpertConnectHomePage = () => {
                     <p className='text-sm lg:text-lg mt-5 lg:my-5 text-zinc-600'>
                         Looking to share your expertise or find the right mentor? Expert Connect by FWC helps you match with verified professionals, gain visibility, and access free Zoom Premium. Let’s grow together!
                     </p>
-                    <button className='mt-5 cursor-pointer bg-gradient-to-r from-[#1700C8] to-[#0B0062] text-white rounded-full px-5 py-2'>
-                        <a href="#formpage">
-                            Request a Match
-                        </a>
-                    </button>
+
+                    {
+                        user === null ? (
+                            <button
+                                onClick={checkLoginHandler} className='mt-5 cursor-pointer bg-gradient-to-r from-[#1700C8] to-[#0B0062] text-white rounded-full px-5 py-2'>
+                                Login Now
+                            </button>
+                        ) : (
+                            user?.role === "member" ? (
+                                user && user.expert_connect === "notapplied" ? (
+                                    <button
+                                        onClick={handleClick} className='mt-5 cursor-pointer bg-gradient-to-r from-[#1700C8] to-[#0B0062] text-white rounded-full px-5 py-2'>
+                                        Request a Match
+                                    </button>
+
+                                ) : (
+                                    <button
+                                        className='mt-5 cursor-pointer bg-gradient-to-r from-[#1700C8] to-[#0B0062] text-white rounded-full px-5 py-2'>
+                                        Successfuly applied
+                                    </button>
+                                )
+                            ) : (
+                                <button className='mt-5 cursor-pointer bg-gradient-to-r from-[#1700C8] to-[#0B0062] text-white rounded-full px-5 py-2'>
+                                    <Link to={'/partner'} >Become a member</Link>
+                                </button>
+                            )
+                        )
+                    }
                 </div>
                 <div className="hero-image mt-10 lg:w-1/2 lg:h-[50vh] lg:mt-0 lg:px-10 overflow-hidden">
                     <img src="/images/Spotlight/eventOrganiser.png" alt="Expert Connect" className='w-full h-full object-cover rounded-md' />
