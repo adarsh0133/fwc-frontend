@@ -218,10 +218,10 @@ const Nav = () => {
                     <img className='w-[20%]' src="/images/Home/nav/careers.png" alt="" />
                     <p className='whitespace-nowrap'>Privacy Policy</p>
                   </a>
-                  <a href="/our-team" className="flex gap-3 items-center justify-start py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
+                  {/* <a href="/our-team" className="flex gap-3 items-center justify-start py-2 px-4 cursor-pointer font-semibold hover:bg-gray-200">
                     <img className='w-[20%]' src="/images/Home/nav/gallery.png" alt="" />
                     <p className='whitespace-nowrap'>Gallery</p>
-                  </a>
+                  </a> */}
                 </div>
               )}
             </li>
@@ -392,11 +392,11 @@ const Nav = () => {
 
                 <p className='whitespace-nowrap'>Privacy Policy</p>
               </a>
-              <a href="/our-team" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
+              {/* <a href="/our-team" className="flex   items-center px-2 py-1 cursor-pointer text-sm opacity-70  hover:bg-gray-200">
                 <RiArrowDropRightLine size={20} />
 
                 <p className='whitespace-nowrap'>Gallery</p>
-              </a>
+              </a> */}
             </motion.div>
           </div>
         </div>

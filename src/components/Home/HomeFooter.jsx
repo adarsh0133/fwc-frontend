@@ -179,12 +179,12 @@ const HomeFooter = () => {
                   >
                     Terms & Conditions
                   </a>
-                  <a
+                  {/* <a
                     href="#"
                     className="text-gray-500 block text-sm font-medium"
                   >
                     Gallery
-                  </a>
+                  </a> */}
                 </div>
 
               </div>
