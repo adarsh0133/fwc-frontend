@@ -181,7 +181,7 @@ export const Home = () => {
         <div className="lft-text w-full lg:w-1/2 h-full pt-32">
           <div className="h-fit space-y-2 lg:space-y-5">
             <div className="flex items-center gap-2">
-              <div className="dast size-5 lg:size-10">
+              <div className="dast size-5 lg:size-10 ">
                 <img className='size-full object-cover' src="/images/Home/herodast.png" alt="" />
               </div>
               <h2 className='font-medium text-lg lg:text-2xl'>Experience the best FWC Solution</h2>
@@ -202,7 +202,7 @@ export const Home = () => {
         </div>
         <div className="rgt-text w-full lg:w-1/2 h-full overflow-hidden mt-5 lg:mt-0 center bg-[url('/images/Home/ellips.png')] bg-cover bg-center">
           <div className="w-full h-[55vh] overflow-hidden rounded-md">
-            <img className='w-full h-full lg:-mt-20 lg:h-[110vh] object-contain object-top' src="/images/Home/landing.JPG" alt="" />
+            <img className='w-full h-full lg:-mt-20 lg:h-[110vh] object-contain object-top scale-[1.4]' src="/images/Home/landing.JPG" alt="" />
           </div>
           {/* <img className='w-full h-full lg:-mt-20 lg:h-[110vh] object-cover' src="/images/Home/homepage.webp" alt="" /> */}
         </div>
