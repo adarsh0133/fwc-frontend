@@ -24,31 +24,48 @@ const ExpertConnect = () => {
     setSelectedMember(null);
   };
 
-const filteredUsers = Array.isArray(allUsers)
-  ? allUsers.filter((user) =>
+  const filteredUsers = Array.isArray(allUsers)
+    ? allUsers.filter((user) =>
       (user.name && user.name.toLowerCase().includes(searchQuery.toLowerCase())) ||
       (user.email && user.email.toLowerCase().includes(searchQuery.toLowerCase())) ||
       (user.contact && user.contact.includes(searchQuery))
     )
-  : [];
+    : [];
+
+  useEffect(() => {
+    dispatch(getAllMatchmakings())
+      .then((data) => {
+        setAllUsers(Array.isArray(data) ? data : data.users || []);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch matchmakings:", error);
+        setLoading(false);
+      });
+  }, []);
 
 
 
 
-useEffect(() => {
-  dispatch(getAllMatchmakings())
-    .then((data) => {
-      setAllUsers(Array.isArray(data) ? data : data.users || []);
-      setLoading(false);
-    })
-    .catch((error) => {
-      console.error("Failed to fetch matchmakings:", error);
-      setLoading(false);
-    });
-}, []);
-
-
-  
+  const handleAllowMatchmaking = async (userId) => {
+    setBtnLoading((prev) => ({ ...prev, [userId]: true }));
+    try {
+      const response = await dispatch(allowMatchmaking(userId));
+      if (response) {
+        setBtnLoading((prev) => ({ ...prev, [userId]: false }));
+        alert("Matchmaking allowed successfully");
+        setAllUsers((prevUsers) =>
+          prevUsers.map((user) =>
+            user.memberId._id === userId ? { ...user, memberId: { ...user.memberId, expert_connect: "allowed" } } : user
+          )
+        );
+      }
+    }
+    catch (error) {
+      console.error("Failed to allow matchmaking:", error);
+      setBtnLoading((prev) => ({ ...prev, [userId]: false }));
+    }
+  }
 
   return (
     <>
@@ -89,6 +106,9 @@ useEffect(() => {
                         Email
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        status
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Functionality
                       </th>
                     </tr>
@@ -106,21 +126,42 @@ useEffect(() => {
                           {user.memberId.email}
                         </td>
                         <td className="px-6 py-4 lowercase whitespace-nowrap text-sm text-gray-700">
-                          {btnLoading[user.email] ? (
+                          {user.memberId.userId.expert_connect}
+                        </td>
+                        {
+                          user.memberId.userId.expert_connect === "pending" ? (
+                        <td className="px-6 py-4 lowercase whitespace-nowrap text-sm text-gray-700">
+                          {btnLoading[user.memberId._id] ? (
                             <button className="bg-gray-500 cursor-pointer px-4 py-2 rounded-lg text-white">
                               Loading
                             </button>
                           ) : (
                             <button
                               className="bg-blue-500 cursor-pointer px-4 py-2 rounded-lg text-white"
-                              onClick={() => dispatch(allowMatchmaking(user.memberId._id))
-                                
-                              }
+                              onClick={() => handleAllowMatchmaking(user.memberId._id)}
                             >
                               Send Matching
                             </button>
                           )}
                         </td>
+
+                          ):(
+                                 <td className="px-6 py-4 lowercase whitespace-nowrap text-sm text-gray-700">
+                          {btnLoading[user.memberId._id] ? (
+                            <button className="bg-gray-500 cursor-pointer px-4 py-2 rounded-lg text-white">
+                              Loading
+                            </button>
+                          ) : (
+                            <button
+                              className="bg-blue-500 cursor-pointer px-4 py-2 rounded-lg text-white"
+                              onClick={() => handleAllowMatchmaking(user.memberId._id)}
+                            >
+                              Re Match
+                            </button>
+                          )}
+                        </td>
+                          )
+                        }
                       </tr>
                     ))}
                   </tbody>
