@@ -29,8 +29,8 @@ const ExpertConnectHomePage = () => {
     return (
         <>
             <Nav />
-            <div className="w-full h-fit lg:h-screen px-5 pt-28 pb-5 lg:flex lg:px-10 lg:pt-40 lg:pb-20 bg-[#F6F5FD]">
-                <div className="hero-text lg:w-1/2 lg:px-10">
+            <div className="w-full h-fit px-5 pb-5 lg:flex lg:flex-col-reverse lg:px-10 lg:pb-20 bg-[#F6F5FD]">
+                <div className="hero-text lg:w-full lg:px-10 text-center">
                     <h1 className='text-2xl lg:text-5xl font-bold leading-8 lg:leading-10 lg:mt-5'>Connect with the Best Minds</h1>
                     <h2 className='text-2xl lg:text-2xl font-semibold leading-8 lg:leading-10 mt-4'>Your Vision, Our Network</h2>
                     <p className='text-sm lg:text-lg mt-5 lg:my-5 text-zinc-600'>
@@ -42,8 +42,8 @@ const ExpertConnectHomePage = () => {
                         </a>
                     </button>
                 </div>
-                <div className="hero-image mt-10 lg:w-1/2 lg:h-[50vh] lg:mt-0 lg:px-10 overflow-hidden">
-                    <img src="/images/Spotlight/eventOrganiser.png" alt="Expert Connect" className='w-full h-full object-cover rounded-md' />
+                <div className="hero-image mt-10 lg:w-full lg:h-[50vh] lg:mt-0 lg:px-10 overflow-hidden">
+                    <img src="/images/Spotlight/expert.jpeg" alt="Expert Connect" className='w-full h-full object-contain rounded-md' />
                 </div>
             </div>
 

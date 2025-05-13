@@ -27,13 +27,6 @@ const FwcStories = () => {
       message: "Serial Entrepreneur",
       content: `Thanks to the First World Community, we successfully secured a deal worth crores with the support of an incredible group of revolutionary individuals. Their backing helped me triple my efficiency. Thank you, FWC community! It is essential for every aspiring businessman to join the CTS community.`,
     },
-    {
-      id: 2,
-      name: "Name 3",
-      desc: "Decrepitation",
-      message: "Hello! Hope you're having a great day. Let me know if you need anything—I’m happy to help with anything!",
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula, felis in cursus venenatis, est libero fermentum lacus, nec aliquam felis ligula nec libero.Pellentesque habitant morbi tristique senectus et netus.`,
-    },
   ];
 
 
